@@ -18,11 +18,12 @@
 		A1876A31292812E1006CE7C9 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1876A30292812E1006CE7C9 /* AppCoordinator.swift */; };
 		A1876A33292812E8006CE7C9 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1876A32292812E8006CE7C9 /* Coordinator.swift */; };
 		A1876A3729281EA8006CE7C9 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1876A3629281EA8006CE7C9 /* NetworkRequest.swift */; };
-		A1876A3A29281FAD006CE7C9 /* BaseURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1876A3929281FAD006CE7C9 /* BaseURL.swift */; };
+		A1876A3A29281FAD006CE7C9 /* BaseURLProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1876A3929281FAD006CE7C9 /* BaseURLProvider.swift */; };
 		A1876A3C292820A8006CE7C9 /* NetworkServiceMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1876A3B292820A8006CE7C9 /* NetworkServiceMethod.swift */; };
 		A1876A3E29282412006CE7C9 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1876A3D29282412006CE7C9 /* Network.swift */; };
 		A1876A4029282679006CE7C9 /* NetworkConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1876A3F29282679006CE7C9 /* NetworkConfiguration.swift */; };
 		A1876A4229283743006CE7C9 /* NetworkDeserialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1876A4129283743006CE7C9 /* NetworkDeserialization.swift */; };
+		A1876A452928429A006CE7C9 /* AccessTokenProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1876A442928429A006CE7C9 /* AccessTokenProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,11 +59,13 @@
 		A1876A30292812E1006CE7C9 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		A1876A32292812E8006CE7C9 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		A1876A3629281EA8006CE7C9 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
-		A1876A3929281FAD006CE7C9 /* BaseURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseURL.swift; sourceTree = "<group>"; };
+		A1876A3929281FAD006CE7C9 /* BaseURLProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseURLProvider.swift; sourceTree = "<group>"; };
 		A1876A3B292820A8006CE7C9 /* NetworkServiceMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceMethod.swift; sourceTree = "<group>"; };
 		A1876A3D29282412006CE7C9 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		A1876A3F29282679006CE7C9 /* NetworkConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConfiguration.swift; sourceTree = "<group>"; };
 		A1876A4129283743006CE7C9 /* NetworkDeserialization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDeserialization.swift; sourceTree = "<group>"; };
+		A1876A4329283F55006CE7C9 /* AppConfiguration.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = AppConfiguration.xcconfig; sourceTree = "<group>"; };
+		A1876A442928429A006CE7C9 /* AccessTokenProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessTokenProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +96,7 @@
 		A18769EF29280E7E006CE7C9 = {
 			isa = PBXGroup;
 			children = (
+				A1876A4329283F55006CE7C9 /* AppConfiguration.xcconfig */,
 				A18769FA29280E7E006CE7C9 /* fuze */,
 				A1876A1129280E7F006CE7C9 /* fuzeTests */,
 				A1876A1B29280E7F006CE7C9 /* fuzeUITests */,
@@ -186,7 +190,8 @@
 		A1876A3529281B3F006CE7C9 /* NetworkService */ = {
 			isa = PBXGroup;
 			children = (
-				A1876A3929281FAD006CE7C9 /* BaseURL.swift */,
+				A1876A3929281FAD006CE7C9 /* BaseURLProvider.swift */,
+				A1876A442928429A006CE7C9 /* AccessTokenProvider.swift */,
 				A1876A3F29282679006CE7C9 /* NetworkConfiguration.swift */,
 				A1876A3B292820A8006CE7C9 /* NetworkServiceMethod.swift */,
 				A1876A3629281EA8006CE7C9 /* NetworkRequest.swift */,
@@ -331,10 +336,11 @@
 				A1876A3C292820A8006CE7C9 /* NetworkServiceMethod.swift in Sources */,
 				A1876A0029280E7E006CE7C9 /* ViewController.swift in Sources */,
 				A1876A33292812E8006CE7C9 /* Coordinator.swift in Sources */,
-				A1876A3A29281FAD006CE7C9 /* BaseURL.swift in Sources */,
+				A1876A3A29281FAD006CE7C9 /* BaseURLProvider.swift in Sources */,
 				A1876A3E29282412006CE7C9 /* Network.swift in Sources */,
 				A18769FC29280E7E006CE7C9 /* AppDelegate.swift in Sources */,
 				A1876A3729281EA8006CE7C9 /* NetworkRequest.swift in Sources */,
+				A1876A452928429A006CE7C9 /* AccessTokenProvider.swift in Sources */,
 				A1876A4229283743006CE7C9 /* NetworkDeserialization.swift in Sources */,
 				A18769FE29280E7E006CE7C9 /* SceneDelegate.swift in Sources */,
 			);
@@ -386,6 +392,7 @@
 /* Begin XCBuildConfiguration section */
 		A1876A2029280E7F006CE7C9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A1876A4329283F55006CE7C9 /* AppConfiguration.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -446,6 +453,7 @@
 		};
 		A1876A2129280E7F006CE7C9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A1876A4329283F55006CE7C9 /* AppConfiguration.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
