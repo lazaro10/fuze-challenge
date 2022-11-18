@@ -1,14 +1,7 @@
-//
-//  NetworkRequest.swift
-//  fuze
-//
-//  Created by Firenze on 18/11/22.
-//
-
 import Foundation
 
 protocol NetworkRequest {
-    var baseURL: APINetwork { get }
+    var baseURL: ApiProvider { get }
     var path: String { get }
     var method: NetworkServiceMethod { get }
     var queryParameters: [String: String] { get }
@@ -17,7 +10,7 @@ protocol NetworkRequest {
 }
 
 extension NetworkRequest {
-    var baseURL: APINetwork { .pandaScore }
+    var baseURL: ApiProvider { .pandaScore }
     var queryParameters: [String: Any] { [:] }
     var bodyParameters: [String: Any]? { nil }
     var headers: [String: String] { [:] }

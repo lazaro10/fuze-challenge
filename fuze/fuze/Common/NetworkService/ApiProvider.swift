@@ -1,3 +1,3 @@
-enum APINetwork {
+enum ApiProvider {
     case pandaScore
 }

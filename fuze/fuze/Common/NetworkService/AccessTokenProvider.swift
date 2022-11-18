@@ -1,11 +1,11 @@
 import Foundation
 
 protocol AccessTokenProviderLogic {
-    func getAccessToken(api: APINetwork) -> (key: String, value: String)
+    func getAccessToken(api: ApiProvider) -> (key: String, value: String)
 }
 
 struct AccessTokenProvider: AccessTokenProviderLogic {
-    func getAccessToken(api: APINetwork) -> (key: String, value: String) {
+    func getAccessToken(api: ApiProvider) -> (key: String, value: String) {
         switch api {
         case .pandaScore:
             guard
