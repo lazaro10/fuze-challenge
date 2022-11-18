@@ -8,7 +8,7 @@
 import Foundation
 
 protocol NetworkRequest {
-    var baseURL: BaseURL { get }
+    var baseURL: APINetwork { get }
     var path: String { get }
     var method: NetworkServiceMethod { get }
     var queryParameters: [String: String] { get }
@@ -17,7 +17,7 @@ protocol NetworkRequest {
 }
 
 extension NetworkRequest {
-    var baseURL: BaseURL { .pandaScore }
+    var baseURL: APINetwork { .pandaScore }
     var queryParameters: [String: Any] { [:] }
     var bodyParameters: [String: Any]? { nil }
     var headers: [String: String] { [:] }

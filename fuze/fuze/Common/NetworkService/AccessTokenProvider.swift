@@ -1,15 +1,20 @@
 import Foundation
 
-struct AccessTokenProvider {
-    static let shared: AccessTokenProvider = AccessTokenProvider()
+protocol AccessTokenProviderLogic {
+    func getAccessToken(api: APINetwork) -> (key: String, value: String)
+}
 
-    var pandaScore: String {
-        guard
-            let token = Bundle.main.object(forInfoDictionaryKey: "PANDA_SCORE_ACCESS_TOKEN") as? String
-        else {
-            fatalError("INVALID PANDA SCORE ACESS TOKEN")
+struct AccessTokenProvider: AccessTokenProviderLogic {
+    func getAccessToken(api: APINetwork) -> (key: String, value: String) {
+        switch api {
+        case .pandaScore:
+            guard
+                let token = Bundle.main.object(forInfoDictionaryKey: "PANDA_SCORE_ACCESS_TOKEN") as? String
+            else {
+                fatalError("INVALID PANDA SCORE ACESS TOKEN")
+            }
+            
+            return (key: "token", value: token)
         }
-        
-        return token
     }
 }

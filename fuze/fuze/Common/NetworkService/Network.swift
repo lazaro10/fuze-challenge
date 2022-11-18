@@ -12,18 +12,29 @@ protocol NetworkLogic {
 
 final class Network {
     private let deserialization: NetworkDeserializationLogic
-    
-    init(deserialization: NetworkDeserializationLogic) {
+    private let urlProvider: BaseURLProviderLogic
+    private let accessTokenProvider: AccessTokenProviderLogic
+
+    init(
+        deserialization: NetworkDeserializationLogic,
+        urlProvider: BaseURLProviderLogic,
+        accessTokenProvider: AccessTokenProviderLogic
+    ) {
         self.deserialization = deserialization
+        self.urlProvider = urlProvider
+        self.accessTokenProvider = accessTokenProvider
     }
 }
 
 extension Network: NetworkLogic {
     func request<T>(_ networkRequest: NetworkRequest, completion: @escaping (Result<T, Error>) -> Void) where T : Decodable {
         do {
-            let request = try networkRequest.toRequest(baseURL: networkRequest.baseURL.url)
             let session = URLSession.shared
-
+            let accessToken = accessTokenProvider.getAccessToken(api: networkRequest.baseURL)
+            var request = try networkRequest.toRequest(baseURL: urlProvider.getURL(api: networkRequest.baseURL))
+            
+            request.setValue(accessToken.value, forHTTPHeaderField: accessToken.key)
+            
             let task = session.dataTask(with: request) { [weak self] (data, response, error) in
                 guard let self = self else { return }
                 if let error = error {

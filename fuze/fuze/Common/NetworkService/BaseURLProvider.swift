@@ -1,16 +1,21 @@
 import Foundation
 
-struct BaseURLProvider {
-    static let shared: BaseURLProvider = BaseURLProvider()
+protocol BaseURLProviderLogic {
+    func getURL(api: APINetwork) -> URL
+}
 
-    var pandaScore: URL {
-        guard
-            let string = Bundle.main.object(forInfoDictionaryKey: "PANDA_SCORE_BASE_URL") as? String,
-            let url = URL(string: string)
-        else {
-            fatalError("INVALID PANDA SCORE BASE URL")
+struct BaseURLProvider: BaseURLProviderLogic {
+    func getURL(api: APINetwork) -> URL {
+        switch api {
+        case .pandaScore:
+            guard
+                let string = Bundle.main.object(forInfoDictionaryKey: "PANDA_SCORE_BASE_URL") as? String,
+                let url = URL(string: string)
+            else {
+                fatalError("INVALID PANDA SCORE BASE URL")
+            }
+            
+            return url
         }
-        
-        return url
     }
 }

@@ -1,0 +1,3 @@
+enum APINetwork {
+    case pandaScore
+}

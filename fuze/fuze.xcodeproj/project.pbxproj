@@ -23,7 +23,7 @@
 		A1876A3E29282412006CE7C9 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1876A3D29282412006CE7C9 /* Network.swift */; };
 		A1876A4229283743006CE7C9 /* NetworkDeserialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1876A4129283743006CE7C9 /* NetworkDeserialization.swift */; };
 		A1876A452928429A006CE7C9 /* AccessTokenProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1876A442928429A006CE7C9 /* AccessTokenProvider.swift */; };
-		A1876A47292843DC006CE7C9 /* BaseURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1876A46292843DC006CE7C9 /* BaseURL.swift */; };
+		A1876A47292843DC006CE7C9 /* APINetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1876A46292843DC006CE7C9 /* APINetwork.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,7 +65,7 @@
 		A1876A4129283743006CE7C9 /* NetworkDeserialization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDeserialization.swift; sourceTree = "<group>"; };
 		A1876A4329283F55006CE7C9 /* AppConfiguration.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = AppConfiguration.xcconfig; sourceTree = "<group>"; };
 		A1876A442928429A006CE7C9 /* AccessTokenProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessTokenProvider.swift; sourceTree = "<group>"; };
-		A1876A46292843DC006CE7C9 /* BaseURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseURL.swift; sourceTree = "<group>"; };
+		A1876A46292843DC006CE7C9 /* APINetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APINetwork.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,7 +190,7 @@
 		A1876A3529281B3F006CE7C9 /* NetworkService */ = {
 			isa = PBXGroup;
 			children = (
-				A1876A46292843DC006CE7C9 /* BaseURL.swift */,
+				A1876A46292843DC006CE7C9 /* APINetwork.swift */,
 				A1876A3929281FAD006CE7C9 /* BaseURLProvider.swift */,
 				A1876A442928429A006CE7C9 /* AccessTokenProvider.swift */,
 				A1876A3B292820A8006CE7C9 /* NetworkServiceMethod.swift */,
@@ -334,7 +334,7 @@
 				A1876A31292812E1006CE7C9 /* AppCoordinator.swift in Sources */,
 				A1876A3C292820A8006CE7C9 /* NetworkServiceMethod.swift in Sources */,
 				A1876A0029280E7E006CE7C9 /* ViewController.swift in Sources */,
-				A1876A47292843DC006CE7C9 /* BaseURL.swift in Sources */,
+				A1876A47292843DC006CE7C9 /* APINetwork.swift in Sources */,
 				A1876A33292812E8006CE7C9 /* Coordinator.swift in Sources */,
 				A1876A3A29281FAD006CE7C9 /* BaseURLProvider.swift in Sources */,
 				A1876A3E29282412006CE7C9 /* Network.swift in Sources */,
