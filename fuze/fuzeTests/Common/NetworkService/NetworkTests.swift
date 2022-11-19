@@ -15,12 +15,7 @@ final class NetworkTests: XCTestCase {
     )
 
     func test_request_givenSuccess_shouldCompletionWithSuccess() throws {
-        let json = """
-        {
-            "firstParam": "fuze",
-            "secondParam": 456
-        }
-        """
+        let json = ""
 
         let url = try XCTUnwrap(URL(string: "https://moises.ai"))
 
@@ -31,7 +26,7 @@ final class NetworkTests: XCTestCase {
         )
 
         deserializationSpy.stubbedDecodeResult = ResponseModel.fixture()
-        urlProviderSpy.stubbedGetURLResult = try XCTUnwrap(URL(string: "https://moises.ai"))
+        urlProviderSpy.stubbedGetURLResult = url
         accessTokenProviderSpy.stubbedGetAccessTokenResult = (key: "token", value: "l54o4k")
 
         var resultRequest: Result<ResponseModel, Error>?
