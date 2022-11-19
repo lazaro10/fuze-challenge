@@ -35,6 +35,7 @@
 		A196D86829287B72000ADDEE /* NetworkErrorEquatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A196D86729287B72000ADDEE /* NetworkErrorEquatable.swift */; };
 		A196D86A29287CC6000ADDEE /* NetworkErrorDummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A196D86929287CC6000ADDEE /* NetworkErrorDummy.swift */; };
 		A196D86C29287ED5000ADDEE /* NetworkDeserializationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A196D86B29287ED5000ADDEE /* NetworkDeserializationTests.swift */; };
+		A19B685D29291D6100145256 /* FileManagerProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19B685C29291D6100145256 /* FileManagerProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,7 @@
 		A196D86729287B72000ADDEE /* NetworkErrorEquatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorEquatable.swift; sourceTree = "<group>"; };
 		A196D86929287CC6000ADDEE /* NetworkErrorDummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorDummy.swift; sourceTree = "<group>"; };
 		A196D86B29287ED5000ADDEE /* NetworkDeserializationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDeserializationTests.swift; sourceTree = "<group>"; };
+		A19B685C29291D6100145256 /* FileManagerProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,9 +190,9 @@
 			children = (
 				A1876A4929284EBE006CE7C9 /* Method */,
 				A1876A4829284EAA006CE7C9 /* Providers */,
+				A1876A4129283743006CE7C9 /* NetworkDeserialization.swift */,
 				A1876A3629281EA8006CE7C9 /* NetworkRequest.swift */,
 				A1876A3D29282412006CE7C9 /* Network.swift */,
-				A1876A4129283743006CE7C9 /* NetworkDeserialization.swift */,
 			);
 			path = NetworkService;
 			sourceTree = "<group>";
@@ -202,6 +204,7 @@
 				A1876A3929281FAD006CE7C9 /* BaseURLProvider.swift */,
 				A1876A442928429A006CE7C9 /* AccessTokenProvider.swift */,
 				A1876A6B29286A88006CE7C9 /* NetworkProvider.swift */,
+				A19B685C29291D6100145256 /* FileManagerProvider.swift */,
 			);
 			path = Providers;
 			sourceTree = "<group>";
@@ -228,9 +231,9 @@
 				A1876A57292854DE006CE7C9 /* Fixtures */,
 				A1876A5E29285C64006CE7C9 /* Doubles */,
 				A1876A4C29284F3D006CE7C9 /* Providers */,
+				A196D86B29287ED5000ADDEE /* NetworkDeserializationTests.swift */,
 				A1876A5A29285504006CE7C9 /* NetworkRequestTests.swift */,
 				A1876A5C29285C51006CE7C9 /* NetworkTests.swift */,
-				A196D86B29287ED5000ADDEE /* NetworkDeserializationTests.swift */,
 			);
 			path = NetworkService;
 			sourceTree = "<group>";
@@ -378,6 +381,7 @@
 				A1876A3729281EA8006CE7C9 /* NetworkRequest.swift in Sources */,
 				A1876A452928429A006CE7C9 /* AccessTokenProvider.swift in Sources */,
 				A1876A4229283743006CE7C9 /* NetworkDeserialization.swift in Sources */,
+				A19B685D29291D6100145256 /* FileManagerProvider.swift in Sources */,
 				A18769FE29280E7E006CE7C9 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -7,7 +7,7 @@ final class NetworkProviderSpy: NetworkProviderLogic {
     var stubbedDataTaskCompletionHandlerResult: (Data?, URLResponse?, Error?)?
 
     func dataTask(
-        with request: URLRequest,
+        request: URLRequest,
         completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void
     ) -> URLSessionDataTask? {
         invokedDataTaskCount += 1
@@ -15,7 +15,22 @@ final class NetworkProviderSpy: NetworkProviderLogic {
         if let result = stubbedDataTaskCompletionHandlerResult {
             completionHandler(result.0, result.1, result.2)
         }
-        
+        return nil
+    }
+
+    private(set) var invokedDownloadTaskCount = 0
+    private(set) var invokedDataTaskParameterURL: URL?
+    var stubbedDownloadTaskCompletionHandlerResult: (URL?, URLResponse?, Error?)?
+
+    func downloadTask(
+        url: URL,
+        completionHandler: @escaping (URL?, URLResponse?, Error?) -> Void
+    ) -> URLSessionDownloadTask? {
+        invokedDownloadTaskCount += 1
+        invokedDataTaskParameterURL = url
+        if let result = stubbedDownloadTaskCompletionHandlerResult {
+            completionHandler(result.0, result.1, result.2)
+        }
         return nil
     }
 }
