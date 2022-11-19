@@ -37,6 +37,7 @@
 		A196D86C29287ED5000ADDEE /* NetworkDeserializationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A196D86B29287ED5000ADDEE /* NetworkDeserializationTests.swift */; };
 		A19B685D29291D6100145256 /* FileManagerProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19B685C29291D6100145256 /* FileManagerProvider.swift */; };
 		A19B685F2929254E00145256 /* FileManagerProviderSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19B685E2929254E00145256 /* FileManagerProviderSpy.swift */; };
+		A19B686129292B0000145256 /* NetworkDownload.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19B686029292B0000145256 /* NetworkDownload.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +85,7 @@
 		A196D86B29287ED5000ADDEE /* NetworkDeserializationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDeserializationTests.swift; sourceTree = "<group>"; };
 		A19B685C29291D6100145256 /* FileManagerProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerProvider.swift; sourceTree = "<group>"; };
 		A19B685E2929254E00145256 /* FileManagerProviderSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerProviderSpy.swift; sourceTree = "<group>"; };
+		A19B686029292B0000145256 /* NetworkDownload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDownload.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +196,7 @@
 				A1876A4829284EAA006CE7C9 /* Providers */,
 				A1876A4129283743006CE7C9 /* NetworkDeserialization.swift */,
 				A1876A3629281EA8006CE7C9 /* NetworkRequest.swift */,
+				A19B686029292B0000145256 /* NetworkDownload.swift */,
 				A1876A3D29282412006CE7C9 /* Network.swift */,
 			);
 			path = NetworkService;
@@ -376,6 +379,7 @@
 				A1876A6C29286A88006CE7C9 /* NetworkProvider.swift in Sources */,
 				A1876A3C292820A8006CE7C9 /* NetworkServiceMethod.swift in Sources */,
 				A1876A0029280E7E006CE7C9 /* ViewController.swift in Sources */,
+				A19B686129292B0000145256 /* NetworkDownload.swift in Sources */,
 				A1876A47292843DC006CE7C9 /* ApiProvider.swift in Sources */,
 				A1876A33292812E8006CE7C9 /* Coordinator.swift in Sources */,
 				A1876A3A29281FAD006CE7C9 /* BaseURLProvider.swift in Sources */,
