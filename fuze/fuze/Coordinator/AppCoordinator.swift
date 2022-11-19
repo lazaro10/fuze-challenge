@@ -8,7 +8,7 @@ final class AppCoordinator: Coordinator {
     }
     
     func start() {
-        let viewController = ViewController()
+        let viewController = MatchesBuilder.build()
         navigationController.pushViewController(viewController, animated: true)
     }
 }
