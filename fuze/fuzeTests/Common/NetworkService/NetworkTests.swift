@@ -90,7 +90,7 @@ final class NetworkTests: XCTestCase {
         )
 
         deserializationSpy.stubbedDecodeResult = ResponseModel.fixture()
-        urlProviderSpy.stubbedGetURLResult = try XCTUnwrap(URL(string: "https://moises.ai"))
+        urlProviderSpy.stubbedGetURLResult = url
         accessTokenProviderSpy.stubbedGetAccessTokenResult = (key: "token", value: "l54o4k")
 
         var resultRequest: Result<ResponseModel, Error>?
