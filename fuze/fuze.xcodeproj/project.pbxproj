@@ -38,6 +38,7 @@
 		A19B685D29291D6100145256 /* FileManagerProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19B685C29291D6100145256 /* FileManagerProvider.swift */; };
 		A19B685F2929254E00145256 /* FileManagerProviderSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19B685E2929254E00145256 /* FileManagerProviderSpy.swift */; };
 		A19B686129292B0000145256 /* NetworkDownload.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19B686029292B0000145256 /* NetworkDownload.swift */; };
+		A19B686829292D0A00145256 /* NetworkDownloadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19B686729292D0A00145256 /* NetworkDownloadTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +87,7 @@
 		A19B685C29291D6100145256 /* FileManagerProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerProvider.swift; sourceTree = "<group>"; };
 		A19B685E2929254E00145256 /* FileManagerProviderSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerProviderSpy.swift; sourceTree = "<group>"; };
 		A19B686029292B0000145256 /* NetworkDownload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDownload.swift; sourceTree = "<group>"; };
+		A19B686729292D0A00145256 /* NetworkDownloadTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDownloadTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -234,6 +236,7 @@
 				A1876A5E29285C64006CE7C9 /* Doubles */,
 				A1876A4C29284F3D006CE7C9 /* Providers */,
 				A19B686529292C5800145256 /* Network */,
+				A19B686629292CED00145256 /* Download */,
 			);
 			path = NetworkService;
 			sourceTree = "<group>";
@@ -297,6 +300,14 @@
 				A1876A5C29285C51006CE7C9 /* NetworkTests.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		A19B686629292CED00145256 /* Download */ = {
+			isa = PBXGroup;
+			children = (
+				A19B686729292D0A00145256 /* NetworkDownloadTests.swift */,
+			);
+			path = Download;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -428,6 +439,7 @@
 				A1876A59292854EF006CE7C9 /* NetworkRequestFixture.swift in Sources */,
 				A1876A6029285C89006CE7C9 /* NetworkDeserializationSpy.swift in Sources */,
 				A1876A532928519A006CE7C9 /* AccessTokenProviderTests.swift in Sources */,
+				A19B686829292D0A00145256 /* NetworkDownloadTests.swift in Sources */,
 				A19B685F2929254E00145256 /* FileManagerProviderSpy.swift in Sources */,
 				A196D86C29287ED5000ADDEE /* NetworkDeserializationTests.swift in Sources */,
 				A1876A6A29286871006CE7C9 /* NetworkProviderSpy.swift in Sources */,

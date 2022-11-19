@@ -41,6 +41,7 @@ final class FileManagerProviderSpy: FileManagerProviderLogic {
     func fileExists(path: String) -> Bool {
         invokedFileExistsCount += 1
         invokedFileExistsParameterPath = path
+        
         return stubbedFileExistsResult
     }
 
@@ -51,6 +52,7 @@ final class FileManagerProviderSpy: FileManagerProviderLogic {
     func removeItem(url: URL) throws {
         invokedRemoveItemCount += 1
         invokedRemoveItemParameterURL = url
+        
         if let error = stubbedRemoveItemError {
             throw error
         }

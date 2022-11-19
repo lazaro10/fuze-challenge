@@ -20,8 +20,7 @@ final class NetworkDownload {
         let task =  session.downloadTask(url: url) { [weak self] dataURL, _, error in
             guard let self = self else { return }
             if let error = error {
-                completion(error)
-                return
+                return completion(error)
             }
 
             do {
@@ -33,9 +32,9 @@ final class NetworkDownload {
                     try self.fileManagerProvdider.copyItem(srcURL: dataURL, dstURL: file)
                 }
                 
-                completion(nil)
+                return completion(nil)
             } catch {
-                completion(error)
+                return completion(error)
             }
         }
 
