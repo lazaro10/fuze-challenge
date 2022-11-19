@@ -41,6 +41,8 @@
 		A19B686B29295C4500145256 /* MatchesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19B686A29295C4500145256 /* MatchesViewController.swift */; };
 		A19B687029295DC000145256 /* MatchesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19B686F29295DC000145256 /* MatchesViewModel.swift */; };
 		A19B687229295DF600145256 /* MatchesBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19B687129295DF600145256 /* MatchesBuilder.swift */; };
+		A19B6875292966E900145256 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A19B6874292966E900145256 /* Colors.xcassets */; };
+		A19B68782929698900145256 /* FuzeColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19B68772929698900145256 /* FuzeColors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +94,8 @@
 		A19B686A29295C4500145256 /* MatchesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesViewController.swift; sourceTree = "<group>"; };
 		A19B686F29295DC000145256 /* MatchesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesViewModel.swift; sourceTree = "<group>"; };
 		A19B687129295DF600145256 /* MatchesBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesBuilder.swift; sourceTree = "<group>"; };
+		A19B6874292966E900145256 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		A19B68772929698900145256 /* FuzeColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuzeColors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				A1876A0429280E7F006CE7C9 /* Assets.xcassets */,
+				A19B6874292966E900145256 /* Colors.xcassets */,
 				A1876A0629280E7F006CE7C9 /* LaunchScreen.storyboard */,
 				A1876A0929280E7F006CE7C9 /* Info.plist */,
 			);
@@ -190,6 +195,7 @@
 		A1876A3429281B2A006CE7C9 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				A19B68762929697A00145256 /* Colors */,
 				A1876A3529281B3F006CE7C9 /* NetworkService */,
 			);
 			path = Common;
@@ -348,6 +354,14 @@
 			path = Scene;
 			sourceTree = "<group>";
 		};
+		A19B68762929697A00145256 /* Colors */ = {
+			isa = PBXGroup;
+			children = (
+				A19B68772929698900145256 /* FuzeColors.swift */,
+			);
+			path = Colors;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -429,6 +443,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A19B6875292966E900145256 /* Colors.xcassets in Resources */,
 				A1876A0829280E7F006CE7C9 /* LaunchScreen.storyboard in Resources */,
 				A1876A0529280E7F006CE7C9 /* Assets.xcassets in Resources */,
 			);
@@ -449,6 +464,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1876A31292812E1006CE7C9 /* AppCoordinator.swift in Sources */,
+				A19B68782929698900145256 /* FuzeColors.swift in Sources */,
 				A1876A6C29286A88006CE7C9 /* NetworkProvider.swift in Sources */,
 				A19B687029295DC000145256 /* MatchesViewModel.swift in Sources */,
 				A1876A3C292820A8006CE7C9 /* NetworkServiceMethod.swift in Sources */,
