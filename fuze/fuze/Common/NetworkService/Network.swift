@@ -11,15 +11,18 @@ protocol NetworkLogic {
 }
 
 final class Network {
+    private let session: NetworkProviderLogic
     private let deserialization: NetworkDeserializationLogic
     private let urlProvider: BaseURLProviderLogic
     private let accessTokenProvider: AccessTokenProviderLogic
 
     init(
+        session: NetworkProviderLogic,
         deserialization: NetworkDeserializationLogic,
         urlProvider: BaseURLProviderLogic,
         accessTokenProvider: AccessTokenProviderLogic
     ) {
+        self.session = session
         self.deserialization = deserialization
         self.urlProvider = urlProvider
         self.accessTokenProvider = accessTokenProvider
@@ -29,7 +32,6 @@ final class Network {
 extension Network: NetworkLogic {
     func request<T>(_ networkRequest: NetworkRequest, completion: @escaping (Result<T, Error>) -> Void) where T : Decodable {
         do {
-            let session = URLSession.shared
             let accessToken = accessTokenProvider.getAccessToken(api: networkRequest.baseURL)
             var request = try networkRequest.toRequest(baseURL: urlProvider.getURL(api: networkRequest.baseURL))
             
@@ -53,7 +55,7 @@ extension Network: NetworkLogic {
                 }
             }
             
-            task.resume()
+            task?.resume()
         } catch {
             completion(.failure(NetworkError.failureToConvertRequest(error: error)))
         }

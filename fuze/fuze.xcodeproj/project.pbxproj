@@ -28,6 +28,15 @@
 		A1876A532928519A006CE7C9 /* AccessTokenProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1876A522928519A006CE7C9 /* AccessTokenProviderTests.swift */; };
 		A1876A59292854EF006CE7C9 /* NetworkRequestFixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1876A58292854EF006CE7C9 /* NetworkRequestFixture.swift */; };
 		A1876A5B29285504006CE7C9 /* NetworkRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1876A5A29285504006CE7C9 /* NetworkRequestTests.swift */; };
+		A1876A5D29285C51006CE7C9 /* NetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1876A5C29285C51006CE7C9 /* NetworkTests.swift */; };
+		A1876A6029285C89006CE7C9 /* NetworkDeserializationSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1876A5F29285C89006CE7C9 /* NetworkDeserializationSpy.swift */; };
+		A1876A6229285DED006CE7C9 /* BaseURLProviderSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1876A6129285DED006CE7C9 /* BaseURLProviderSpy.swift */; };
+		A1876A6429285EF4006CE7C9 /* AccessTokenProviderSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1876A6329285EF4006CE7C9 /* AccessTokenProviderSpy.swift */; };
+		A1876A6829286700006CE7C9 /* ResponseModeFixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1876A6729286700006CE7C9 /* ResponseModeFixture.swift */; };
+		A1876A6A29286871006CE7C9 /* NetworkProviderSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1876A6929286871006CE7C9 /* NetworkProviderSpy.swift */; };
+		A1876A6C29286A88006CE7C9 /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1876A6B29286A88006CE7C9 /* NetworkProvider.swift */; };
+		A196D86829287B72000ADDEE /* NetworkErrorEquatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A196D86729287B72000ADDEE /* NetworkErrorEquatable.swift */; };
+		A196D86A29287CC6000ADDEE /* NetworkErrorDummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A196D86929287CC6000ADDEE /* NetworkErrorDummy.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +83,15 @@
 		A1876A522928519A006CE7C9 /* AccessTokenProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessTokenProviderTests.swift; sourceTree = "<group>"; };
 		A1876A58292854EF006CE7C9 /* NetworkRequestFixture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequestFixture.swift; sourceTree = "<group>"; };
 		A1876A5A29285504006CE7C9 /* NetworkRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequestTests.swift; sourceTree = "<group>"; };
+		A1876A5C29285C51006CE7C9 /* NetworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTests.swift; sourceTree = "<group>"; };
+		A1876A5F29285C89006CE7C9 /* NetworkDeserializationSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDeserializationSpy.swift; sourceTree = "<group>"; };
+		A1876A6129285DED006CE7C9 /* BaseURLProviderSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseURLProviderSpy.swift; sourceTree = "<group>"; };
+		A1876A6329285EF4006CE7C9 /* AccessTokenProviderSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessTokenProviderSpy.swift; sourceTree = "<group>"; };
+		A1876A6729286700006CE7C9 /* ResponseModeFixture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseModeFixture.swift; sourceTree = "<group>"; };
+		A1876A6929286871006CE7C9 /* NetworkProviderSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProviderSpy.swift; sourceTree = "<group>"; };
+		A1876A6B29286A88006CE7C9 /* NetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
+		A196D86729287B72000ADDEE /* NetworkErrorEquatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorEquatable.swift; sourceTree = "<group>"; };
+		A196D86929287CC6000ADDEE /* NetworkErrorDummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorDummy.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,6 +232,7 @@
 				A1876A46292843DC006CE7C9 /* ApiProvider.swift */,
 				A1876A3929281FAD006CE7C9 /* BaseURLProvider.swift */,
 				A1876A442928429A006CE7C9 /* AccessTokenProvider.swift */,
+				A1876A6B29286A88006CE7C9 /* NetworkProvider.swift */,
 			);
 			path = Providers;
 			sourceTree = "<group>";
@@ -238,8 +257,10 @@
 			isa = PBXGroup;
 			children = (
 				A1876A57292854DE006CE7C9 /* Fixtures */,
+				A1876A5E29285C64006CE7C9 /* Doubles */,
 				A1876A4C29284F3D006CE7C9 /* Providers */,
 				A1876A5A29285504006CE7C9 /* NetworkRequestTests.swift */,
+				A1876A5C29285C51006CE7C9 /* NetworkTests.swift */,
 			);
 			path = NetworkService;
 			sourceTree = "<group>";
@@ -257,8 +278,22 @@
 			isa = PBXGroup;
 			children = (
 				A1876A58292854EF006CE7C9 /* NetworkRequestFixture.swift */,
+				A1876A6729286700006CE7C9 /* ResponseModeFixture.swift */,
 			);
 			path = Fixtures;
+			sourceTree = "<group>";
+		};
+		A1876A5E29285C64006CE7C9 /* Doubles */ = {
+			isa = PBXGroup;
+			children = (
+				A1876A5F29285C89006CE7C9 /* NetworkDeserializationSpy.swift */,
+				A1876A6129285DED006CE7C9 /* BaseURLProviderSpy.swift */,
+				A1876A6329285EF4006CE7C9 /* AccessTokenProviderSpy.swift */,
+				A1876A6929286871006CE7C9 /* NetworkProviderSpy.swift */,
+				A196D86929287CC6000ADDEE /* NetworkErrorDummy.swift */,
+				A196D86729287B72000ADDEE /* NetworkErrorEquatable.swift */,
+			);
+			path = Doubles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -392,6 +427,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1876A31292812E1006CE7C9 /* AppCoordinator.swift in Sources */,
+				A1876A6C29286A88006CE7C9 /* NetworkProvider.swift in Sources */,
 				A1876A3C292820A8006CE7C9 /* NetworkServiceMethod.swift in Sources */,
 				A1876A0029280E7E006CE7C9 /* ViewController.swift in Sources */,
 				A1876A47292843DC006CE7C9 /* ApiProvider.swift in Sources */,
@@ -410,10 +446,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1876A6229285DED006CE7C9 /* BaseURLProviderSpy.swift in Sources */,
+				A196D86A29287CC6000ADDEE /* NetworkErrorDummy.swift in Sources */,
+				A1876A6829286700006CE7C9 /* ResponseModeFixture.swift in Sources */,
+				A1876A5D29285C51006CE7C9 /* NetworkTests.swift in Sources */,
 				A1876A59292854EF006CE7C9 /* NetworkRequestFixture.swift in Sources */,
 				A1876A1329280E7F006CE7C9 /* fuzeTests.swift in Sources */,
+				A1876A6029285C89006CE7C9 /* NetworkDeserializationSpy.swift in Sources */,
 				A1876A532928519A006CE7C9 /* AccessTokenProviderTests.swift in Sources */,
+				A1876A6A29286871006CE7C9 /* NetworkProviderSpy.swift in Sources */,
+				A1876A6429285EF4006CE7C9 /* AccessTokenProviderSpy.swift in Sources */,
 				A1876A4E29284F54006CE7C9 /* BaseURLProviderTests.swift in Sources */,
+				A196D86829287B72000ADDEE /* NetworkErrorEquatable.swift in Sources */,
 				A1876A5B29285504006CE7C9 /* NetworkRequestTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
