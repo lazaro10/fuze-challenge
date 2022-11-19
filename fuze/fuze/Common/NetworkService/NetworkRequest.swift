@@ -37,7 +37,7 @@ extension NetworkRequest {
         }
          
         guard let body = try? JSONSerialization.data(withJSONObject: bodyParameters ?? [:], options: []) else {
-            throw NetworkRequestError.invalidURL
+            throw NetworkRequestError.invalidBodyParameters
         }
         
         var request = URLRequest(url: url)
