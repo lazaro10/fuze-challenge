@@ -192,12 +192,9 @@
 		A1876A3529281B3F006CE7C9 /* NetworkService */ = {
 			isa = PBXGroup;
 			children = (
-				A1876A4929284EBE006CE7C9 /* Method */,
 				A1876A4829284EAA006CE7C9 /* Providers */,
-				A1876A4129283743006CE7C9 /* NetworkDeserialization.swift */,
-				A1876A3629281EA8006CE7C9 /* NetworkRequest.swift */,
-				A19B686029292B0000145256 /* NetworkDownload.swift */,
-				A1876A3D29282412006CE7C9 /* Network.swift */,
+				A19B686329292BEC00145256 /* Network */,
+				A19B686429292BFF00145256 /* Download */,
 			);
 			path = NetworkService;
 			sourceTree = "<group>";
@@ -236,9 +233,7 @@
 				A1876A57292854DE006CE7C9 /* Fixtures */,
 				A1876A5E29285C64006CE7C9 /* Doubles */,
 				A1876A4C29284F3D006CE7C9 /* Providers */,
-				A196D86B29287ED5000ADDEE /* NetworkDeserializationTests.swift */,
-				A1876A5A29285504006CE7C9 /* NetworkRequestTests.swift */,
-				A1876A5C29285C51006CE7C9 /* NetworkTests.swift */,
+				A19B686529292C5800145256 /* Network */,
 			);
 			path = NetworkService;
 			sourceTree = "<group>";
@@ -273,6 +268,35 @@
 				A196D86729287B72000ADDEE /* NetworkErrorEquatable.swift */,
 			);
 			path = Doubles;
+			sourceTree = "<group>";
+		};
+		A19B686329292BEC00145256 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				A1876A4929284EBE006CE7C9 /* Method */,
+				A1876A4129283743006CE7C9 /* NetworkDeserialization.swift */,
+				A1876A3629281EA8006CE7C9 /* NetworkRequest.swift */,
+				A1876A3D29282412006CE7C9 /* Network.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		A19B686429292BFF00145256 /* Download */ = {
+			isa = PBXGroup;
+			children = (
+				A19B686029292B0000145256 /* NetworkDownload.swift */,
+			);
+			path = Download;
+			sourceTree = "<group>";
+		};
+		A19B686529292C5800145256 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				A196D86B29287ED5000ADDEE /* NetworkDeserializationTests.swift */,
+				A1876A5A29285504006CE7C9 /* NetworkRequestTests.swift */,
+				A1876A5C29285C51006CE7C9 /* NetworkTests.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
