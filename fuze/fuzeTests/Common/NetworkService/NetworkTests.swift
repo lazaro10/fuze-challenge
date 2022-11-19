@@ -6,12 +6,14 @@ final class NetworkTests: XCTestCase {
     let deserializationSpy = NetworkDeserializationSpy()
     let urlProviderSpy = BaseURLProviderSpy()
     let accessTokenProviderSpy = AccessTokenProviderSpy()
+    let fileManagerProvdiderSpy = FileManagerProviderSpy()
 
     lazy var sut = Network(
         session: sessionSpy,
         deserialization: deserializationSpy,
         urlProvider: urlProviderSpy,
-        accessTokenProvider: accessTokenProviderSpy
+        accessTokenProvider: accessTokenProviderSpy,
+        fileManagerProvdider: fileManagerProvdiderSpy
     )
 
     func test_request_givenSuccess_shouldCompletionWithSuccess() throws {

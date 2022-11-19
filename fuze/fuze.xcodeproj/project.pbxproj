@@ -36,6 +36,7 @@
 		A196D86A29287CC6000ADDEE /* NetworkErrorDummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A196D86929287CC6000ADDEE /* NetworkErrorDummy.swift */; };
 		A196D86C29287ED5000ADDEE /* NetworkDeserializationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A196D86B29287ED5000ADDEE /* NetworkDeserializationTests.swift */; };
 		A19B685D29291D6100145256 /* FileManagerProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19B685C29291D6100145256 /* FileManagerProvider.swift */; };
+		A19B685F2929254E00145256 /* FileManagerProviderSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19B685E2929254E00145256 /* FileManagerProviderSpy.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,7 @@
 		A196D86929287CC6000ADDEE /* NetworkErrorDummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorDummy.swift; sourceTree = "<group>"; };
 		A196D86B29287ED5000ADDEE /* NetworkDeserializationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDeserializationTests.swift; sourceTree = "<group>"; };
 		A19B685C29291D6100145256 /* FileManagerProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerProvider.swift; sourceTree = "<group>"; };
+		A19B685E2929254E00145256 /* FileManagerProviderSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerProviderSpy.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -263,6 +265,7 @@
 				A1876A6129285DED006CE7C9 /* BaseURLProviderSpy.swift */,
 				A1876A6329285EF4006CE7C9 /* AccessTokenProviderSpy.swift */,
 				A1876A6929286871006CE7C9 /* NetworkProviderSpy.swift */,
+				A19B685E2929254E00145256 /* FileManagerProviderSpy.swift */,
 				A196D86929287CC6000ADDEE /* NetworkErrorDummy.swift */,
 				A196D86729287B72000ADDEE /* NetworkErrorEquatable.swift */,
 			);
@@ -397,6 +400,7 @@
 				A1876A59292854EF006CE7C9 /* NetworkRequestFixture.swift in Sources */,
 				A1876A6029285C89006CE7C9 /* NetworkDeserializationSpy.swift in Sources */,
 				A1876A532928519A006CE7C9 /* AccessTokenProviderTests.swift in Sources */,
+				A19B685F2929254E00145256 /* FileManagerProviderSpy.swift in Sources */,
 				A196D86C29287ED5000ADDEE /* NetworkDeserializationTests.swift in Sources */,
 				A1876A6A29286871006CE7C9 /* NetworkProviderSpy.swift in Sources */,
 				A1876A6429285EF4006CE7C9 /* AccessTokenProviderSpy.swift in Sources */,
