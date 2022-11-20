@@ -1,7 +1,7 @@
 import UIKit
 
 protocol MatchesViewLogic: UIView {
-    var matchesViewModel: [MatcheViewModel] { get set }
+    var matchViewModels: [MatchViewModel] { get set }
 }
 
 final class MatchesView: UIView {
@@ -15,7 +15,7 @@ final class MatchesView: UIView {
 
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
-        tableView.registerReusableCell(MatcheTableViewCell.self)
+        tableView.registerReusableCell(MatchTableViewCell.self)
         tableView.backgroundColor = .primaryBackground
         tableView.separatorStyle = .none
         tableView.delegate = self
@@ -24,7 +24,7 @@ final class MatchesView: UIView {
         return tableView
     }()
 
-    var matchesViewModel: [MatcheViewModel] = [] {
+    var matchViewModels: [MatchViewModel] = [] {
         didSet {
             DispatchQueue.main.async { [weak self] in
                 self?.tableView.reloadData()
@@ -74,14 +74,14 @@ extension MatchesView: UITableViewDelegate {
 
 extension MatchesView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        matchesViewModel.count
+        matchViewModels.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let matcheTableViewCell: MatcheTableViewCell = tableView.dequeueReusableCell(indexPath: indexPath)
-        let viewModel = matchesViewModel[indexPath.row]
-        matcheTableViewCell.setup(viewModel)
+        let matchTableViewCell: MatchTableViewCell = tableView.dequeueReusableCell(indexPath: indexPath)
+        let viewModel = matchViewModels[indexPath.row]
+        matchTableViewCell.setup(viewModel)
 
-        return matcheTableViewCell
+        return matchTableViewCell
     }
 }

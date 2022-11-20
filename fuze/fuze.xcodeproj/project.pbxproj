@@ -61,10 +61,12 @@
 		A19F31BB292A82DA00EAABDE /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19F31BA292A82DA00EAABDE /* Reusable.swift */; };
 		A19F31BD292A83E900EAABDE /* MatchesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19F31BC292A83E900EAABDE /* MatchesView.swift */; };
 		A19F31C0292A859300EAABDE /* ConstraintsTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19F31BF292A859300EAABDE /* ConstraintsTools.swift */; };
-		A19F31C3292A8A9200EAABDE /* MatcheTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19F31C2292A8A9200EAABDE /* MatcheTableViewCell.swift */; };
+		A19F31C3292A8A9200EAABDE /* MatchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19F31C2292A8A9200EAABDE /* MatchTableViewCell.swift */; };
 		A19F31CA292AA99A00EAABDE /* ConfrontationOpponentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19F31C9292AA99A00EAABDE /* ConfrontationOpponentsView.swift */; };
 		A19F31CD292AC80D00EAABDE /* FuzeImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19F31CC292AC80D00EAABDE /* FuzeImages.swift */; };
 		A19F31D0292AC8D200EAABDE /* FuzeImagesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19F31CF292AC8D200EAABDE /* FuzeImagesTests.swift */; };
+		A19F31D3292ACA6800EAABDE /* DownloadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19F31D2292ACA6800EAABDE /* DownloadImage.swift */; };
+		A19F31D6292AD43E00EAABDE /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19F31D5292AD43E00EAABDE /* DateFormatter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -138,10 +140,12 @@
 		A19F31BA292A82DA00EAABDE /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 		A19F31BC292A83E900EAABDE /* MatchesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesView.swift; sourceTree = "<group>"; };
 		A19F31BF292A859300EAABDE /* ConstraintsTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstraintsTools.swift; sourceTree = "<group>"; };
-		A19F31C2292A8A9200EAABDE /* MatcheTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatcheTableViewCell.swift; sourceTree = "<group>"; };
+		A19F31C2292A8A9200EAABDE /* MatchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchTableViewCell.swift; sourceTree = "<group>"; };
 		A19F31C9292AA99A00EAABDE /* ConfrontationOpponentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfrontationOpponentsView.swift; sourceTree = "<group>"; };
 		A19F31CC292AC80D00EAABDE /* FuzeImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuzeImages.swift; sourceTree = "<group>"; };
 		A19F31CF292AC8D200EAABDE /* FuzeImagesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuzeImagesTests.swift; sourceTree = "<group>"; };
+		A19F31D2292ACA6800EAABDE /* DownloadImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadImage.swift; sourceTree = "<group>"; };
+		A19F31D5292AD43E00EAABDE /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -301,6 +305,8 @@
 		A1876A3429281B2A006CE7C9 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				A19F31D4292AD40600EAABDE /* Formatters */,
+				A19F31D1292ACA5A00EAABDE /* DownloadImage */,
 				A19F31BE292A856700EAABDE /* ConstraintsTools */,
 				A19F31B9292A82C200EAABDE /* ReusableCell */,
 				A19F31CB292AC7EC00EAABDE /* Images */,
@@ -521,7 +527,7 @@
 			isa = PBXGroup;
 			children = (
 				A19F31BC292A83E900EAABDE /* MatchesView.swift */,
-				A19F31C2292A8A9200EAABDE /* MatcheTableViewCell.swift */,
+				A19F31C2292A8A9200EAABDE /* MatchTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -556,6 +562,22 @@
 				A19F31CF292AC8D200EAABDE /* FuzeImagesTests.swift */,
 			);
 			path = Images;
+			sourceTree = "<group>";
+		};
+		A19F31D1292ACA5A00EAABDE /* DownloadImage */ = {
+			isa = PBXGroup;
+			children = (
+				A19F31D2292ACA6800EAABDE /* DownloadImage.swift */,
+			);
+			path = DownloadImage;
+			sourceTree = "<group>";
+		};
+		A19F31D4292AD40600EAABDE /* Formatters */ = {
+			isa = PBXGroup;
+			children = (
+				A19F31D5292AD43E00EAABDE /* DateFormatter.swift */,
+			);
+			path = Formatters;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -662,6 +684,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A19F31D6292AD43E00EAABDE /* DateFormatter.swift in Sources */,
 				A1876A31292812E1006CE7C9 /* AppCoordinator.swift in Sources */,
 				A19F31C0292A859300EAABDE /* ConstraintsTools.swift in Sources */,
 				A19F31CA292AA99A00EAABDE /* ConfrontationOpponentsView.swift in Sources */,
@@ -688,9 +711,10 @@
 				A18769FE29280E7E006CE7C9 /* SceneDelegate.swift in Sources */,
 				A14A00AC2929C0A500B918D1 /* MatchesResponse.swift in Sources */,
 				A19B687D2929703000145256 /* FuzeFonts.swift in Sources */,
-				A19F31C3292A8A9200EAABDE /* MatcheTableViewCell.swift in Sources */,
+				A19F31C3292A8A9200EAABDE /* MatchTableViewCell.swift in Sources */,
 				A19B687229295DF600145256 /* MatchesBuilder.swift in Sources */,
 				A19B688D29297D2000145256 /* NetworkBuilder.swift in Sources */,
+				A19F31D3292ACA6800EAABDE /* DownloadImage.swift in Sources */,
 				A19F31CD292AC80D00EAABDE /* FuzeImages.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

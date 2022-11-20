@@ -1,14 +1,14 @@
 import UIKit
 
-struct MatcheViewModel {
+struct MatchViewModel {
     let matchTime: String
-    let isRunning: Bool
+    let matchTimeViewColor: UIColor?
     let confrontationViewModel: ConfrontationOpponentsViewModel
     let leagueImageURL: URL?
     let leagueSerie: String
 }
 
-final class MatcheTableViewCell: UITableViewCell, Reusable {
+final class MatchTableViewCell: UITableViewCell, Reusable {
     private let backGroundView: UIView = {
         let view = UIView()
         view.backgroundColor = .secondaryBackground
@@ -18,13 +18,16 @@ final class MatcheTableViewCell: UITableViewCell, Reusable {
         return view
     }()
 
-    private let matcheTimeView: UIView = {
+    private let matchTimeView: UIView = {
         let view = UIView()
+        view.layer.cornerRadius = 16
+        view.layer.maskedCorners = [.layerMinXMaxYCorner]
+        view.clipsToBounds = true
 
         return view
     }()
 
-    private let matcheTimeLabel: UILabel = {
+    private let matchTimeLabel: UILabel = {
         let label = UILabel()
         label.font = .robotoMeidum(size: 8)
 
@@ -42,7 +45,6 @@ final class MatcheTableViewCell: UITableViewCell, Reusable {
 
     private let leagueImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = .placeholderCircleSmall
         imageView.contentMode = .scaleAspectFit
 
         return imageView
@@ -66,10 +68,12 @@ final class MatcheTableViewCell: UITableViewCell, Reusable {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func setup(_ viewModel: MatcheViewModel) {
-        matcheTimeLabel.text = viewModel.matchTime
+    func setup(_ viewModel: MatchViewModel) {
+        matchTimeLabel.text = viewModel.matchTime
+        matchTimeView.backgroundColor = viewModel.matchTimeViewColor
         confrontationView.setup(viewModel: viewModel.confrontationViewModel)
         leagueSerieLabel.text = viewModel.leagueSerie
+        leagueImageView.setImage(viewModel.leagueImageURL, placeholder: .placeholderCircleSmall)
     }
 
     private func setupConstraint() {
@@ -80,20 +84,20 @@ final class MatcheTableViewCell: UITableViewCell, Reusable {
             backGroundView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -24)
         ])
 
-        backGroundView.addSubview(matcheTimeView, constraints: [
-            matcheTimeView.topAnchor.constraint(equalTo: backGroundView.topAnchor),
-            matcheTimeView.trailingAnchor.constraint(equalTo: backGroundView.trailingAnchor),
-            matcheTimeView.heightAnchor.constraint(equalToConstant: 25)
+        backGroundView.addSubview(matchTimeView, constraints: [
+            matchTimeView.topAnchor.constraint(equalTo: backGroundView.topAnchor),
+            matchTimeView.trailingAnchor.constraint(equalTo: backGroundView.trailingAnchor),
+            matchTimeView.heightAnchor.constraint(equalToConstant: 25)
         ])
 
-        matcheTimeView.addSubview(matcheTimeLabel, constraints: [
-            matcheTimeLabel.centerYAnchor.constraint(equalTo: matcheTimeView.centerYAnchor),
-            matcheTimeLabel.leadingAnchor.constraint(equalTo: matcheTimeView.leadingAnchor, constant: 8),
-            matcheTimeLabel.trailingAnchor.constraint(equalTo: matcheTimeView.trailingAnchor, constant: -8)
+        matchTimeView.addSubview(matchTimeLabel, constraints: [
+            matchTimeLabel.centerYAnchor.constraint(equalTo: matchTimeView.centerYAnchor),
+            matchTimeLabel.leadingAnchor.constraint(equalTo: matchTimeView.leadingAnchor, constant: 8),
+            matchTimeLabel.trailingAnchor.constraint(equalTo: matchTimeView.trailingAnchor, constant: -8)
         ])
 
         backGroundView.addSubview(confrontationView, constraints: [
-            confrontationView.topAnchor.constraint(equalTo: matcheTimeView.bottomAnchor, constant: 18),
+            confrontationView.topAnchor.constraint(equalTo: matchTimeView.bottomAnchor, constant: 18),
             confrontationView.centerXAnchor.constraint(equalTo: backGroundView.centerXAnchor)
         ])
 

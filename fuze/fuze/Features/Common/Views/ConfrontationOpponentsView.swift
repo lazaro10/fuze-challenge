@@ -11,7 +11,6 @@ struct ConfrontationOpponentsViewModel {
 final class ConfrontationOpponentsView: UIView {
     private let leftOpponentImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = .placeholderCircle
         imageView.contentMode = .scaleAspectFit
 
         return imageView
@@ -37,7 +36,6 @@ final class ConfrontationOpponentsView: UIView {
 
     private let rightOpponentImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = .placeholderCircle
         imageView.contentMode = .scaleAspectFit
 
         return imageView
@@ -62,6 +60,8 @@ final class ConfrontationOpponentsView: UIView {
     }
 
     func setup(viewModel: ConfrontationOpponentsViewModel) {
+        leftOpponentImageView.setImage(viewModel.leftOpponentImageURL, placeholder: .placeholderCircle)
+        rightOpponentImageView.setImage(viewModel.rightOpponentImageURL, placeholder: .placeholderCircle)
         leftOpponentLabel.text = viewModel.leftOpponentName
         rightOpponentLabel.text = viewModel.rightOpponentName
     }

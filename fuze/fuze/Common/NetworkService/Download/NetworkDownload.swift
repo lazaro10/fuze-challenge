@@ -5,6 +5,8 @@ protocol NetworkDownloadLogic {
 }
 
 final class NetworkDownload {
+    static let shared = NetworkDownload(session: NetworkProvider(), fileManagerProvdider: FileManagerProvider())
+
     private let session: NetworkProviderLogic
     private let fileManagerProvdider: FileManagerProviderLogic
     
@@ -17,7 +19,7 @@ final class NetworkDownload {
     }
     
     private func download(url: URL, file: URL, completion: @escaping (Error?) -> Void) {
-        let task =  session.downloadTask(url: url) { [weak self] dataURL, _, error in
+        let task = session.downloadTask(url: url) { [weak self] dataURL, _, error in
             guard let self = self else { return }
             if let error = error {
                 return completion(error)
@@ -32,9 +34,9 @@ final class NetworkDownload {
                     try self.fileManagerProvdider.copyItem(srcURL: dataURL, dstURL: file)
                 }
                 
-                return completion(nil)
+                completion(nil)
             } catch {
-                return completion(error)
+                completion(error)
             }
         }
 

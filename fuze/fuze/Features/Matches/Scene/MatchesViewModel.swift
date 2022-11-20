@@ -47,7 +47,7 @@ final class MatchesViewModel {
                     self.matches.append(contentsOf: matches)
                     self.upcomeMachesPage += 1
 
-                    self.display?.displayMatcheViewModel(viewModels: self.convertMatches())
+                    self.display?.displayMatchViewModels(viewModels: self.convertMatches())
                 case .failure:
                     if self.matches.isEmpty {
                         // show error
@@ -57,7 +57,7 @@ final class MatchesViewModel {
         }
     }
 
-    private func convertMatches() -> [MatcheViewModel] {
+    private func convertMatches() -> [MatchViewModel] {
         let matchesFiltered = matches.filter {
             $0.opponents.count == 2
         }
@@ -70,9 +70,9 @@ final class MatchesViewModel {
                 rightOpponentName: $0.opponents[1].opponent?.name ?? ""
             )
 
-            return MatcheViewModel(
+            return MatchViewModel(
                 matchTime: $0.beginAt,
-                isRunning: false,
+                matchTimeViewColor: .tertiaryGrey,
                 confrontationViewModel: confrontationViewModel,
                 leagueImageURL: $0.league.imageUrl,
                 leagueSerie: "\($0.league.name) | \($0.serie.fullName)"
