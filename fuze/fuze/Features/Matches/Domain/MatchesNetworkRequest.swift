@@ -1,12 +1,24 @@
-struct MatchesNetworkRequest: NetworkRequest {
-    let page: Int
+enum MatchesNetworkRequest: NetworkRequest {
+    case running(page: Int)
+    case upcoming(page: Int)
 
     var queryParameters: [String: String] {
-        ["page": "\(page)", "per_page": "5", "filter[begin_at]": "2022-11-19"]
+        switch self {
+        case .running(let page):
+            return ["page": "\(page)", "per_page": "50"]
+        case .upcoming(let page):
+            return ["page": "\(page)", "per_page": "5"]
+        }
+
     }
 
     var path: String {
-        "/csgo/matches"
+        switch self {
+        case .running:
+            return "/csgo/matches/running/"
+        case .upcoming:
+            return "/csgo/matches/upcoming"
+        }
     }
 
     var method: NetworkServiceMethod {

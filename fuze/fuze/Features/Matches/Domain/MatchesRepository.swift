@@ -1,5 +1,6 @@
 protocol MatchesRepositoryLogic {
-    func fetchMatched(page: Int, completion: @escaping (Result<[MatchesResponse], Error>) -> Void)
+    func fetchRunningMatches(page: Int, completion: @escaping (Result<[MatchesResponse], Error>) -> Void)
+    func fetchMatches(page: Int, completion: @escaping (Result<[MatchesResponse], Error>) -> Void)
 }
 
 final class MatchesRepository: MatchesRepositoryLogic {
@@ -9,8 +10,16 @@ final class MatchesRepository: MatchesRepositoryLogic {
         self.network = network
     }
 
-    func fetchMatched(page: Int, completion: @escaping (Result<[MatchesResponse], Error>) -> Void) {
-        let request = MatchesNetworkRequest(page: page)
+    func fetchRunningMatches(page: Int, completion: @escaping (Result<[MatchesResponse], Error>) -> Void) {
+        let request = MatchesNetworkRequest.running(page: page)
+
+        network.request(request) { (result: Result<[MatchesResponse], Error>) in
+            completion(result)
+        }
+    }
+
+    func fetchMatches(page: Int, completion: @escaping (Result<[MatchesResponse], Error>) -> Void) {
+        let request = MatchesNetworkRequest.upcoming(page: page)
 
         network.request(request) { (result: Result<[MatchesResponse], Error>) in
             completion(result)
