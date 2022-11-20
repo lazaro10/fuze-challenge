@@ -12,6 +12,7 @@
 		A14A00B32929DED800B918D1 /* MatchesRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14A00B22929DED800B918D1 /* MatchesRepositoryTests.swift */; };
 		A14A00B52929DF2200B918D1 /* NetworkSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14A00B42929DF2200B918D1 /* NetworkSpy.swift */; };
 		A14A00B82929E0C400B918D1 /* MatchesResponseFixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14A00B72929E0C400B918D1 /* MatchesResponseFixture.swift */; };
+		A14A00BB2929E4ED00B918D1 /* FuzeColorsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14A00BA2929E4ED00B918D1 /* FuzeColorsTests.swift */; };
 		A18769FC29280E7E006CE7C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18769FB29280E7E006CE7C9 /* AppDelegate.swift */; };
 		A18769FE29280E7E006CE7C9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18769FD29280E7E006CE7C9 /* SceneDelegate.swift */; };
 		A1876A0529280E7F006CE7C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1876A0429280E7F006CE7C9 /* Assets.xcassets */; };
@@ -73,6 +74,7 @@
 		A14A00B22929DED800B918D1 /* MatchesRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesRepositoryTests.swift; sourceTree = "<group>"; };
 		A14A00B42929DF2200B918D1 /* NetworkSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSpy.swift; sourceTree = "<group>"; };
 		A14A00B72929E0C400B918D1 /* MatchesResponseFixture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesResponseFixture.swift; sourceTree = "<group>"; };
+		A14A00BA2929E4ED00B918D1 /* FuzeColorsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuzeColorsTests.swift; sourceTree = "<group>"; };
 		A18769F829280E7E006CE7C9 /* fuze.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fuze.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A18769FB29280E7E006CE7C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A18769FD29280E7E006CE7C9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -174,6 +176,14 @@
 				A14A00B72929E0C400B918D1 /* MatchesResponseFixture.swift */,
 			);
 			path = Fixture;
+			sourceTree = "<group>";
+		};
+		A14A00B92929E4DD00B918D1 /* Colors */ = {
+			isa = PBXGroup;
+			children = (
+				A14A00BA2929E4ED00B918D1 /* FuzeColorsTests.swift */,
+			);
+			path = Colors;
 			sourceTree = "<group>";
 		};
 		A18769EF29280E7E006CE7C9 = {
@@ -297,6 +307,7 @@
 		A1876A4A29284F0F006CE7C9 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				A14A00B92929E4DD00B918D1 /* Colors */,
 				A1876A4B29284F2D006CE7C9 /* NetworkService */,
 			);
 			path = Common;
@@ -586,6 +597,7 @@
 				A1876A6229285DED006CE7C9 /* BaseURLProviderSpy.swift in Sources */,
 				A196D86A29287CC6000ADDEE /* NetworkErrorDummy.swift in Sources */,
 				A1876A6829286700006CE7C9 /* ResponseModeFixture.swift in Sources */,
+				A14A00BB2929E4ED00B918D1 /* FuzeColorsTests.swift in Sources */,
 				A1876A5D29285C51006CE7C9 /* NetworkTests.swift in Sources */,
 				A1876A59292854EF006CE7C9 /* NetworkRequestFixture.swift in Sources */,
 				A1876A6029285C89006CE7C9 /* NetworkDeserializationSpy.swift in Sources */,
