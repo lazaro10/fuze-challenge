@@ -71,7 +71,7 @@ final class MatchesViewModel {
             )
 
             return MatchViewModel(
-                matchTime: $0.beginAt,
+                matchTime: $0.beginAt.toDateZ()?.toMatchDate() ?? "-",
                 matchTimeViewColor: .tertiaryGrey,
                 confrontationViewModel: confrontationViewModel,
                 leagueImageURL: $0.league.imageUrl,
