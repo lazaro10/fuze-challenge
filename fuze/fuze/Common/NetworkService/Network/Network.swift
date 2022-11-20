@@ -51,10 +51,8 @@ extension Network: NetworkLogic {
     func request<T>(_ networkRequest: NetworkRequest, completion: @escaping (Result<T, Error>) -> Void) where T : Decodable {
         do {
             let accessToken = accessTokenProvider.getAccessToken(api: networkRequest.baseURL)
-            var request = try networkRequest.toRequest(baseURL: urlProvider.getURL(api: networkRequest.baseURL))
-            
-            request.setValue(accessToken.value, forHTTPHeaderField: accessToken.key)
-            
+            let request = try networkRequest.toRequest(baseURL: urlProvider.getURL(api: networkRequest.baseURL), token: accessToken)
+
             dataTask(request: request) { result in
                 switch result {
                 case .success(let data):
