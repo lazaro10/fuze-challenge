@@ -4,13 +4,13 @@ protocol NetworkRequest {
     var baseURL: ApiProvider { get }
     var path: String { get }
     var method: NetworkServiceMethod { get }
-    var queryParameters: [String: String] { get }
+    var parameters: [String: String] { get }
     var headers: [String: String] { get }
 }
 
 extension NetworkRequest {
     var baseURL: ApiProvider { .pandaScore }
-    var queryParameters: [String: String] { [:] }
+    var parameters: [String: String] { [:] }
     var headers: [String: String] { [:] }
 }
 
@@ -25,7 +25,7 @@ extension NetworkRequest {
             throw NetworkRequestError.invalidPath
         }
 
-        urlPathComponent.queryItems = queryParameters.map { (key, value) in
+        urlPathComponent.queryItems = parameters.map { (key, value) in
             URLQueryItem(name: key, value: value)
         }
 

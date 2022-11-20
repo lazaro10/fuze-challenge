@@ -2,7 +2,7 @@ enum MatchesNetworkRequest: NetworkRequest {
     case running(page: Int)
     case upcoming(page: Int)
 
-    var queryParameters: [String: String] {
+    var parameters: [String: String] {
         switch self {
         case .running(let page):
             return ["page": "\(page)", "per_page": "50"]
@@ -15,7 +15,7 @@ enum MatchesNetworkRequest: NetworkRequest {
     var path: String {
         switch self {
         case .running:
-            return "/csgo/matches/running/"
+            return "/csgo/matches/running"
         case .upcoming:
             return "/csgo/matches/upcoming"
         }

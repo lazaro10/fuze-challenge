@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		A14A00AC2929C0A500B918D1 /* MatchesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14A00AB2929C0A500B918D1 /* MatchesResponse.swift */; };
+		A14A00B12929DB4400B918D1 /* MatchesNetworkRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14A00B02929DB4400B918D1 /* MatchesNetworkRequestTests.swift */; };
+		A14A00B32929DED800B918D1 /* MatchesRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14A00B22929DED800B918D1 /* MatchesRepositoryTests.swift */; };
+		A14A00B52929DF2200B918D1 /* NetworkSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14A00B42929DF2200B918D1 /* NetworkSpy.swift */; };
+		A14A00B82929E0C400B918D1 /* MatchesResponseFixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14A00B72929E0C400B918D1 /* MatchesResponseFixture.swift */; };
 		A18769FC29280E7E006CE7C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18769FB29280E7E006CE7C9 /* AppDelegate.swift */; };
 		A18769FE29280E7E006CE7C9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18769FD29280E7E006CE7C9 /* SceneDelegate.swift */; };
 		A1876A0529280E7F006CE7C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1876A0429280E7F006CE7C9 /* Assets.xcassets */; };
@@ -65,6 +69,10 @@
 
 /* Begin PBXFileReference section */
 		A14A00AB2929C0A500B918D1 /* MatchesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesResponse.swift; sourceTree = "<group>"; };
+		A14A00B02929DB4400B918D1 /* MatchesNetworkRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesNetworkRequestTests.swift; sourceTree = "<group>"; };
+		A14A00B22929DED800B918D1 /* MatchesRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesRepositoryTests.swift; sourceTree = "<group>"; };
+		A14A00B42929DF2200B918D1 /* NetworkSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSpy.swift; sourceTree = "<group>"; };
+		A14A00B72929E0C400B918D1 /* MatchesResponseFixture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesResponseFixture.swift; sourceTree = "<group>"; };
 		A18769F829280E7E006CE7C9 /* fuze.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fuze.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A18769FB29280E7E006CE7C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A18769FD29280E7E006CE7C9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -134,6 +142,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A14A00AD2929DB0900B918D1 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				A14A00AE2929DB1200B918D1 /* Matches */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		A14A00AE2929DB1200B918D1 /* Matches */ = {
+			isa = PBXGroup;
+			children = (
+				A14A00B62929E0B300B918D1 /* Fixture */,
+				A14A00AF2929DB1E00B918D1 /* Domain */,
+			);
+			path = Matches;
+			sourceTree = "<group>";
+		};
+		A14A00AF2929DB1E00B918D1 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				A14A00B02929DB4400B918D1 /* MatchesNetworkRequestTests.swift */,
+				A14A00B22929DED800B918D1 /* MatchesRepositoryTests.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		A14A00B62929E0B300B918D1 /* Fixture */ = {
+			isa = PBXGroup;
+			children = (
+				A14A00B72929E0C400B918D1 /* MatchesResponseFixture.swift */,
+			);
+			path = Fixture;
+			sourceTree = "<group>";
+		};
 		A18769EF29280E7E006CE7C9 = {
 			isa = PBXGroup;
 			children = (
@@ -169,6 +211,7 @@
 			isa = PBXGroup;
 			children = (
 				A1876A4A29284F0F006CE7C9 /* Common */,
+				A14A00AD2929DB0900B918D1 /* Features */,
 			);
 			path = fuzeTests;
 			sourceTree = "<group>";
@@ -297,6 +340,7 @@
 				A1876A6329285EF4006CE7C9 /* AccessTokenProviderSpy.swift */,
 				A1876A6929286871006CE7C9 /* NetworkProviderSpy.swift */,
 				A19B685E2929254E00145256 /* FileManagerProviderSpy.swift */,
+				A14A00B42929DF2200B918D1 /* NetworkSpy.swift */,
 				A196D86929287CC6000ADDEE /* NetworkErrorDummy.swift */,
 				A196D86729287B72000ADDEE /* NetworkErrorEquatable.swift */,
 			);
@@ -548,12 +592,16 @@
 				A1876A532928519A006CE7C9 /* AccessTokenProviderTests.swift in Sources */,
 				A19B686829292D0A00145256 /* NetworkDownloadTests.swift in Sources */,
 				A19B685F2929254E00145256 /* FileManagerProviderSpy.swift in Sources */,
+				A14A00B52929DF2200B918D1 /* NetworkSpy.swift in Sources */,
 				A196D86C29287ED5000ADDEE /* NetworkDeserializationTests.swift in Sources */,
 				A1876A6A29286871006CE7C9 /* NetworkProviderSpy.swift in Sources */,
+				A14A00B32929DED800B918D1 /* MatchesRepositoryTests.swift in Sources */,
 				A1876A6429285EF4006CE7C9 /* AccessTokenProviderSpy.swift in Sources */,
+				A14A00B12929DB4400B918D1 /* MatchesNetworkRequestTests.swift in Sources */,
 				A1876A4E29284F54006CE7C9 /* BaseURLProviderTests.swift in Sources */,
 				A196D86829287B72000ADDEE /* NetworkErrorEquatable.swift in Sources */,
 				A1876A5B29285504006CE7C9 /* NetworkRequestTests.swift in Sources */,
+				A14A00B82929E0C400B918D1 /* MatchesResponseFixture.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -38,7 +38,7 @@ final class NetworkTests: XCTestCase {
         switch resultRequest {
         case .success(let object):
             XCTAssertEqual(sessionSpy.invokedDataTaskCount, 1)
-            XCTAssertEqual(sessionSpy.invokedDataTaskParameterRequest?.url?.absoluteString, "https://moises.ai/path?queryName=queryValue&token=l54o4k")
+            XCTAssertEqual(sessionSpy.invokedDataTaskParameterRequest?.url?.absoluteString, "https://moises.ai/path?paramName=paramValue&token=l54o4k")
             XCTAssertEqual(accessTokenProviderSpy.invokedGetAccessTokenCount, 1)
             XCTAssertEqual(accessTokenProviderSpy.invokedGetAccessTokenParameterApi, .pandaScore)
             XCTAssertEqual(urlProviderSpy.invokedGetURLCount, 1)

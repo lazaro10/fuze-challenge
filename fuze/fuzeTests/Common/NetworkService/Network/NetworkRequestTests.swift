@@ -9,7 +9,7 @@ final class NetworkRequestTests: XCTestCase {
         let request = try sut.toRequest(baseURL: baseURL, token: (key: "token", value: "u8y7t6hj"))
         
         XCTAssertEqual(request.httpMethod, "GET")
-        XCTAssertEqual(request.url?.absoluteString, "https://moises.ai/path?queryName=queryValue&token=u8y7t6hj")
+        XCTAssertEqual(request.url?.absoluteString, "https://moises.ai/path?paramName=paramValue&token=u8y7t6hj")
         
         let expectedHTTPHeaders = ["headerName": "headerValue"]
         XCTAssertEqual(request.allHTTPHeaderFields, expectedHTTPHeaders)
