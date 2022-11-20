@@ -45,13 +45,13 @@ final class MatchesRepositoryTests: XCTestCase {
         }
     }
 
-    func test_fetchMatches_givenSuccess_shouldCompleteSuccess() {
+    func test_fetchUpcomingMatches_givenSuccess_shouldCompleteSuccess() {
         let successStubbed: Result<[MatchesResponse], Error> = .success([MatchesResponse.fixture()])
         networkSpy.stubbedRequestCompletionResult = successStubbed
 
         var resultRequest: Result<[MatchesResponse], Error>?
 
-        sut.fetchMatches(page: 1) { result in
+        sut.fetchUpcomingMatches(page: 1) { result in
             resultRequest = result
         }
 
@@ -65,13 +65,13 @@ final class MatchesRepositoryTests: XCTestCase {
         }
     }
 
-    func test_fetchMatches_givenFailure_shouldCompleteError() {
+    func test_fetchUpcomingMatches_givenFailure_shouldCompleteError() {
         let failureStubbed: Result<[MatchesResponse], Error> = .failure(NetworkErrorDummy.dummyError)
         networkSpy.stubbedRequestCompletionResult = failureStubbed
 
         var resultRequest: Result<[MatchesResponse], Error>?
 
-        sut.fetchMatches(page: 1) { result in
+        sut.fetchUpcomingMatches(page: 1) { result in
             resultRequest = result
         }
 

@@ -1,0 +1,25 @@
+import UIKit
+
+protocol Reusable: AnyObject {
+    static var reuseIdentifier: String { get }
+}
+
+extension Reusable {
+    static var reuseIdentifier: String {
+        return String(describing: self)
+    }
+}
+
+extension UITableView {
+    func registerReusableCell<T: UITableViewCell>(_: T.Type) where T: Reusable {
+        self.register(T.self, forCellReuseIdentifier: T.reuseIdentifier)
+    }
+
+    func dequeueReusableCell<T: UITableViewCell>(indexPath: IndexPath) -> T where T: Reusable {
+        guard let cell = dequeueReusableCell(withIdentifier: T.reuseIdentifier, for: indexPath) as? T else {
+            fatalError("Could not dequeue cell with identifier: \(T.reuseIdentifier)")
+        }
+
+        return cell
+    }
+}

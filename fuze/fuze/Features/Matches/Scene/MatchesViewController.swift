@@ -1,14 +1,36 @@
 import UIKit
 
+protocol MatchesViewControllerDisplayble: AnyObject {
+    func displayMatcheViewModel(viewModels: [MatcheViewModel])
+}
+
 final class MatchesViewController: UIViewController {
     private let viewModel: MatchesViewModelLogic
+    private let contentView: MatchesViewLogic
 
-    init(viewModel: MatchesViewModelLogic) {
+    init(viewModel: MatchesViewModelLogic, contentView: MatchesViewLogic) {
         self.viewModel = viewModel
+        self.contentView = contentView
         super.init(nibName: nil, bundle: nil)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    override func loadView() {
+        view = contentView
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        viewModel.fetchMatches()
+    }
+}
+
+extension MatchesViewController: MatchesViewControllerDisplayble {
+    func displayMatcheViewModel(viewModels: [MatcheViewModel]) {
+        contentView.matchesViewModel = viewModels
     }
 }

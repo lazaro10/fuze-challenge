@@ -29,6 +29,12 @@ struct MatchesResponse: Decodable {
 
     struct League: Decodable {
         let name: String
+        let imageUrl: URL?
+
+        private enum CodingKeys: String, CodingKey {
+            case name
+            case imageUrl = "image_url"
+        }
     }
 
     struct Serie: Decodable {

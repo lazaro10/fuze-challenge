@@ -13,7 +13,7 @@
 		A14A00B52929DF2200B918D1 /* NetworkSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14A00B42929DF2200B918D1 /* NetworkSpy.swift */; };
 		A14A00B82929E0C400B918D1 /* MatchesResponseFixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14A00B72929E0C400B918D1 /* MatchesResponseFixture.swift */; };
 		A14A00BB2929E4ED00B918D1 /* FuzeColorsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14A00BA2929E4ED00B918D1 /* FuzeColorsTests.swift */; };
-		A14A00BE2929E64000B918D1 /* FontsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14A00BD2929E64000B918D1 /* FontsTests.swift */; };
+		A14A00BE2929E64000B918D1 /* FuzeFontsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14A00BD2929E64000B918D1 /* FuzeFontsTests.swift */; };
 		A14A00C12929E87100B918D1 /* LocalizableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14A00C02929E87100B918D1 /* LocalizableTests.swift */; };
 		A18769FC29280E7E006CE7C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18769FB29280E7E006CE7C9 /* AppDelegate.swift */; };
 		A18769FE29280E7E006CE7C9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18769FD29280E7E006CE7C9 /* SceneDelegate.swift */; };
@@ -52,12 +52,19 @@
 		A19B6875292966E900145256 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A19B6874292966E900145256 /* Colors.xcassets */; };
 		A19B68782929698900145256 /* FuzeColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19B68772929698900145256 /* FuzeColors.swift */; };
 		A19B687B29296FE800145256 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A19B687A29296FCE00145256 /* Roboto-Medium.ttf */; };
-		A19B687D2929703000145256 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19B687C2929703000145256 /* Fonts.swift */; };
+		A19B687D2929703000145256 /* FuzeFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19B687C2929703000145256 /* FuzeFonts.swift */; };
 		A19B6880292975B200145256 /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19B687F292975B200145256 /* Localizable.swift */; };
 		A19B6883292978C300145256 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A19B6885292978C300145256 /* Localizable.strings */; };
 		A19B688929297B3700145256 /* MatchesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19B688829297B3700145256 /* MatchesRepository.swift */; };
 		A19B688B29297C8A00145256 /* MatchesNetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19B688A29297C8A00145256 /* MatchesNetworkRequest.swift */; };
 		A19B688D29297D2000145256 /* NetworkBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19B688C29297D2000145256 /* NetworkBuilder.swift */; };
+		A19F31BB292A82DA00EAABDE /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19F31BA292A82DA00EAABDE /* Reusable.swift */; };
+		A19F31BD292A83E900EAABDE /* MatchesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19F31BC292A83E900EAABDE /* MatchesView.swift */; };
+		A19F31C0292A859300EAABDE /* ConstraintsTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19F31BF292A859300EAABDE /* ConstraintsTools.swift */; };
+		A19F31C3292A8A9200EAABDE /* MatcheTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19F31C2292A8A9200EAABDE /* MatcheTableViewCell.swift */; };
+		A19F31CA292AA99A00EAABDE /* ConfrontationOpponentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19F31C9292AA99A00EAABDE /* ConfrontationOpponentsView.swift */; };
+		A19F31CD292AC80D00EAABDE /* FuzeImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19F31CC292AC80D00EAABDE /* FuzeImages.swift */; };
+		A19F31D0292AC8D200EAABDE /* FuzeImagesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19F31CF292AC8D200EAABDE /* FuzeImagesTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,7 +84,7 @@
 		A14A00B42929DF2200B918D1 /* NetworkSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSpy.swift; sourceTree = "<group>"; };
 		A14A00B72929E0C400B918D1 /* MatchesResponseFixture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesResponseFixture.swift; sourceTree = "<group>"; };
 		A14A00BA2929E4ED00B918D1 /* FuzeColorsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuzeColorsTests.swift; sourceTree = "<group>"; };
-		A14A00BD2929E64000B918D1 /* FontsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontsTests.swift; sourceTree = "<group>"; };
+		A14A00BD2929E64000B918D1 /* FuzeFontsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuzeFontsTests.swift; sourceTree = "<group>"; };
 		A14A00C02929E87100B918D1 /* LocalizableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizableTests.swift; sourceTree = "<group>"; };
 		A18769F829280E7E006CE7C9 /* fuze.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fuze.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A18769FB29280E7E006CE7C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -120,7 +127,7 @@
 		A19B6874292966E900145256 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		A19B68772929698900145256 /* FuzeColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuzeColors.swift; sourceTree = "<group>"; };
 		A19B687A29296FCE00145256 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
-		A19B687C2929703000145256 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		A19B687C2929703000145256 /* FuzeFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuzeFonts.swift; sourceTree = "<group>"; };
 		A19B687F292975B200145256 /* Localizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localizable.swift; sourceTree = "<group>"; };
 		A19B6884292978C300145256 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A19B6886292978F000145256 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
@@ -128,6 +135,13 @@
 		A19B688829297B3700145256 /* MatchesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesRepository.swift; sourceTree = "<group>"; };
 		A19B688A29297C8A00145256 /* MatchesNetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesNetworkRequest.swift; sourceTree = "<group>"; };
 		A19B688C29297D2000145256 /* NetworkBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkBuilder.swift; sourceTree = "<group>"; };
+		A19F31BA292A82DA00EAABDE /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
+		A19F31BC292A83E900EAABDE /* MatchesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesView.swift; sourceTree = "<group>"; };
+		A19F31BF292A859300EAABDE /* ConstraintsTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstraintsTools.swift; sourceTree = "<group>"; };
+		A19F31C2292A8A9200EAABDE /* MatcheTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatcheTableViewCell.swift; sourceTree = "<group>"; };
+		A19F31C9292AA99A00EAABDE /* ConfrontationOpponentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfrontationOpponentsView.swift; sourceTree = "<group>"; };
+		A19F31CC292AC80D00EAABDE /* FuzeImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuzeImages.swift; sourceTree = "<group>"; };
+		A19F31CF292AC8D200EAABDE /* FuzeImagesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuzeImagesTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,7 +207,7 @@
 		A14A00BC2929E62D00B918D1 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				A14A00BD2929E64000B918D1 /* FontsTests.swift */,
+				A14A00BD2929E64000B918D1 /* FuzeFontsTests.swift */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -259,6 +273,7 @@
 			isa = PBXGroup;
 			children = (
 				A19B686929295C3300145256 /* Matches */,
+				A19F31C7292AA96C00EAABDE /* Common */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -286,6 +301,9 @@
 		A1876A3429281B2A006CE7C9 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				A19F31BE292A856700EAABDE /* ConstraintsTools */,
+				A19F31B9292A82C200EAABDE /* ReusableCell */,
+				A19F31CB292AC7EC00EAABDE /* Images */,
 				A19B687E292973FF00145256 /* Localizable */,
 				A19B687929296DD500145256 /* Fonts */,
 				A19B68762929697A00145256 /* Colors */,
@@ -327,6 +345,7 @@
 		A1876A4A29284F0F006CE7C9 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				A19F31CE292AC8C600EAABDE /* Images */,
 				A14A00BF2929E82E00B918D1 /* Localizable */,
 				A14A00BC2929E62D00B918D1 /* Fonts */,
 				A14A00B92929E4DD00B918D1 /* Colors */,
@@ -449,8 +468,9 @@
 		A19B686E29295DA400145256 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
-				A19B686A29295C4500145256 /* MatchesViewController.swift */,
 				A19B686F29295DC000145256 /* MatchesViewModel.swift */,
+				A19B686A29295C4500145256 /* MatchesViewController.swift */,
+				A19F31C1292A8A7100EAABDE /* Views */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -467,7 +487,7 @@
 			isa = PBXGroup;
 			children = (
 				A19B687A29296FCE00145256 /* Roboto-Medium.ttf */,
-				A19B687C2929703000145256 /* Fonts.swift */,
+				A19B687C2929703000145256 /* FuzeFonts.swift */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -479,6 +499,63 @@
 				A19B6885292978C300145256 /* Localizable.strings */,
 			);
 			path = Localizable;
+			sourceTree = "<group>";
+		};
+		A19F31B9292A82C200EAABDE /* ReusableCell */ = {
+			isa = PBXGroup;
+			children = (
+				A19F31BA292A82DA00EAABDE /* Reusable.swift */,
+			);
+			path = ReusableCell;
+			sourceTree = "<group>";
+		};
+		A19F31BE292A856700EAABDE /* ConstraintsTools */ = {
+			isa = PBXGroup;
+			children = (
+				A19F31BF292A859300EAABDE /* ConstraintsTools.swift */,
+			);
+			path = ConstraintsTools;
+			sourceTree = "<group>";
+		};
+		A19F31C1292A8A7100EAABDE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A19F31BC292A83E900EAABDE /* MatchesView.swift */,
+				A19F31C2292A8A9200EAABDE /* MatcheTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A19F31C7292AA96C00EAABDE /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				A19F31C8292AA97900EAABDE /* Views */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		A19F31C8292AA97900EAABDE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A19F31C9292AA99A00EAABDE /* ConfrontationOpponentsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A19F31CB292AC7EC00EAABDE /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				A19F31CC292AC80D00EAABDE /* FuzeImages.swift */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		A19F31CE292AC8C600EAABDE /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				A19F31CF292AC8D200EAABDE /* FuzeImagesTests.swift */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -586,7 +663,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1876A31292812E1006CE7C9 /* AppCoordinator.swift in Sources */,
+				A19F31C0292A859300EAABDE /* ConstraintsTools.swift in Sources */,
+				A19F31CA292AA99A00EAABDE /* ConfrontationOpponentsView.swift in Sources */,
 				A19B68782929698900145256 /* FuzeColors.swift in Sources */,
+				A19F31BD292A83E900EAABDE /* MatchesView.swift in Sources */,
 				A19B6880292975B200145256 /* Localizable.swift in Sources */,
 				A1876A6C29286A88006CE7C9 /* NetworkProvider.swift in Sources */,
 				A19B687029295DC000145256 /* MatchesViewModel.swift in Sources */,
@@ -595,6 +675,7 @@
 				A1876A47292843DC006CE7C9 /* ApiProvider.swift in Sources */,
 				A1876A33292812E8006CE7C9 /* Coordinator.swift in Sources */,
 				A1876A3A29281FAD006CE7C9 /* BaseURLProvider.swift in Sources */,
+				A19F31BB292A82DA00EAABDE /* Reusable.swift in Sources */,
 				A1876A3E29282412006CE7C9 /* Network.swift in Sources */,
 				A18769FC29280E7E006CE7C9 /* AppDelegate.swift in Sources */,
 				A19B686B29295C4500145256 /* MatchesViewController.swift in Sources */,
@@ -606,9 +687,11 @@
 				A19B688B29297C8A00145256 /* MatchesNetworkRequest.swift in Sources */,
 				A18769FE29280E7E006CE7C9 /* SceneDelegate.swift in Sources */,
 				A14A00AC2929C0A500B918D1 /* MatchesResponse.swift in Sources */,
-				A19B687D2929703000145256 /* Fonts.swift in Sources */,
+				A19B687D2929703000145256 /* FuzeFonts.swift in Sources */,
+				A19F31C3292A8A9200EAABDE /* MatcheTableViewCell.swift in Sources */,
 				A19B687229295DF600145256 /* MatchesBuilder.swift in Sources */,
 				A19B688D29297D2000145256 /* NetworkBuilder.swift in Sources */,
+				A19F31CD292AC80D00EAABDE /* FuzeImages.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -619,6 +702,7 @@
 				A1876A6229285DED006CE7C9 /* BaseURLProviderSpy.swift in Sources */,
 				A196D86A29287CC6000ADDEE /* NetworkErrorDummy.swift in Sources */,
 				A1876A6829286700006CE7C9 /* ResponseModeFixture.swift in Sources */,
+				A19F31D0292AC8D200EAABDE /* FuzeImagesTests.swift in Sources */,
 				A14A00BB2929E4ED00B918D1 /* FuzeColorsTests.swift in Sources */,
 				A1876A5D29285C51006CE7C9 /* NetworkTests.swift in Sources */,
 				A1876A59292854EF006CE7C9 /* NetworkRequestFixture.swift in Sources */,
@@ -631,7 +715,7 @@
 				A1876A6A29286871006CE7C9 /* NetworkProviderSpy.swift in Sources */,
 				A14A00B32929DED800B918D1 /* MatchesRepositoryTests.swift in Sources */,
 				A1876A6429285EF4006CE7C9 /* AccessTokenProviderSpy.swift in Sources */,
-				A14A00BE2929E64000B918D1 /* FontsTests.swift in Sources */,
+				A14A00BE2929E64000B918D1 /* FuzeFontsTests.swift in Sources */,
 				A14A00C12929E87100B918D1 /* LocalizableTests.swift in Sources */,
 				A14A00B12929DB4400B918D1 /* MatchesNetworkRequestTests.swift in Sources */,
 				A1876A4E29284F54006CE7C9 /* BaseURLProviderTests.swift in Sources */,

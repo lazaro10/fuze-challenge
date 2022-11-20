@@ -1,7 +1,7 @@
 import XCTest
 @testable import fuze
 
-final class FontsTests: XCTestCase {
+final class FuzeFontsTests: XCTestCase {
     func test_robotoMeidum_whenCreated_shouldReturnAValidFont() {
         let robotoMedium: UIFont = .robotoMeidum(size: 16)
 
