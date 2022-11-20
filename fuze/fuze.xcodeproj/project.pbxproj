@@ -13,6 +13,7 @@
 		A14A00B52929DF2200B918D1 /* NetworkSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14A00B42929DF2200B918D1 /* NetworkSpy.swift */; };
 		A14A00B82929E0C400B918D1 /* MatchesResponseFixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14A00B72929E0C400B918D1 /* MatchesResponseFixture.swift */; };
 		A14A00BB2929E4ED00B918D1 /* FuzeColorsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14A00BA2929E4ED00B918D1 /* FuzeColorsTests.swift */; };
+		A14A00BE2929E64000B918D1 /* FontsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14A00BD2929E64000B918D1 /* FontsTests.swift */; };
 		A18769FC29280E7E006CE7C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18769FB29280E7E006CE7C9 /* AppDelegate.swift */; };
 		A18769FE29280E7E006CE7C9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18769FD29280E7E006CE7C9 /* SceneDelegate.swift */; };
 		A1876A0529280E7F006CE7C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1876A0429280E7F006CE7C9 /* Assets.xcassets */; };
@@ -75,6 +76,7 @@
 		A14A00B42929DF2200B918D1 /* NetworkSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSpy.swift; sourceTree = "<group>"; };
 		A14A00B72929E0C400B918D1 /* MatchesResponseFixture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesResponseFixture.swift; sourceTree = "<group>"; };
 		A14A00BA2929E4ED00B918D1 /* FuzeColorsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuzeColorsTests.swift; sourceTree = "<group>"; };
+		A14A00BD2929E64000B918D1 /* FontsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontsTests.swift; sourceTree = "<group>"; };
 		A18769F829280E7E006CE7C9 /* fuze.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fuze.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A18769FB29280E7E006CE7C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A18769FD29280E7E006CE7C9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -184,6 +186,21 @@
 				A14A00BA2929E4ED00B918D1 /* FuzeColorsTests.swift */,
 			);
 			path = Colors;
+			sourceTree = "<group>";
+		};
+		A14A00BC2929E62D00B918D1 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				A14A00BD2929E64000B918D1 /* FontsTests.swift */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		A14A00BF2929E82E00B918D1 /* Localizable */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Localizable;
 			sourceTree = "<group>";
 		};
 		A18769EF29280E7E006CE7C9 = {
@@ -307,6 +324,8 @@
 		A1876A4A29284F0F006CE7C9 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				A14A00BF2929E82E00B918D1 /* Localizable */,
+				A14A00BC2929E62D00B918D1 /* Fonts */,
 				A14A00B92929E4DD00B918D1 /* Colors */,
 				A1876A4B29284F2D006CE7C9 /* NetworkService */,
 			);
@@ -609,6 +628,7 @@
 				A1876A6A29286871006CE7C9 /* NetworkProviderSpy.swift in Sources */,
 				A14A00B32929DED800B918D1 /* MatchesRepositoryTests.swift in Sources */,
 				A1876A6429285EF4006CE7C9 /* AccessTokenProviderSpy.swift in Sources */,
+				A14A00BE2929E64000B918D1 /* FontsTests.swift in Sources */,
 				A14A00B12929DB4400B918D1 /* MatchesNetworkRequestTests.swift in Sources */,
 				A1876A4E29284F54006CE7C9 /* BaseURLProviderTests.swift in Sources */,
 				A196D86829287B72000ADDEE /* NetworkErrorEquatable.swift in Sources */,

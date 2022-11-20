@@ -8,7 +8,7 @@
 	<string>$(PANDA_SCORE_BASE_URL)</string>
 	<key>UIAppFonts</key>
 	<array>
-		<string>Roboto-Medium</string>
+		<string>Roboto-Medium.ttf</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
