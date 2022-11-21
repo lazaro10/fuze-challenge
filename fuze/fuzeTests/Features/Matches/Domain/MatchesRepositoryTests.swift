@@ -6,10 +6,10 @@ final class MatchesRepositoryTests: XCTestCase {
     lazy var sut = MatchesRepository(network: networkSpy)
 
     func test_fetchRunningMatches_givenSuccess_shouldCompleteSuccess() {
-        let successStubbed: Result<[MatchesResponse], Error> = .success([MatchesResponse.fixture()])
+        let successStubbed: Result<[MatchModel], Error> = .success([MatchModel.fixture()])
         networkSpy.stubbedRequestCompletionResult = successStubbed
 
-        var resultRequest: Result<[MatchesResponse], Error>?
+        var resultRequest: Result<[MatchModel], Error>?
 
         sut.fetchRunningMatches(page: 1) { result in
             resultRequest = result
@@ -26,10 +26,10 @@ final class MatchesRepositoryTests: XCTestCase {
     }
 
     func test_fetchRunningMatches_givenFailure_shouldCompleteError() {
-        let failureStubbed: Result<[MatchesResponse], Error> = .failure(NetworkErrorDummy.dummyError)
+        let failureStubbed: Result<[MatchModel], Error> = .failure(ErrorDummy.error)
         networkSpy.stubbedRequestCompletionResult = failureStubbed
 
-        var resultRequest: Result<[MatchesResponse], Error>?
+        var resultRequest: Result<[MatchModel], Error>?
 
         sut.fetchRunningMatches(page: 1) { result in
             resultRequest = result
@@ -39,17 +39,17 @@ final class MatchesRepositoryTests: XCTestCase {
         case .failure(let error):
             XCTAssertEqual(networkSpy.invokedRequestCount, 1)
             XCTAssertNotNil(networkSpy.invokedRequestParameterRequest)
-            XCTAssertEqual(error as? NetworkErrorDummy, .dummyError)
+            XCTAssertEqual(error as? ErrorDummy, .error)
         default:
             XCTFail("Expected to be failure")
         }
     }
 
     func test_fetchUpcomingMatches_givenSuccess_shouldCompleteSuccess() {
-        let successStubbed: Result<[MatchesResponse], Error> = .success([MatchesResponse.fixture()])
+        let successStubbed: Result<[MatchModel], Error> = .success([MatchModel.fixture()])
         networkSpy.stubbedRequestCompletionResult = successStubbed
 
-        var resultRequest: Result<[MatchesResponse], Error>?
+        var resultRequest: Result<[MatchModel], Error>?
 
         sut.fetchUpcomingMatches(page: 1) { result in
             resultRequest = result
@@ -66,10 +66,10 @@ final class MatchesRepositoryTests: XCTestCase {
     }
 
     func test_fetchUpcomingMatches_givenFailure_shouldCompleteError() {
-        let failureStubbed: Result<[MatchesResponse], Error> = .failure(NetworkErrorDummy.dummyError)
+        let failureStubbed: Result<[MatchModel], Error> = .failure(ErrorDummy.error)
         networkSpy.stubbedRequestCompletionResult = failureStubbed
 
-        var resultRequest: Result<[MatchesResponse], Error>?
+        var resultRequest: Result<[MatchModel], Error>?
 
         sut.fetchUpcomingMatches(page: 1) { result in
             resultRequest = result
@@ -79,7 +79,7 @@ final class MatchesRepositoryTests: XCTestCase {
         case .failure(let error):
             XCTAssertEqual(networkSpy.invokedRequestCount, 1)
             XCTAssertNotNil(networkSpy.invokedRequestParameterRequest)
-            XCTAssertEqual(error as? NetworkErrorDummy, .dummyError)
+            XCTAssertEqual(error as? ErrorDummy, .error)
         default:
             XCTFail("Expected to be failure")
         }

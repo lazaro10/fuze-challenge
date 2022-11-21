@@ -1,7 +1,7 @@
 import UIKit
 
 protocol MatchesViewLogic: UIView {
-    var matchViewModels: [MatchViewModel] { get set }
+    func changeState(_ state: MatchesView.State)
     var delegate: MatchesViewDelegate? { get set }
 }
 
@@ -10,6 +10,13 @@ protocol MatchesViewDelegate: AnyObject {
 }
 
 final class MatchesView: UIView {
+    enum State {
+        case content(viewModels: [MatchViewModel])
+        case loading
+        case error
+        case empty
+    }
+
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.text = Strings.matches
@@ -29,7 +36,7 @@ final class MatchesView: UIView {
         return tableView
     }()
 
-    var matchViewModels: [MatchViewModel] = [] {
+    private var matchViewModels: [MatchViewModel] = [] {
         didSet {
             DispatchQueue.main.async { [weak self] in
                 self?.tableView.reloadData()
@@ -70,7 +77,18 @@ final class MatchesView: UIView {
 }
 
 extension MatchesView: MatchesViewLogic {
-
+    func changeState(_ state: MatchesView.State) {
+        switch state {
+        case .content(let viewModels):
+            self.matchViewModels = viewModels
+        case .loading:
+            break
+        case .error:
+            break
+        case .empty:
+            break
+        }
+    }
 }
 
 extension MatchesView: UITableViewDelegate {

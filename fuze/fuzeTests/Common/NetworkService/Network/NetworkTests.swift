@@ -53,7 +53,7 @@ final class NetworkTests: XCTestCase {
     }
     
     func test_request_givenHasError_shouldCompletionFeilureRequest() throws {
-        sessionSpy.stubbedDataTaskCompletionHandlerResult = (nil, nil, NetworkErrorDummy.dummyError)
+        sessionSpy.stubbedDataTaskCompletionHandlerResult = (nil, nil, ErrorDummy.error)
 
         deserializationSpy.stubbedDecodeResult = ResponseModel.fixture()
         urlProviderSpy.stubbedGetURLResult = try XCTUnwrap(URL(string: "https://moises.ai"))
@@ -73,7 +73,7 @@ final class NetworkTests: XCTestCase {
             XCTAssertEqual(urlProviderSpy.invokedGetURLCount, 1)
             XCTAssertEqual(urlProviderSpy.invokedGetURLParameterApi, .pandaScore)
             XCTAssertEqual(deserializationSpy.invokedDecodeCount, 0)
-            XCTAssertEqual(error as? NetworkError, .failureRequest(error: NetworkErrorDummy.dummyError))
+            XCTAssertEqual(error as? NetworkError, .failureRequest(error: ErrorDummy.error))
             break
         default:
             XCTFail("Expected to be failure")

@@ -1,6 +1,7 @@
 import UIKit
 
 struct MatchViewModel {
+    let id: Int
     let matchTime: String
     let matchTimeViewColor: UIColor?
     let confrontationViewModel: ConfrontationOpponentsViewModel

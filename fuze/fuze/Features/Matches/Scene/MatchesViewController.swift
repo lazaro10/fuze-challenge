@@ -1,7 +1,7 @@
 import UIKit
 
 protocol MatchesViewControllerDisplayble: AnyObject {
-    func displayMatchViewModels(viewModels: [MatchViewModel])
+    func displayState(_ state: MatchesView.State)
 }
 
 final class MatchesViewController: UIViewController {
@@ -31,8 +31,8 @@ final class MatchesViewController: UIViewController {
 }
 
 extension MatchesViewController: MatchesViewControllerDisplayble {
-    func displayMatchViewModels(viewModels: [MatchViewModel]) {
-        contentView.matchViewModels = viewModels
+    func displayState(_ state: MatchesView.State) {
+        contentView.changeState(state)
     }
 }
 

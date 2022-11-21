@@ -1,6 +1,6 @@
 @testable import fuze
 import Foundation
 
-enum NetworkErrorDummy: Error {
-    case dummyError
+enum ErrorDummy: Error {
+    case error
 }

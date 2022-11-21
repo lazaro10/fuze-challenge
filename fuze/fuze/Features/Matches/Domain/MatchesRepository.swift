@@ -1,6 +1,6 @@
 protocol MatchesRepositoryLogic {
-    func fetchRunningMatches(page: Int, completion: @escaping (Result<[MatchesResponse], Error>) -> Void)
-    func fetchUpcomingMatches(page: Int, completion: @escaping (Result<[MatchesResponse], Error>) -> Void)
+    func fetchRunningMatches(page: Int, completion: @escaping (Result<[MatchModel], Error>) -> Void)
+    func fetchUpcomingMatches(page: Int, completion: @escaping (Result<[MatchModel], Error>) -> Void)
 }
 
 final class MatchesRepository: MatchesRepositoryLogic {
@@ -10,18 +10,18 @@ final class MatchesRepository: MatchesRepositoryLogic {
         self.network = network
     }
 
-    func fetchRunningMatches(page: Int, completion: @escaping (Result<[MatchesResponse], Error>) -> Void) {
+    func fetchRunningMatches(page: Int, completion: @escaping (Result<[MatchModel], Error>) -> Void) {
         let request = MatchesNetworkRequest.running(page: page)
 
-        network.request(request) { (result: Result<[MatchesResponse], Error>) in
+        network.request(request) { (result: Result<[MatchModel], Error>) in
             completion(result)
         }
     }
 
-    func fetchUpcomingMatches(page: Int, completion: @escaping (Result<[MatchesResponse], Error>) -> Void) {
+    func fetchUpcomingMatches(page: Int, completion: @escaping (Result<[MatchModel], Error>) -> Void) {
         let request = MatchesNetworkRequest.upcoming(page: page)
 
-        network.request(request) { (result: Result<[MatchesResponse], Error>) in
+        network.request(request) { (result: Result<[MatchModel], Error>) in
             completion(result)
         }
     }

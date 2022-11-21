@@ -5,11 +5,10 @@ enum MatchesNetworkRequest: NetworkRequest {
     var parameters: [String: String] {
         switch self {
         case .running(let page):
-            return ["page": "\(page)", "per_page": "50"]
+            return ["page": "\(page)", "per_page": "10"]
         case .upcoming(let page):
-            return ["page": "\(page)", "per_page": "5"]
+            return ["page": "\(page)", "per_page": "10"]
         }
-
     }
 
     var path: String {

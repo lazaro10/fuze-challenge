@@ -4,11 +4,11 @@ protocol MatchesViewModelLogic {
 }
 
 final class MatchesViewModel {
-    private var runningMachesPage = 1
-    private var isContinueRunningPagination = true
-    private var upcomeMachesPage = 1
-    private var isContinueUpcomePagination = true
-    private var matches: [MatchesResponse] = []
+    private(set) var runningMachesPage = 1
+    private(set) var isContinueRunningPagination = true
+    private(set) var upcomeMachesPage = 1
+    private(set) var isContinueUpcomePagination = true
+    private(set) var matches: [MatchModel] = []
     weak var display: MatchesViewControllerDisplayble?
 
     private let repository: MatchesRepositoryLogic
@@ -18,22 +18,25 @@ final class MatchesViewModel {
     }
 
     private func fetchRunningMatches() {
-        // Show Load
+        display?.displayState(.loading)
+
         repository.fetchRunningMatches(page: runningMachesPage) { [weak self] result in
             guard let self = self else { return }
 
             switch result {
             case .success(let matches):
+                self.matches.append(contentsOf: matches)
                 self.runningMachesPage += 1
 
                 if matches.isEmpty {
                     self.fetchUpcomingMatches()
-                    self.isContinueRunningPagination = false
                 } else {
-                    self.matches.append(contentsOf: matches)
-                    self.display?.displayMatchViewModels(viewModels: self.convertMatches())
-                    self.isContinueRunningPagination = true
-                    // Hide Load
+                    if matches.count == 10 {
+                        self.isContinueRunningPagination = true
+                        self.display?.displayState(.content(viewModels: self.convertMatches()))
+                    } else {
+                        self.fetchUpcomingMatches()
+                    }
                 }
             case .failure:
                 self.fetchUpcomingMatches()
@@ -42,22 +45,29 @@ final class MatchesViewModel {
     }
 
     private func fetchUpcomingMatches() {
+        isContinueRunningPagination = false
+
         repository.fetchUpcomingMatches(page: upcomeMachesPage) { [weak self] result in
             guard let self = self else { return }
 
             switch result {
             case .success(let matches):
+                self.matches.append(contentsOf: matches)
                 self.upcomeMachesPage += 1
 
-                if !matches.isEmpty {
-                    self.matches.append(contentsOf: matches)
-                    self.display?.displayMatchViewModels(viewModels: self.convertMatches())
+                if matches.isEmpty {
+                    self.isContinueUpcomePagination = false
+                    if self.matches.isEmpty {
+                        self.display?.displayState(.empty)
+                    }
+                } else {
                     self.isContinueUpcomePagination = true
-                    // Hide Load
+                    self.display?.displayState(.content(viewModels: self.convertMatches()))
                 }
             case .failure:
+                self.isContinueUpcomePagination = false
                 if self.matches.isEmpty {
-                    // show error
+                    self.display?.displayState(.error)
                 }
             }
         }
@@ -77,6 +87,7 @@ final class MatchesViewModel {
             )
 
             return MatchViewModel(
+                id: $0.id,
                 matchTime: $0.status == .running ? Strings.now : $0.beginAt.toDateZ()?.toMatchDate() ?? "-",
                 matchTimeViewColor: $0.status == .running ? .primaryRed : .tertiaryGrey,
                 confrontationViewModel: confrontationViewModel,
