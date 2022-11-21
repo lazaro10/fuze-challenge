@@ -25,6 +25,7 @@ final class MatchesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        contentView.delegate = self
         viewModel.fetchMatches()
     }
 }
@@ -32,5 +33,11 @@ final class MatchesViewController: UIViewController {
 extension MatchesViewController: MatchesViewControllerDisplayble {
     func displayMatchViewModels(viewModels: [MatchViewModel]) {
         contentView.matchViewModels = viewModels
+    }
+}
+
+extension MatchesViewController: MatchesViewDelegate {
+    func matchesViewDidTableViewScrollEnded() {
+        viewModel.fetchMoreMatches()
     }
 }

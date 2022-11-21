@@ -2,6 +2,11 @@ import UIKit
 
 protocol MatchesViewLogic: UIView {
     var matchViewModels: [MatchViewModel] { get set }
+    var delegate: MatchesViewDelegate? { get set }
+}
+
+protocol MatchesViewDelegate: AnyObject {
+    func matchesViewDidTableViewScrollEnded()
 }
 
 final class MatchesView: UIView {
@@ -31,6 +36,8 @@ final class MatchesView: UIView {
             }
         }
     }
+
+    weak var delegate: MatchesViewDelegate?
 
     init() {
         super.init(frame: .zero)
@@ -69,6 +76,16 @@ extension MatchesView: MatchesViewLogic {
 extension MatchesView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
+    }
+
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offsetY = scrollView.contentOffset.y
+        let contentSize = tableView.contentSize.height - 50
+        let scrollHeight = scrollView.frame.size.height
+
+        if offsetY > contentSize - scrollHeight {
+            delegate?.matchesViewDidTableViewScrollEnded()
+        }
     }
 }
 

@@ -2,9 +2,10 @@ import UIKit
 
 extension UIImageView {
     func setImage(_ url: URL?, placeholder: UIImage?) {
-        image = placeholder
-
-        guard let url = url else { return }
+        guard let url = url else {
+            image = placeholder
+            return
+        }
 
         NetworkDownload.shared.loadData(url: url) { [weak self] result in
             switch result {

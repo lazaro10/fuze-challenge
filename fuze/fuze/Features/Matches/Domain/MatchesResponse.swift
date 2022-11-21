@@ -5,12 +5,14 @@ struct MatchesResponse: Decodable {
     let opponents: [Opponent]
     let league: League
     let serie: Serie
+    let status: Status
 
     private enum CodingKeys: String, CodingKey {
         case beginAt = "begin_at"
         case opponents
         case league
         case serie
+        case status
     }
 
     struct Opponent: Decodable {
@@ -43,5 +45,12 @@ struct MatchesResponse: Decodable {
         private enum CodingKeys: String, CodingKey {
             case fullName = "full_name"
         }
+    }
+
+    enum Status: String, Decodable {
+        case finished
+        case notPayed = "not_played"
+        case notStarted = "not_started"
+        case running
     }
 }
