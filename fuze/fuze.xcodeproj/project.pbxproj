@@ -23,6 +23,9 @@
 		A17BDEC9292BE7BC001BF682 /* MatchesViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17BDEC8292BE7BC001BF682 /* MatchesViewControllerTests.swift */; };
 		A17BDECB292BE7EE001BF682 /* MatchesViewModeSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17BDECA292BE7EE001BF682 /* MatchesViewModeSpy.swift */; };
 		A17BDECD292BE83B001BF682 /* MatchesViewSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17BDECC292BE83B001BF682 /* MatchesViewSpy.swift */; };
+		A17BDECF292BF50F001BF682 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17BDECE292BF50F001BF682 /* LoadingView.swift */; };
+		A17BDED1292BF526001BF682 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17BDED0292BF526001BF682 /* EmptyStateView.swift */; };
+		A17BDED3292BF52E001BF682 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17BDED2292BF52E001BF682 /* ErrorView.swift */; };
 		A18769FC29280E7E006CE7C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18769FB29280E7E006CE7C9 /* AppDelegate.swift */; };
 		A18769FE29280E7E006CE7C9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18769FD29280E7E006CE7C9 /* SceneDelegate.swift */; };
 		A1876A0529280E7F006CE7C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1876A0429280E7F006CE7C9 /* Assets.xcassets */; };
@@ -104,6 +107,9 @@
 		A17BDEC8292BE7BC001BF682 /* MatchesViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesViewControllerTests.swift; sourceTree = "<group>"; };
 		A17BDECA292BE7EE001BF682 /* MatchesViewModeSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesViewModeSpy.swift; sourceTree = "<group>"; };
 		A17BDECC292BE83B001BF682 /* MatchesViewSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesViewSpy.swift; sourceTree = "<group>"; };
+		A17BDECE292BF50F001BF682 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		A17BDED0292BF526001BF682 /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
+		A17BDED2292BF52E001BF682 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		A18769F829280E7E006CE7C9 /* fuze.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fuze.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A18769FB29280E7E006CE7C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A18769FD29280E7E006CE7C9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -600,6 +606,9 @@
 			isa = PBXGroup;
 			children = (
 				A19F31C9292AA99A00EAABDE /* ConfrontationOpponentsView.swift */,
+				A17BDECE292BF50F001BF682 /* LoadingView.swift */,
+				A17BDED0292BF526001BF682 /* EmptyStateView.swift */,
+				A17BDED2292BF52E001BF682 /* ErrorView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -754,6 +763,7 @@
 				A1876A47292843DC006CE7C9 /* ApiProvider.swift in Sources */,
 				A1876A33292812E8006CE7C9 /* Coordinator.swift in Sources */,
 				A1876A3A29281FAD006CE7C9 /* BaseURLProvider.swift in Sources */,
+				A17BDECF292BF50F001BF682 /* LoadingView.swift in Sources */,
 				A19F31BB292A82DA00EAABDE /* Reusable.swift in Sources */,
 				A1876A3E29282412006CE7C9 /* Network.swift in Sources */,
 				A18769FC29280E7E006CE7C9 /* AppDelegate.swift in Sources */,
@@ -761,8 +771,10 @@
 				A19B688929297B3700145256 /* MatchesRepository.swift in Sources */,
 				A1876A3729281EA8006CE7C9 /* NetworkRequest.swift in Sources */,
 				A1876A452928429A006CE7C9 /* AccessTokenProvider.swift in Sources */,
+				A17BDED1292BF526001BF682 /* EmptyStateView.swift in Sources */,
 				A1876A4229283743006CE7C9 /* NetworkDeserialization.swift in Sources */,
 				A19B685D29291D6100145256 /* FileManagerProvider.swift in Sources */,
+				A17BDED3292BF52E001BF682 /* ErrorView.swift in Sources */,
 				A19B688B29297C8A00145256 /* MatchesNetworkRequest.swift in Sources */,
 				A18769FE29280E7E006CE7C9 /* SceneDelegate.swift in Sources */,
 				A14A00AC2929C0A500B918D1 /* MatchModel.swift in Sources */,

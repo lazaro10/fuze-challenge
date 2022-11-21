@@ -18,8 +18,6 @@ final class MatchesViewModel {
     }
 
     private func fetchRunningMatches() {
-        display?.displayState(.loading)
-
         repository.fetchRunningMatches(page: runningMachesPage) { [weak self] result in
             guard let self = self else { return }
 
@@ -107,6 +105,7 @@ final class MatchesViewModel {
 }
 extension MatchesViewModel: MatchesViewModelLogic {
     func fetchMatches() {
+        display?.displayState(.loading)
         setupInitialState()
         fetchRunningMatches()
     }
