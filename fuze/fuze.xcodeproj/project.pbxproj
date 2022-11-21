@@ -26,11 +26,15 @@
 		A17BDECF292BF50F001BF682 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17BDECE292BF50F001BF682 /* LoadingView.swift */; };
 		A17BDED1292BF526001BF682 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17BDED0292BF526001BF682 /* EmptyStateView.swift */; };
 		A17BDED3292BF52E001BF682 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17BDED2292BF52E001BF682 /* ErrorView.swift */; };
+		A17BDED6292C197D001BF682 /* MatchDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17BDED5292C197D001BF682 /* MatchDetailViewController.swift */; };
+		A17BDEDA292C19B6001BF682 /* MatchDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17BDED9292C19B6001BF682 /* MatchDetailView.swift */; };
+		A17BDEDE292C1A48001BF682 /* MatchDetailBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17BDEDD292C1A48001BF682 /* MatchDetailBuilder.swift */; };
+		A17BDEE2292C2CD8001BF682 /* MatchesCoordinatorSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17BDEE1292C2CD8001BF682 /* MatchesCoordinatorSpy.swift */; };
 		A18769FC29280E7E006CE7C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18769FB29280E7E006CE7C9 /* AppDelegate.swift */; };
 		A18769FE29280E7E006CE7C9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18769FD29280E7E006CE7C9 /* SceneDelegate.swift */; };
 		A1876A0529280E7F006CE7C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1876A0429280E7F006CE7C9 /* Assets.xcassets */; };
 		A1876A0829280E7F006CE7C9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1876A0629280E7F006CE7C9 /* LaunchScreen.storyboard */; };
-		A1876A31292812E1006CE7C9 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1876A30292812E1006CE7C9 /* AppCoordinator.swift */; };
+		A1876A31292812E1006CE7C9 /* MatchesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1876A30292812E1006CE7C9 /* MatchesCoordinator.swift */; };
 		A1876A33292812E8006CE7C9 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1876A32292812E8006CE7C9 /* Coordinator.swift */; };
 		A1876A3729281EA8006CE7C9 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1876A3629281EA8006CE7C9 /* NetworkRequest.swift */; };
 		A1876A3A29281FAD006CE7C9 /* BaseURLProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1876A3929281FAD006CE7C9 /* BaseURLProvider.swift */; };
@@ -110,6 +114,10 @@
 		A17BDECE292BF50F001BF682 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		A17BDED0292BF526001BF682 /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
 		A17BDED2292BF52E001BF682 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		A17BDED5292C197D001BF682 /* MatchDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchDetailViewController.swift; sourceTree = "<group>"; };
+		A17BDED9292C19B6001BF682 /* MatchDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchDetailView.swift; sourceTree = "<group>"; };
+		A17BDEDD292C1A48001BF682 /* MatchDetailBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchDetailBuilder.swift; sourceTree = "<group>"; };
+		A17BDEE1292C2CD8001BF682 /* MatchesCoordinatorSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesCoordinatorSpy.swift; sourceTree = "<group>"; };
 		A18769F829280E7E006CE7C9 /* fuze.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fuze.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A18769FB29280E7E006CE7C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A18769FD29280E7E006CE7C9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -117,7 +125,7 @@
 		A1876A0729280E7F006CE7C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A1876A0929280E7F006CE7C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A1876A0E29280E7F006CE7C9 /* fuzeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = fuzeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A1876A30292812E1006CE7C9 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		A1876A30292812E1006CE7C9 /* MatchesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesCoordinator.swift; sourceTree = "<group>"; };
 		A1876A32292812E8006CE7C9 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		A1876A3629281EA8006CE7C9 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
 		A1876A3929281FAD006CE7C9 /* BaseURLProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseURLProvider.swift; sourceTree = "<group>"; };
@@ -286,6 +294,56 @@
 			path = Fixture;
 			sourceTree = "<group>";
 		};
+		A17BDED4292C196D001BF682 /* MatchDetail */ = {
+			isa = PBXGroup;
+			children = (
+				A17BDEDC292C1A2E001BF682 /* Composite */,
+				A17BDED7292C1996001BF682 /* Scene */,
+			);
+			path = MatchDetail;
+			sourceTree = "<group>";
+		};
+		A17BDED7292C1996001BF682 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				A17BDED5292C197D001BF682 /* MatchDetailViewController.swift */,
+				A17BDED8292C19A6001BF682 /* Views */,
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
+		A17BDED8292C19A6001BF682 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A17BDED9292C19B6001BF682 /* MatchDetailView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A17BDEDC292C1A2E001BF682 /* Composite */ = {
+			isa = PBXGroup;
+			children = (
+				A17BDEDD292C1A48001BF682 /* MatchDetailBuilder.swift */,
+			);
+			path = Composite;
+			sourceTree = "<group>";
+		};
+		A17BDEDF292C2CC5001BF682 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				A17BDEE0292C2CCE001BF682 /* Double */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		A17BDEE0292C2CCE001BF682 /* Double */ = {
+			isa = PBXGroup;
+			children = (
+				A17BDEE1292C2CD8001BF682 /* MatchesCoordinatorSpy.swift */,
+			);
+			path = Double;
+			sourceTree = "<group>";
+		};
 		A18769EF29280E7E006CE7C9 = {
 			isa = PBXGroup;
 			children = (
@@ -320,6 +378,7 @@
 		A1876A1129280E7F006CE7C9 /* fuzeTests */ = {
 			isa = PBXGroup;
 			children = (
+				A17BDEDF292C2CC5001BF682 /* Coordinator */,
 				A1876A4A29284F0F006CE7C9 /* Common */,
 				A14A00AD2929DB0900B918D1 /* Features */,
 			);
@@ -339,6 +398,7 @@
 			isa = PBXGroup;
 			children = (
 				A19B686929295C3300145256 /* Matches */,
+				A17BDED4292C196D001BF682 /* MatchDetail */,
 				A19F31C7292AA96C00EAABDE /* Common */,
 			);
 			path = Features;
@@ -359,7 +419,7 @@
 			isa = PBXGroup;
 			children = (
 				A1876A32292812E8006CE7C9 /* Coordinator.swift */,
-				A1876A30292812E1006CE7C9 /* AppCoordinator.swift */,
+				A1876A30292812E1006CE7C9 /* MatchesCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -750,7 +810,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A19F31D6292AD43E00EAABDE /* DateFormatter.swift in Sources */,
-				A1876A31292812E1006CE7C9 /* AppCoordinator.swift in Sources */,
+				A1876A31292812E1006CE7C9 /* MatchesCoordinator.swift in Sources */,
 				A19F31C0292A859300EAABDE /* ConstraintsTools.swift in Sources */,
 				A19F31CA292AA99A00EAABDE /* ConfrontationOpponentsView.swift in Sources */,
 				A19B68782929698900145256 /* FuzeColors.swift in Sources */,
@@ -778,10 +838,13 @@
 				A19B688B29297C8A00145256 /* MatchesNetworkRequest.swift in Sources */,
 				A18769FE29280E7E006CE7C9 /* SceneDelegate.swift in Sources */,
 				A14A00AC2929C0A500B918D1 /* MatchModel.swift in Sources */,
+				A17BDEDA292C19B6001BF682 /* MatchDetailView.swift in Sources */,
 				A19B687D2929703000145256 /* FuzeFonts.swift in Sources */,
 				A19F31C3292A8A9200EAABDE /* MatchTableViewCell.swift in Sources */,
 				A19B687229295DF600145256 /* MatchesBuilder.swift in Sources */,
 				A19B688D29297D2000145256 /* NetworkBuilder.swift in Sources */,
+				A17BDEDE292C1A48001BF682 /* MatchDetailBuilder.swift in Sources */,
+				A17BDED6292C197D001BF682 /* MatchDetailViewController.swift in Sources */,
 				A19F31D3292ACA6800EAABDE /* DownloadImage.swift in Sources */,
 				A19F31CD292AC80D00EAABDE /* FuzeImages.swift in Sources */,
 			);
@@ -818,6 +881,7 @@
 				A14A00BE2929E64000B918D1 /* FuzeFontsTests.swift in Sources */,
 				A14A00C12929E87100B918D1 /* LocalizableTests.swift in Sources */,
 				A14A00B12929DB4400B918D1 /* MatchesNetworkRequestTests.swift in Sources */,
+				A17BDEE2292C2CD8001BF682 /* MatchesCoordinatorSpy.swift in Sources */,
 				A1876A4E29284F54006CE7C9 /* BaseURLProviderTests.swift in Sources */,
 				A196D86829287B72000ADDEE /* NetworkErrorEquatable.swift in Sources */,
 				A1876A5B29285504006CE7C9 /* NetworkRequestTests.swift in Sources */,

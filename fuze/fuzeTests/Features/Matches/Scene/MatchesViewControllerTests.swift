@@ -4,8 +4,13 @@ import XCTest
 final class MatchesViewControllerTests: XCTestCase {
     let viewModelSpy = MatchesViewModeSpy()
     let contentViewSpy = MatchesViewSpy()
+    let coordinatorSpy = MatchesCoordinatorSpy()
 
-    lazy var sut = MatchesViewController(viewModel: viewModelSpy, contentView: contentViewSpy)
+    lazy var sut = MatchesViewController(
+        viewModel: viewModelSpy,
+        contentView: contentViewSpy,
+        coordinator: coordinatorSpy
+    )
 
     func test_viewDidLoad_givenCalled_shouldSetDelegateAndFetchMatches() {
         sut.viewDidLoad()

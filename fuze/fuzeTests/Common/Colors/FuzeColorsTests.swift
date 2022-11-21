@@ -10,5 +10,6 @@ final class FuzeColorsTests: XCTestCase {
         XCTAssertNotNil(UIColor.tertiaryGrey)
         XCTAssertNotNil(UIColor.primaryRed)
         XCTAssertNotNil(UIColor.secondaryRed)
+        XCTAssertNotNil(UIColor.primaryWhite)
     }
 }

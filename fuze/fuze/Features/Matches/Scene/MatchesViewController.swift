@@ -7,10 +7,16 @@ protocol MatchesViewControllerDisplayble: AnyObject {
 final class MatchesViewController: UIViewController {
     private let viewModel: MatchesViewModelLogic
     private let contentView: MatchesViewLogic
+    private let coordinator: MatchesCoordinatorLogic
 
-    init(viewModel: MatchesViewModelLogic, contentView: MatchesViewLogic) {
+    init(
+        viewModel: MatchesViewModelLogic,
+        contentView: MatchesViewLogic,
+        coordinator: MatchesCoordinatorLogic
+    ) {
         self.viewModel = viewModel
         self.contentView = contentView
+        self.coordinator = coordinator
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -27,11 +33,6 @@ final class MatchesViewController: UIViewController {
 
         contentView.delegate = self
         viewModel.fetchMatches()
-        setTitle()
-    }
-
-    private func setTitle() {
-        title = Strings.matches
     }
 }
 
@@ -44,5 +45,9 @@ extension MatchesViewController: MatchesViewControllerDisplayble {
 extension MatchesViewController: MatchesViewDelegate {
     func matchesViewDidTableViewScrollEnded() {
         viewModel.fetchMoreMatches()
+    }
+
+    func matchesViewDidSelectMatch(viewModel: MatchViewModel) {
+        coordinator.showMatchDetail(viewModel: viewModel)
     }
 }

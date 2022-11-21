@@ -7,6 +7,7 @@ protocol MatchesViewLogic: UIView {
 
 protocol MatchesViewDelegate: AnyObject {
     func matchesViewDidTableViewScrollEnded()
+    func matchesViewDidSelectMatch(viewModel: MatchViewModel)
 }
 
 final class MatchesView: UIView {
@@ -118,7 +119,7 @@ extension MatchesView: MatchesViewLogic {
 
 extension MatchesView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
+        delegate?.matchesViewDidSelectMatch(viewModel: matchViewModels[indexPath.row])
     }
 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
