@@ -30,8 +30,8 @@ final class MatchesViewModel {
                     self.fetchUpcomingMatches()
                     self.isContinueRunningPagination = false
                 } else {
-                    self.display?.displayMatchViewModels(viewModels: self.convertMatches())
                     self.matches.append(contentsOf: matches)
+                    self.display?.displayMatchViewModels(viewModels: self.convertMatches())
                     self.isContinueRunningPagination = true
                     // Hide Load
                 }
