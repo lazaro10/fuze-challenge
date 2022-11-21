@@ -27,6 +27,11 @@ final class MatchesViewController: UIViewController {
 
         contentView.delegate = self
         viewModel.fetchMatches()
+        setTitle()
+    }
+
+    private func setTitle() {
+        title = Strings.matches
     }
 }
 

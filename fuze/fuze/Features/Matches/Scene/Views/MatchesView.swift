@@ -17,13 +17,13 @@ final class MatchesView: UIView {
         case empty
     }
 
-    private let titleLabel: UILabel = {
-        let label = UILabel()
-        label.text = Strings.matches
-        label.font = .robotoMeidum(size: 32)
-
-        return label
-    }()
+//    private let titleLabel: UILabel = {
+//        let label = UILabel()
+//        label.text = Strings.matches
+//        label.font = .robotoMeidum(size: 32)
+//
+//        return label
+//    }()
 
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
@@ -58,13 +58,8 @@ final class MatchesView: UIView {
     }
 
     private func setupConstraints() {
-        addSubview(titleLabel, constraints: [
-            titleLabel.topAnchor.constraint(equalTo: layoutMarginsGuide.topAnchor),
-            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24)
-        ])
-
         addSubview(tableView, constraints: [
-            tableView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 24),
+            tableView.topAnchor.constraint(equalTo: layoutMarginsGuide.topAnchor, constant: 16),
             tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: bottomAnchor)
@@ -98,6 +93,8 @@ extension MatchesView: UITableViewDelegate {
 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let offsetY = scrollView.contentOffset.y
+        guard offsetY > 0 else { return }
+
         let contentSize = tableView.contentSize.height - 50
         let scrollHeight = scrollView.frame.size.height
 
