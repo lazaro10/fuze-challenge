@@ -31,6 +31,7 @@ final class MatchesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        title = Strings.matches
         contentView.delegate = self
         viewModel.fetchMatches()
     }

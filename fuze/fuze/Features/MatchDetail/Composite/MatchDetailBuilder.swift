@@ -5,7 +5,6 @@ enum MatchDetailBuilder {
             coordinator: coordinator,
             viewModel: viewModel
         )
-        viewController.title = "Match Detail"
 
         return viewController
     }

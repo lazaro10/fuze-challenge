@@ -23,4 +23,10 @@ final class MatchDetailViewController: UIViewController {
     override func loadView() {
         view = contentView
     }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        contentView.changeState(.content(matchViewModel: viewModel))
+    }
 }
