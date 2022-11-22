@@ -1,15 +1,10 @@
 import UIKit
 
-struct PlayersViewModel {
-    enum SideDisplayed {
-        case left
-        case right
-    }
-
+struct PlayerViewModel {
     let imageURL: URL?
     let nickname: String
     let name: String
-    let side: SideDisplayed
+    let alignment: PlayersAligment
 }
 
 final class PlayerTableViewCell: UITableViewCell, Reusable {
@@ -55,12 +50,12 @@ final class PlayerTableViewCell: UITableViewCell, Reusable {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func setup(_ viewModel: PlayersViewModel) {
+    func setup(_ viewModel: PlayerViewModel) {
         playerImageView.setImage(viewModel.imageURL, placeholder: .placeholderRounded)
         nicknameLabel.text = viewModel.nickname
         nameLabel.text = viewModel.name
 
-        switch viewModel.side {
+        switch viewModel.alignment {
         case .left:
             setupViewsLeftSide()
             setupConstraintsLeftSide()

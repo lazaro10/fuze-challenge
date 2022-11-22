@@ -3,11 +3,11 @@ import Foundation
 struct PlayerModel: Decodable {
     let imageUrl: URL?
     let nickname: String
-    private let firstName: String
-    private let lastName: String
+    private let firstName: String?
+    private let lastName: String?
 
     var fullName: String {
-        firstName + lastName
+       "\(firstName ?? "") \(lastName ?? "")" 
     }
 
     private enum CodingKeys: String, CodingKey {

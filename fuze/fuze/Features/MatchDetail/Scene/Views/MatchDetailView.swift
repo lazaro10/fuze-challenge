@@ -10,47 +10,15 @@ final class MatchDetailView: UIView {
         case loading
     }
 
-    private var leftPlayersViewModels: [PlayersViewModel] = [] {
-        didSet {
-            leftTableView.reloadData()
-        }
-    }
-
-    private var rightPlayersViewModels: [PlayersViewModel] = [] {
-        didSet {
-            rightTableView.reloadData()
-        }
-    }
-
     private let headerView = MatchDetailHeaderView()
 
     private lazy var stackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [leftTableView, rightTableView])
+        let stackView = UIStackView()
         stackView.spacing = 13
         stackView.axis = .horizontal
         stackView.distribution = .fillEqually
 
         return stackView
-    }()
-
-    private lazy var leftTableView: UITableView = {
-        let tableView = UITableView()
-        tableView.registerReusableCell(PlayerTableViewCell.self)
-        tableView.backgroundColor = .primaryBackground
-        tableView.separatorStyle = .none
-        tableView.dataSource = self
-
-        return tableView
-    }()
-
-    private lazy var rightTableView: UITableView = {
-        let tableView = UITableView()
-        tableView.registerReusableCell(PlayerTableViewCell.self)
-        tableView.backgroundColor = .primaryBackground
-        tableView.separatorStyle = .none
-        tableView.dataSource = self
-
-        return tableView
     }()
 
     private let loadingView = LoadingView()
@@ -93,33 +61,9 @@ extension MatchDetailView: MatchDetailViewLogic {
             headerView.isHidden = false
             loadingView.isHidden = true
             headerView.setup(viewModel: matchViewModel)
-            self.leftPlayersViewModels = leftPlayersViewModels
-            self.rightPlayersViewModels = rightPlayersViewModels
         case .loading:
             headerView.isHidden = true
             loadingView.isHidden = false
         }
-    }
-}
-
-extension MatchDetailView: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if tableView == leftTableView {
-            return leftPlayersViewModels.count
-        } else {
-            return rightPlayersViewModels.count
-        }
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let playerTableViewCell: PlayerTableViewCell = tableView.dequeueReusableCell(indexPath: indexPath)
-
-        if tableView == leftTableView {
-            playerTableViewCell.setup(leftPlayersViewModels[indexPath.row])
-        } else {
-            playerTableViewCell.setup(rightPlayersViewModels[indexPath.row])
-        }
-
-        return playerTableViewCell
     }
 }

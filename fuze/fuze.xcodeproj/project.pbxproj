@@ -91,8 +91,11 @@
 		A1A2434E292D47AD00A6EEEE /* PlayerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A2434D292D47AD00A6EEEE /* PlayerModel.swift */; };
 		A1A24350292D48A100A6EEEE /* PlayersNetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A2434F292D48A100A6EEEE /* PlayersNetworkRequest.swift */; };
 		A1A24352292D498800A6EEEE /* PlayersRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A24351292D498800A6EEEE /* PlayersRepository.swift */; };
-		A1A24354292D4A2900A6EEEE /* MatchDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A24353292D4A2900A6EEEE /* MatchDetailViewModel.swift */; };
-		A1A24356292D4A3D00A6EEEE /* MatchDetailConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A24355292D4A3D00A6EEEE /* MatchDetailConverter.swift */; };
+		A1A24354292D4A2900A6EEEE /* PlayersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A24353292D4A2900A6EEEE /* PlayersViewModel.swift */; };
+		A1A24356292D4A3D00A6EEEE /* PlayersConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A24355292D4A3D00A6EEEE /* PlayersConverter.swift */; };
+		A1A2435C292D81ED00A6EEEE /* PlayersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A2435B292D81ED00A6EEEE /* PlayersViewController.swift */; };
+		A1A2435E292D820000A6EEEE /* PlayersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A2435D292D820000A6EEEE /* PlayersView.swift */; };
+		A1A24361292D8DC400A6EEEE /* PlayersBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A24360292D8DC400A6EEEE /* PlayersBuilder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -196,8 +199,11 @@
 		A1A2434D292D47AD00A6EEEE /* PlayerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerModel.swift; sourceTree = "<group>"; };
 		A1A2434F292D48A100A6EEEE /* PlayersNetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersNetworkRequest.swift; sourceTree = "<group>"; };
 		A1A24351292D498800A6EEEE /* PlayersRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersRepository.swift; sourceTree = "<group>"; };
-		A1A24353292D4A2900A6EEEE /* MatchDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchDetailViewModel.swift; sourceTree = "<group>"; };
-		A1A24355292D4A3D00A6EEEE /* MatchDetailConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchDetailConverter.swift; sourceTree = "<group>"; };
+		A1A24353292D4A2900A6EEEE /* PlayersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersViewModel.swift; sourceTree = "<group>"; };
+		A1A24355292D4A3D00A6EEEE /* PlayersConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersConverter.swift; sourceTree = "<group>"; };
+		A1A2435B292D81ED00A6EEEE /* PlayersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersViewController.swift; sourceTree = "<group>"; };
+		A1A2435D292D820000A6EEEE /* PlayersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersView.swift; sourceTree = "<group>"; };
+		A1A24360292D8DC400A6EEEE /* PlayersBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersBuilder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -330,9 +336,7 @@
 		A17BDED7292C1996001BF682 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
-				A1A24355292D4A3D00A6EEEE /* MatchDetailConverter.swift */,
 				A17BDED5292C197D001BF682 /* MatchDetailViewController.swift */,
-				A1A24353292D4A2900A6EEEE /* MatchDetailViewModel.swift */,
 				A17BDED8292C19A6001BF682 /* Views */,
 			);
 			path = Scene;
@@ -343,7 +347,6 @@
 			children = (
 				A17BDED9292C19B6001BF682 /* MatchDetailView.swift */,
 				A1A2434A292D373700A6EEEE /* MatchDetailHeaderView.swift */,
-				A1A24348292D175F00A6EEEE /* PlayerTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -749,6 +752,7 @@
 		A1A24357292D7EAF00A6EEEE /* Players */ = {
 			isa = PBXGroup;
 			children = (
+				A1A2435F292D8DB500A6EEEE /* Composite */,
 				A1A2434C292D469300A6EEEE /* Domain */,
 				A1A24358292D7ED300A6EEEE /* Scene */,
 			);
@@ -758,6 +762,9 @@
 		A1A24358292D7ED300A6EEEE /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				A1A24355292D4A3D00A6EEEE /* PlayersConverter.swift */,
+				A1A24353292D4A2900A6EEEE /* PlayersViewModel.swift */,
+				A1A2435B292D81ED00A6EEEE /* PlayersViewController.swift */,
 				A1A24359292D7EEB00A6EEEE /* Views */,
 			);
 			path = Scene;
@@ -766,8 +773,18 @@
 		A1A24359292D7EEB00A6EEEE /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A1A2435D292D820000A6EEEE /* PlayersView.swift */,
+				A1A24348292D175F00A6EEEE /* PlayerTableViewCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		A1A2435F292D8DB500A6EEEE /* Composite */ = {
+			isa = PBXGroup;
+			children = (
+				A1A24360292D8DC400A6EEEE /* PlayersBuilder.swift */,
+			);
+			path = Composite;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -879,16 +896,19 @@
 				A19F31C0292A859300EAABDE /* ConstraintsTools.swift in Sources */,
 				A19F31CA292AA99A00EAABDE /* ConfrontationOpponentsView.swift in Sources */,
 				A19B68782929698900145256 /* FuzeColors.swift in Sources */,
+				A1A2435E292D820000A6EEEE /* PlayersView.swift in Sources */,
+				A1A2435C292D81ED00A6EEEE /* PlayersViewController.swift in Sources */,
 				A19F31BD292A83E900EAABDE /* MatchesView.swift in Sources */,
 				A19B6880292975B200145256 /* Localizable.swift in Sources */,
 				A1876A6C29286A88006CE7C9 /* NetworkProvider.swift in Sources */,
+				A1A24361292D8DC400A6EEEE /* PlayersBuilder.swift in Sources */,
 				A19B687029295DC000145256 /* MatchesViewModel.swift in Sources */,
 				A1876A3C292820A8006CE7C9 /* NetworkServiceMethod.swift in Sources */,
 				A19B686129292B0000145256 /* NetworkDownload.swift in Sources */,
 				A1876A47292843DC006CE7C9 /* ApiProvider.swift in Sources */,
 				A1876A33292812E8006CE7C9 /* Coordinator.swift in Sources */,
-				A1A24354292D4A2900A6EEEE /* MatchDetailViewModel.swift in Sources */,
-				A1A24356292D4A3D00A6EEEE /* MatchDetailConverter.swift in Sources */,
+				A1A24354292D4A2900A6EEEE /* PlayersViewModel.swift in Sources */,
+				A1A24356292D4A3D00A6EEEE /* PlayersConverter.swift in Sources */,
 				A1876A3A29281FAD006CE7C9 /* BaseURLProvider.swift in Sources */,
 				A1A2434B292D373700A6EEEE /* MatchDetailHeaderView.swift in Sources */,
 				A17BDECF292BF50F001BF682 /* LoadingView.swift in Sources */,
