@@ -86,7 +86,7 @@ final class MatchesViewModel {
 
             return MatchViewModel(
                 id: $0.id,
-                matchTime: $0.status == .running ? Strings.now : $0.beginAt.toDateZ()?.toMatchDate() ?? "-",
+                matchTime: $0.status == .running ? Strings.now : $0.beginAt.toMatchDate(),
                 matchTimeViewColor: $0.status == .running ? .primaryRed : .tertiaryGrey,
                 confrontationViewModel: confrontationViewModel,
                 leagueImageURL: $0.league.imageUrl,

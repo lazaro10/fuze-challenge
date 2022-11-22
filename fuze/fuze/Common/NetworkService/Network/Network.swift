@@ -54,18 +54,15 @@ extension Network: NetworkLogic {
             let request = try networkRequest.toRequest(baseURL: urlProvider.getURL(api: networkRequest.baseURL), token: accessToken)
 
             dataTask(request: request) { result in
-                switch result {
-                case .success(let data):
+                completion(result.flatMap {
                     do {
-                        let object: T = try self.deserialization.decode(data: data)
-                        completion(.success(object))
+                        return try .success(self.deserialization.decode(data: $0))
                     } catch {
-                        completion(.failure(error))
+                        return .failure(error)
                     }
-                case .failure(let error):
-                    completion(.failure(error))
-                }
+                })
             }
+
         } catch {
             completion(.failure(NetworkError.failureToConvertRequest(error: error)))
         }
