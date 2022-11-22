@@ -13,4 +13,10 @@ final class MatchesViewModeSpy: MatchesViewModelLogic {
     func fetchMoreMatches() {
         invokedFetchMoreMatchesCount += 1
     }
+
+    private(set) var invokedRefreshMatchesCount = 0
+
+    func refreshMatches() {
+        invokedRefreshMatchesCount += 1
+    }
 }

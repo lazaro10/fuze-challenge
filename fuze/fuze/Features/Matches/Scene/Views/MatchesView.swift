@@ -6,8 +6,9 @@ protocol MatchesViewLogic: UIView {
 }
 
 protocol MatchesViewDelegate: AnyObject {
-    func matchesViewDidTableViewScrollEnded()
     func matchesViewDidSelectMatch(viewModel: MatchViewModel)
+    func matchesViewDidScrollEnded()
+    func matchesViewDidPullToRefresh()
 }
 
 final class MatchesView: UIView {
@@ -18,28 +19,19 @@ final class MatchesView: UIView {
         case error
     }
 
-    private lazy var tableView: UITableView = {
-        let tableView = UITableView()
-        tableView.registerReusableCell(MatchTableViewCell.self)
-        tableView.backgroundColor = .primaryBackground
-        tableView.separatorStyle = .none
-        tableView.delegate = self
-        tableView.dataSource = self
+    private lazy var tableViewDataSource = MatchesTableViewDataSource(tableView: tableView, delegate: self)
 
-        return tableView
+    private let topLineView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .primaryBackground
+
+        return view
     }()
 
+    private let tableView = UITableView()
     private let loadinView = LoadingView()
     private let emptyStateView = EmptyStateView(message: Strings.matchNotFound)
     private let errorView = ErrorView(message: Strings.matchesNotLoaded)
-
-    private var matchViewModels: [MatchViewModel] = [] {
-        didSet {
-            DispatchQueue.main.async { [weak self] in
-                self?.tableView.reloadData()
-            }
-        }
-    }
 
     weak var delegate: MatchesViewDelegate?
 
@@ -55,8 +47,15 @@ final class MatchesView: UIView {
     }
 
     private func setupConstraints() {
+        addSubview(topLineView, constraints: [
+            topLineView.topAnchor.constraint(equalTo: layoutMarginsGuide.topAnchor, constant: 16),
+            topLineView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            topLineView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            topLineView.heightAnchor.constraint(equalToConstant: 1)
+        ])
+
         addSubview(tableView, constraints: [
-            tableView.topAnchor.constraint(equalTo: layoutMarginsGuide.topAnchor, constant: 16),
+            tableView.topAnchor.constraint(equalTo: topLineView.bottomAnchor),
             tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: bottomAnchor)
@@ -97,7 +96,7 @@ extension MatchesView: MatchesViewLogic {
             loadinView.isHidden = true
             emptyStateView.isHidden = true
             errorView.isHidden = true
-            matchViewModels = viewModels
+            tableViewDataSource.matchViewModels = viewModels
         case .loading:
             tableView.isHidden = true
             loadinView.isHidden = false
@@ -117,34 +116,16 @@ extension MatchesView: MatchesViewLogic {
     }
 }
 
-extension MatchesView: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        delegate?.matchesViewDidSelectMatch(viewModel: matchViewModels[indexPath.row])
+extension MatchesView: MatchesTableViewDataSourceDelegate {
+    func matchesTableViewDidSelectMatch(viewModel: MatchViewModel) {
+        delegate?.matchesViewDidSelectMatch(viewModel: viewModel)
     }
 
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let offsetY = scrollView.contentOffset.y
-        guard offsetY > 0 else { return }
-
-        let contentSize = tableView.contentSize.height - 50
-        let scrollHeight = scrollView.frame.size.height
-
-        if offsetY > contentSize - scrollHeight {
-            delegate?.matchesViewDidTableViewScrollEnded()
-        }
-    }
-}
-
-extension MatchesView: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        matchViewModels.count
+    func matchesTableViewDidScrollEnded() {
+        delegate?.matchesViewDidScrollEnded()
     }
 
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let matchTableViewCell: MatchTableViewCell = tableView.dequeueReusableCell(indexPath: indexPath)
-        let viewModel = matchViewModels[indexPath.row]
-        matchTableViewCell.setup(viewModel)
-
-        return matchTableViewCell
+    func matchesTableViewDidPullToRefresh() {
+        delegate?.matchesViewDidPullToRefresh()
     }
 }

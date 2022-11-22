@@ -1,6 +1,9 @@
+import Foundation
+
 protocol MatchesViewModelLogic {
     func fetchMatches()
     func fetchMoreMatches()
+    func refreshMatches()
 }
 
 final class MatchesViewModel {
@@ -106,7 +109,6 @@ final class MatchesViewModel {
 extension MatchesViewModel: MatchesViewModelLogic {
     func fetchMatches() {
         display?.displayState(.loading)
-        setupInitialState()
         fetchRunningMatches()
     }
 
@@ -118,5 +120,10 @@ extension MatchesViewModel: MatchesViewModelLogic {
             isContinueUpcomePagination = false
             fetchUpcomingMatches()
         }
+    }
+
+    func refreshMatches() {
+        setupInitialState()
+        fetchRunningMatches()
     }
 }

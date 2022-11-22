@@ -53,7 +53,6 @@ extension Date {
     }
 }
 
-
 extension Calendar {
   private var currentDate: Date { return Date() }
 

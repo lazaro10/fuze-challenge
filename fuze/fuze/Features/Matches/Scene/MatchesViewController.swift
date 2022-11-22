@@ -38,16 +38,22 @@ final class MatchesViewController: UIViewController {
 
 extension MatchesViewController: MatchesViewControllerDisplayble {
     func displayState(_ state: MatchesView.State) {
-        contentView.changeState(state)
+        DispatchQueue.main.async { [weak self] in
+            self?.contentView.changeState(state)
+        }
     }
 }
 
 extension MatchesViewController: MatchesViewDelegate {
-    func matchesViewDidTableViewScrollEnded() {
+    func matchesViewDidSelectMatch(viewModel: MatchViewModel) {
+        coordinator.showMatchDetail(viewModel: viewModel)
+    }
+
+    func matchesViewDidScrollEnded() {
         viewModel.fetchMoreMatches()
     }
 
-    func matchesViewDidSelectMatch(viewModel: MatchViewModel) {
-        coordinator.showMatchDetail(viewModel: viewModel)
+    func matchesViewDidPullToRefresh() {
+        viewModel.refreshMatches()
     }
 }
