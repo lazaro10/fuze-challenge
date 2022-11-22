@@ -13,16 +13,12 @@ final class MatchesRepository: MatchesRepositoryLogic {
     func fetchRunningMatches(page: Int, completion: @escaping (Result<[MatchModel], Error>) -> Void) {
         let request = MatchesNetworkRequest.running(page: page)
 
-        network.request(request) { (result: Result<[MatchModel], Error>) in
-            completion(result)
-        }
+        network.request(request, completion: completion)
     }
 
     func fetchUpcomingMatches(page: Int, completion: @escaping (Result<[MatchModel], Error>) -> Void) {
         let request = MatchesNetworkRequest.upcoming(page: page)
 
-        network.request(request) { (result: Result<[MatchModel], Error>) in
-            completion(result)
-        }
+        network.request(request, completion: completion)
     }
 }

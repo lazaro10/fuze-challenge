@@ -24,7 +24,7 @@ struct MatchesConverter: MatchesConverterLogic {
             case .canceled:
                 matchTime = Strings.canceled
             default:
-                matchTime = $0.beginAt.toMatchDate()
+                matchTime = ($0.beginAt ?? "").toMatchDate()
             }
 
             return MatchViewModel(

@@ -2,7 +2,7 @@ import Foundation
 
 struct MatchModel: Decodable {
     let id: Int
-    let beginAt: String
+    let beginAt: String?
     let opponents: [Opponent]
     let league: League
     let serie: Serie
@@ -17,17 +17,6 @@ struct MatchModel: Decodable {
         case status
     }
 
-    init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-
-        id = try container.decode(Int.self, forKey: .id)
-        beginAt = (try? container.decode(String.self, forKey: .beginAt)) ?? ""
-        opponents = try container.decode(Array.self, forKey: .opponents)
-        league = try container.decode(League.self, forKey: .league)
-        serie = try container.decode(Serie.self, forKey: .serie)
-        status = try container.decode(Status.self, forKey: .status)
-    }
-
     struct Opponent: Decodable {
         let opponent: OpponentData?
 
@@ -38,13 +27,6 @@ struct MatchModel: Decodable {
             private enum CodingKeys: String, CodingKey {
                 case name
                 case imageUrl = "image_url"
-            }
-
-            init(from decoder: Decoder) throws {
-                let container = try decoder.container(keyedBy: CodingKeys.self)
-
-                name = try container.decode(String.self, forKey: .name)
-                imageUrl = (try? container.decode(URL.self, forKey: .imageUrl)) ?? nil
             }
         }
     }
@@ -57,13 +39,6 @@ struct MatchModel: Decodable {
             case name
             case imageUrl = "image_url"
         }
-
-        init(from decoder: Decoder) throws {
-            let container = try decoder.container(keyedBy: CodingKeys.self)
-
-            name = try container.decode(String.self, forKey: .name)
-            imageUrl = (try? container.decode(URL.self, forKey: .imageUrl)) ?? nil
-        }
     }
 
     struct Serie: Decodable {
@@ -71,12 +46,6 @@ struct MatchModel: Decodable {
 
         private enum CodingKeys: String, CodingKey {
             case fullName = "full_name"
-        }
-
-        init(from decoder: Decoder) throws {
-            let container = try decoder.container(keyedBy: CodingKeys.self)
-
-            fullName = try container.decode(String.self, forKey: .fullName)
         }
     }
 

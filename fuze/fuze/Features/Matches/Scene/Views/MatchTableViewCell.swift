@@ -10,7 +10,7 @@ struct MatchViewModel {
 }
 
 final class MatchTableViewCell: UITableViewCell, Reusable {
-    private let backGroundView: UIView = {
+    private let matchBackgroundView: UIView = {
         let view = UIView()
         view.backgroundColor = .secondaryBackground
         view.layer.cornerRadius = 16
@@ -78,16 +78,16 @@ final class MatchTableViewCell: UITableViewCell, Reusable {
     }
 
     private func setupConstraints() {
-        contentView.addSubview(backGroundView, constraints: [
-            backGroundView.topAnchor.constraint(equalTo: contentView.topAnchor),
-            backGroundView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 24),
-            backGroundView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -24),
-            backGroundView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -24)
+        contentView.addSubview(matchBackgroundView, constraints: [
+            matchBackgroundView.topAnchor.constraint(equalTo: contentView.topAnchor),
+            matchBackgroundView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 24),
+            matchBackgroundView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -24),
+            matchBackgroundView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -24)
         ])
 
-        backGroundView.addSubview(matchTimeView, constraints: [
-            matchTimeView.topAnchor.constraint(equalTo: backGroundView.topAnchor),
-            matchTimeView.trailingAnchor.constraint(equalTo: backGroundView.trailingAnchor),
+        matchBackgroundView.addSubview(matchTimeView, constraints: [
+            matchTimeView.topAnchor.constraint(equalTo: matchBackgroundView.topAnchor),
+            matchTimeView.trailingAnchor.constraint(equalTo: matchBackgroundView.trailingAnchor),
             matchTimeView.heightAnchor.constraint(equalToConstant: 25)
         ])
 
@@ -97,27 +97,27 @@ final class MatchTableViewCell: UITableViewCell, Reusable {
             matchTimeLabel.trailingAnchor.constraint(equalTo: matchTimeView.trailingAnchor, constant: -8)
         ])
 
-        backGroundView.addSubview(confrontationView, constraints: [
+        matchBackgroundView.addSubview(confrontationView, constraints: [
             confrontationView.topAnchor.constraint(equalTo: matchTimeView.bottomAnchor, constant: 18),
-            confrontationView.centerXAnchor.constraint(equalTo: backGroundView.centerXAnchor)
+            confrontationView.centerXAnchor.constraint(equalTo: matchBackgroundView.centerXAnchor)
         ])
 
-        backGroundView.addSubview(separatorLineView, constraints: [
+        matchBackgroundView.addSubview(separatorLineView, constraints: [
             separatorLineView.topAnchor.constraint(equalTo: confrontationView.bottomAnchor, constant: 18),
-            separatorLineView.leadingAnchor.constraint(equalTo: backGroundView.leadingAnchor),
-            separatorLineView.trailingAnchor.constraint(equalTo: backGroundView.trailingAnchor),
+            separatorLineView.leadingAnchor.constraint(equalTo: matchBackgroundView.leadingAnchor),
+            separatorLineView.trailingAnchor.constraint(equalTo: matchBackgroundView.trailingAnchor),
             separatorLineView.heightAnchor.constraint(equalToConstant: 1)
         ])
 
-        backGroundView.addSubview(leagueImageView, constraints: [
+        matchBackgroundView.addSubview(leagueImageView, constraints: [
             leagueImageView.topAnchor.constraint(equalTo: separatorLineView.bottomAnchor, constant: 8),
-            leagueImageView.leadingAnchor.constraint(equalTo: backGroundView.leadingAnchor, constant: 16),
-            leagueImageView.bottomAnchor.constraint(equalTo: backGroundView.bottomAnchor, constant: -8),
+            leagueImageView.leadingAnchor.constraint(equalTo: matchBackgroundView.leadingAnchor, constant: 16),
+            leagueImageView.bottomAnchor.constraint(equalTo: matchBackgroundView.bottomAnchor, constant: -8),
             leagueImageView.widthAnchor.constraint(equalToConstant: 16),
             leagueImageView.heightAnchor.constraint(equalToConstant: 16)
         ])
 
-        backGroundView.addSubview(leagueSerieLabel, constraints: [
+        matchBackgroundView.addSubview(leagueSerieLabel, constraints: [
             leagueSerieLabel.leadingAnchor.constraint(equalTo: leagueImageView.trailingAnchor, constant: 8),
             leagueSerieLabel.centerYAnchor.constraint(equalTo: leagueImageView.centerYAnchor)
         ])

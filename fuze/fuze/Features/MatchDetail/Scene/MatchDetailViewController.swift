@@ -26,7 +26,12 @@ final class MatchDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        contentView.changeState(.content(matchViewModel: viewModel))
+        let left = PlayersViewModel(imageURL: nil, nickname: "Artorias", name: "Lázaro", side: .left)
+        let right = PlayersViewModel(imageURL: nil, nickname: "Artorias", name: "Lázaro", side: .right)
+        contentView.changeState(.content(
+            matchViewModel: viewModel,
+            leftPlayersViewModels: [left, left, left, left, left, left],
+            rightPlayersViewModels: [right, right, right, right, right])
+        )
     }
 }
