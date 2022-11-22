@@ -9,4 +9,5 @@ extension UIColor {
     static let primaryRed = UIColor(named: "primary-red")
     static let secondaryRed = UIColor(named: "secondary-red")
     static let primaryWhite = UIColor(named: "primary-white")
+    static let primaryBlue = UIColor(named: "primary-blue")
 }

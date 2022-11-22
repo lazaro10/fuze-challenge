@@ -61,7 +61,7 @@ final class MatchTableViewCell: UITableViewCell, Reusable {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
 
-        setupConstraint()
+        setupConstraints()
         setupLayout()
     }
 
@@ -77,7 +77,7 @@ final class MatchTableViewCell: UITableViewCell, Reusable {
         leagueImageView.setImage(viewModel.leagueImageURL, placeholder: .placeholderCircleSmall)
     }
 
-    private func setupConstraint() {
+    private func setupConstraints() {
         contentView.addSubview(backGroundView, constraints: [
             backGroundView.topAnchor.constraint(equalTo: contentView.topAnchor),
             backGroundView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 24),

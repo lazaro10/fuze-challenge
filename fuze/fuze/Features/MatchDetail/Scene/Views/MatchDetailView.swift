@@ -6,19 +6,29 @@ protocol MatchDetailViewLogic: UIView {
 
 final class MatchDetailView: UIView {
     enum State {
-        case content(matchViewModel: MatchViewModel)
+        case content(matchViewModel: MatchViewModel, playersViewModels: [PlayersViewModel])
         case loading
-        case error
     }
 
-    private let titleLabel: UILabel = {
-        let label = UILabel()
-        label.font = .robotoMeidum(size: 18)
-        label.textAlignment = .center
-        label.numberOfLines = 0
+    private var playersViewModels: [PlayersViewModel] = [] {
+        didSet {
+            tableView.reloadData()
+        }
+    }
 
-        return label
+    private let headerView = MatchDetailHeaderView()
+
+    private lazy var tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.registerReusableCell(PlayersTableViewCell.self)
+        tableView.backgroundColor = .primaryBackground
+        tableView.separatorStyle = .none
+        tableView.dataSource = self
+
+        return tableView
     }()
+
+    private let loadingView = LoadingView()
 
     init() {
         super.init(frame: .zero)
@@ -32,10 +42,17 @@ final class MatchDetailView: UIView {
     }
 
     private func setupConstraints() {
-        addSubview(titleLabel, constraints: [
-            titleLabel.topAnchor.constraint(equalTo: layoutMarginsGuide.topAnchor, constant: -24),
-            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16)
+        addSubview(headerView, constraints: [
+            headerView.topAnchor.constraint(equalTo: layoutMarginsGuide.topAnchor, constant: -24),
+            headerView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            headerView.trailingAnchor.constraint(equalTo: trailingAnchor)
+        ])
+
+        addSubview(tableView, constraints: [
+            tableView.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: 16),
+            tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            tableView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }
 
@@ -47,12 +64,29 @@ final class MatchDetailView: UIView {
 extension MatchDetailView: MatchDetailViewLogic {
     func changeState(_ state: State) {
         switch state {
-        case .content(let viewModel):
-            titleLabel.text = viewModel.leagueSerie
+        case let .content(matchViewModel, playersViewModels):
+            headerView.isHidden = false
+            tableView.isHidden = false
+            loadingView.isHidden = true
+            headerView.setup(viewModel: matchViewModel)
+            self.playersViewModels = playersViewModels
         case .loading:
-            break
-        case .error:
-            break
+            headerView.isHidden = true
+            tableView.isHidden = true
+            loadingView.isHidden = false
         }
+    }
+}
+
+extension MatchDetailView: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        playersViewModels.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let matchTableViewCell: PlayersTableViewCell = tableView.dequeueReusableCell(indexPath: indexPath)
+        matchTableViewCell.setup(playersViewModels[indexPath.row])
+
+        return matchTableViewCell
     }
 }

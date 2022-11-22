@@ -86,6 +86,8 @@
 		A19F31D0292AC8D200EAABDE /* FuzeImagesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19F31CF292AC8D200EAABDE /* FuzeImagesTests.swift */; };
 		A19F31D3292ACA6800EAABDE /* DownloadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19F31D2292ACA6800EAABDE /* DownloadImage.swift */; };
 		A19F31D6292AD43E00EAABDE /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19F31D5292AD43E00EAABDE /* DateFormatter.swift */; };
+		A1A24349292D175F00A6EEEE /* PlayersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A24348292D175F00A6EEEE /* PlayersTableViewCell.swift */; };
+		A1A2434B292D373700A6EEEE /* MatchDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A2434A292D373700A6EEEE /* MatchDetailHeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -184,6 +186,8 @@
 		A19F31CF292AC8D200EAABDE /* FuzeImagesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuzeImagesTests.swift; sourceTree = "<group>"; };
 		A19F31D2292ACA6800EAABDE /* DownloadImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadImage.swift; sourceTree = "<group>"; };
 		A19F31D5292AD43E00EAABDE /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
+		A1A24348292D175F00A6EEEE /* PlayersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersTableViewCell.swift; sourceTree = "<group>"; };
+		A1A2434A292D373700A6EEEE /* MatchDetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchDetailHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -326,6 +330,8 @@
 			isa = PBXGroup;
 			children = (
 				A17BDED9292C19B6001BF682 /* MatchDetailView.swift */,
+				A1A2434A292D373700A6EEEE /* MatchDetailHeaderView.swift */,
+				A1A24348292D175F00A6EEEE /* PlayersTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -835,6 +841,7 @@
 				A1876A47292843DC006CE7C9 /* ApiProvider.swift in Sources */,
 				A1876A33292812E8006CE7C9 /* Coordinator.swift in Sources */,
 				A1876A3A29281FAD006CE7C9 /* BaseURLProvider.swift in Sources */,
+				A1A2434B292D373700A6EEEE /* MatchDetailHeaderView.swift in Sources */,
 				A17BDECF292BF50F001BF682 /* LoadingView.swift in Sources */,
 				A17BDEE4292C5AB5001BF682 /* MatchesTableViewDataSource.swift in Sources */,
 				A19F31BB292A82DA00EAABDE /* Reusable.swift in Sources */,
@@ -854,6 +861,7 @@
 				A17BDEE6292C6B19001BF682 /* MatchesConverter.swift in Sources */,
 				A17BDEDA292C19B6001BF682 /* MatchDetailView.swift in Sources */,
 				A19B687D2929703000145256 /* FuzeFonts.swift in Sources */,
+				A1A24349292D175F00A6EEEE /* PlayersTableViewCell.swift in Sources */,
 				A19F31C3292A8A9200EAABDE /* MatchTableViewCell.swift in Sources */,
 				A19B687229295DF600145256 /* MatchesBuilder.swift in Sources */,
 				A19B688D29297D2000145256 /* NetworkBuilder.swift in Sources */,
