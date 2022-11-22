@@ -15,11 +15,21 @@ final class MatchesViewModel {
     weak var display: MatchesViewControllerDisplayble?
 
     private let repository: MatchesRepositoryLogic
+    private let converter: MatchesConverterLogic
 
-    init(repository: MatchesRepositoryLogic) {
+    init(repository: MatchesRepositoryLogic, converter: MatchesConverterLogic) {
         self.repository = repository
+        self.converter = converter
     }
 
+    private func setupInitialState() {
+        runningMachesPage = 1
+        isContinueRunningPagination = true
+        upcomeMachesPage = 1
+        isContinueUpcomePagination = true
+        matches = []
+    }
+    
     private func fetchRunningMatches() {
         repository.fetchRunningMatches(page: runningMachesPage) { [weak self] result in
             guard let self = self else { return }
@@ -29,16 +39,13 @@ final class MatchesViewModel {
                 self.matches.append(contentsOf: matches)
                 self.runningMachesPage += 1
 
-                if matches.isEmpty {
+                if matches.count < 10 {
                     self.fetchUpcomingMatches()
                 } else {
-                    if matches.count == 10 {
-                        self.isContinueRunningPagination = true
-                        self.display?.displayState(.content(viewModels: self.convertMatches()))
-                    } else {
-                        self.fetchUpcomingMatches()
-                    }
+                    self.isContinueRunningPagination = true
+                    self.display?.displayState(.content(viewModels: self.converter.convert(self.matches)))
                 }
+
             case .failure:
                 self.fetchUpcomingMatches()
             }
@@ -56,14 +63,12 @@ final class MatchesViewModel {
                 self.matches.append(contentsOf: matches)
                 self.upcomeMachesPage += 1
 
-                if matches.isEmpty {
+                if matches.count < 10 && self.matches.isEmpty {
                     self.isContinueUpcomePagination = false
-                    if self.matches.isEmpty {
-                        self.display?.displayState(.empty)
-                    }
+                    self.display?.displayState(.empty)
                 } else {
                     self.isContinueUpcomePagination = true
-                    self.display?.displayState(.content(viewModels: self.convertMatches()))
+                    self.display?.displayState(.content(viewModels: self.converter.convert(self.matches)))
                 }
             case .failure:
                 self.isContinueUpcomePagination = false
@@ -73,39 +78,8 @@ final class MatchesViewModel {
             }
         }
     }
-
-    private func convertMatches() -> [MatchViewModel] {
-        let matchesFiltered = matches.filter {
-            $0.opponents.count == 2
-        }
-
-        return matchesFiltered.map {
-            let confrontationViewModel = ConfrontationOpponentsViewModel(
-                leftOpponentImageURL: $0.opponents[0].opponent?.imageUrl,
-                rightOpponentImageURL: $0.opponents[1].opponent?.imageUrl,
-                leftOpponentName: $0.opponents[0].opponent?.name ?? "",
-                rightOpponentName: $0.opponents[1].opponent?.name ?? ""
-            )
-
-            return MatchViewModel(
-                id: $0.id,
-                matchTime: $0.status == .running ? Strings.now : $0.beginAt.toMatchDate(),
-                matchTimeViewColor: $0.status == .running ? .primaryRed : .tertiaryGrey,
-                confrontationViewModel: confrontationViewModel,
-                leagueImageURL: $0.league.imageUrl,
-                leagueSerie: "\($0.league.name) | \($0.serie.fullName)"
-            )
-        }
-    }
-
-    private func setupInitialState() {
-        runningMachesPage = 1
-        isContinueRunningPagination = true
-        upcomeMachesPage = 1
-        isContinueUpcomePagination = true
-        matches = []
-    }
 }
+
 extension MatchesViewModel: MatchesViewModelLogic {
     func fetchMatches() {
         display?.displayState(.loading)

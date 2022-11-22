@@ -4,111 +4,118 @@ import XCTest
 final class MatchesViewModelTests: XCTestCase {
     private let matchesRepositorySpy = MatchesRepositorySpy()
     private let displaySpy = MatchesViewControllerDisplaySpy()
+    private let converterSpy = MatchesConverterSpy()
 
     lazy var sut: MatchesViewModel = {
-        let viewModel = MatchesViewModel(repository: matchesRepositorySpy)
+        let viewModel = MatchesViewModel(repository: matchesRepositorySpy, converter: converterSpy)
         viewModel.display = displaySpy
 
         return viewModel
     }()
 
-    func test_fetchMatches_givenRunningMatchesSuccess_givenMatchesIsEmpty_shouldShouldCallMatchesUpcome() {
-        matchesRepositorySpy.stubbedFetchRunningMatchesCompletionResult = .success([])
-
+    func test_fetchMatches_shouldFetchRunningMatches() {
         sut.fetchMatches()
 
         XCTAssertEqual(matchesRepositorySpy.invokedFetchRunningMatchesCount, 1)
         XCTAssertEqual(matchesRepositorySpy.invokedFetchRunningMatchesParameterPage, 1)
-        XCTAssertFalse(sut.isContinueRunningPagination)
-        XCTAssertEqual(sut.runningMachesPage, 2)
-        XCTAssertEqual(displaySpy.invokedDisplayStateCount, 1)
-        XCTAssertEqual(matchesRepositorySpy.invokedFetchUpcomingMatchesCount, 1)
     }
 
-    func test_fetchMatches_givenRunningMatchesSuccess_givenHave10Matches_shouldDisplayContentState() {
-        let matches = [MatchModel](repeating: .fixture(), count: 10)
-        matchesRepositorySpy.stubbedFetchRunningMatchesCompletionResult = .success(matches)
-
-        sut.fetchMatches()
-
-        XCTAssertEqual(matchesRepositorySpy.invokedFetchRunningMatchesCount, 1)
-        XCTAssertEqual(matchesRepositorySpy.invokedFetchRunningMatchesParameterPage, 1)
-        XCTAssertTrue(sut.isContinueRunningPagination)
-        XCTAssertEqual(sut.runningMachesPage, 2)
-        XCTAssertEqual(displaySpy.invokedDisplayStateCount, 2)
-
-        let viewModels = [MatchViewModel](repeating: .fixture(), count: 10)
-        XCTAssertEqual(displaySpy.invokedDisplayStateParameterState, .content(viewModels: viewModels))
-    }
-
-    func test_fetchMatches_givenRunningMatchesSuccess_giveHaveLessThan10Matches_shouldShouldCallMatchesUpcome() {
+    func test_fetchMatches_givenRunningMatchesSuccess_shouldAddAPageAndPopulateMatches() {
         matchesRepositorySpy.stubbedFetchRunningMatchesCompletionResult = .success([.fixture()])
 
         sut.fetchMatches()
 
-        XCTAssertEqual(matchesRepositorySpy.invokedFetchRunningMatchesCount, 1)
-        XCTAssertEqual(matchesRepositorySpy.invokedFetchRunningMatchesParameterPage, 1)
-        XCTAssertFalse(sut.isContinueRunningPagination)
         XCTAssertEqual(sut.runningMachesPage, 2)
-        XCTAssertEqual(displaySpy.invokedDisplayStateCount, 1)
+        XCTAssertEqual(sut.matches.count, 1)
+    }
+
+    func test_fetchMatches_givenRunningMatchesSuccess_givenMatchesLessThan10_shouldShouldCallMatchesUpcome() {
+        matchesRepositorySpy.stubbedFetchRunningMatchesCompletionResult = .success([])
+
+        sut.fetchMatches()
+
         XCTAssertEqual(matchesRepositorySpy.invokedFetchUpcomingMatchesCount, 1)
     }
 
-    func test_fetchMatches_givenFailure_shouldShouldCallMatchesUpcome() {
+    func test_fetchMatches_givenRunningMatchesSuccess_givenMatchesEqualTo10_shouldDisplayContentState() {
+        let matches = [MatchModel](repeating: .fixture(), count: 10)
+        matchesRepositorySpy.stubbedFetchRunningMatchesCompletionResult = .success(matches)
+
+        let viewModels = [MatchViewModel](repeating: .fixture(), count: 10)
+        converterSpy.stubbedConvertResult = viewModels
+
+        sut.fetchMatches()
+
+        XCTAssertEqual(displaySpy.invokedDisplayStateParameterState, .content(viewModels: viewModels))
+        XCTAssertEqual(displaySpy.invokedDisplayStateCount, 2)
+        XCTAssertEqual(converterSpy.invokedConvertCount, 1)
+        XCTAssertTrue(sut.isContinueRunningPagination)
+    }
+
+    func test_fetchMatches_givenRunningMatchesFailure_shouldShouldCallMatchesUpcome() {
         matchesRepositorySpy.stubbedFetchRunningMatchesCompletionResult = .failure(ErrorDummy.error)
 
         sut.fetchMatches()
 
-        XCTAssertEqual(matchesRepositorySpy.invokedFetchRunningMatchesCount, 1)
-        XCTAssertEqual(matchesRepositorySpy.invokedFetchRunningMatchesParameterPage, 1)
-        XCTAssertFalse(sut.isContinueRunningPagination)
-        XCTAssertEqual(sut.runningMachesPage, 1)
-        XCTAssertEqual(displaySpy.invokedDisplayStateCount, 1)
         XCTAssertEqual(matchesRepositorySpy.invokedFetchUpcomingMatchesCount, 1)
     }
 
-    func test_fetchMatches_givenCallMatchesUpcome_givenSuccess_givenMatchesIsEmpty_shouldDisplayEmptyState() {
-        matchesRepositorySpy.stubbedFetchRunningMatchesCompletionResult = .success([])
-        matchesRepositorySpy.stubbedFetchUpcomingMatchesCompletionResult = .success([])
+    func test_fetchMatches_givenFetchUpcomeMatches_shouldFetchUpcomeMatches() {
+        matchesRepositorySpy.stubbedFetchRunningMatchesCompletionResult = .failure(ErrorDummy.error)
 
         sut.fetchMatches()
 
-        XCTAssertEqual(matchesRepositorySpy.invokedFetchRunningMatchesCount, 1)
         XCTAssertEqual(matchesRepositorySpy.invokedFetchUpcomingMatchesCount, 1)
         XCTAssertEqual(matchesRepositorySpy.invokedFetchUpcomingMatchesParameterPage, 1)
-        XCTAssertFalse(sut.isContinueUpcomePagination)
-        XCTAssertEqual(displaySpy.invokedDisplayStateCount, 2)
-        XCTAssertEqual(displaySpy.invokedDisplayStateParameterState, .empty)
     }
 
-    func test_fetchMatches_givenCallMatchesUpcome_givenSuccess_shouldDisplayContentState() {
-        matchesRepositorySpy.stubbedFetchRunningMatchesCompletionResult = .success([])
+    func test_fetchMatches_givenFetchUpcomeMatchesSuccess_shouldAddAPageAndPopulateMatches() {
+        matchesRepositorySpy.stubbedFetchRunningMatchesCompletionResult = .failure(ErrorDummy.error)
         matchesRepositorySpy.stubbedFetchUpcomingMatchesCompletionResult = .success([.fixture()])
 
         sut.fetchMatches()
 
-        XCTAssertEqual(matchesRepositorySpy.invokedFetchRunningMatchesCount, 1)
-        XCTAssertEqual(matchesRepositorySpy.invokedFetchUpcomingMatchesCount, 1)
-        XCTAssertEqual(matchesRepositorySpy.invokedFetchUpcomingMatchesParameterPage, 1)
-        XCTAssertFalse(sut.isContinueRunningPagination)
-        XCTAssertTrue(sut.isContinueUpcomePagination)
-        XCTAssertEqual(displaySpy.invokedDisplayStateCount, 2)
-        XCTAssertEqual(displaySpy.invokedDisplayStateParameterState, .content(viewModels: [.fixture()]))
+        XCTAssertEqual(sut.upcomeMachesPage, 2)
+        XCTAssertEqual(sut.matches.count, 1)
     }
 
-    func test_fetchMatches_givenCallMatchesUpcome_givenFailure_givenMatchIsEmpry_shouldDisplayErrorState() {
-        matchesRepositorySpy.stubbedFetchRunningMatchesCompletionResult = .success([])
+    func test_fetchMatches_givenFetchUpcomeMatchesSuccessEmpty_givenMatchesLessThan10_shouldDisplayEmptyState() {
+        matchesRepositorySpy.stubbedFetchRunningMatchesCompletionResult = .failure(ErrorDummy.error)
+        matchesRepositorySpy.stubbedFetchUpcomingMatchesCompletionResult = .success([])
+
+        sut.fetchMatches()
+
+        XCTAssertFalse(sut.isContinueUpcomePagination)
+        XCTAssertEqual(displaySpy.invokedDisplayStateParameterState, .empty)
+        XCTAssertEqual(displaySpy.invokedDisplayStateCount, 2)
+    }
+
+
+    func test_fetchMatches_givenFetchUpcomeMatchesSuccess_givenMatchesEqualTo10_shouldDisplayContentState() {
+        matchesRepositorySpy.stubbedFetchRunningMatchesCompletionResult = .failure(ErrorDummy.error)
+
+        let matches = [MatchModel](repeating: .fixture(), count: 10)
+        matchesRepositorySpy.stubbedFetchUpcomingMatchesCompletionResult = .success(matches)
+
+        let viewModels = [MatchViewModel](repeating: .fixture(), count: 10)
+        converterSpy.stubbedConvertResult = viewModels
+
+        sut.fetchMatches()
+
+        XCTAssertTrue(sut.isContinueUpcomePagination)
+        XCTAssertEqual(displaySpy.invokedDisplayStateParameterState, .content(viewModels: viewModels))
+        XCTAssertEqual(displaySpy.invokedDisplayStateCount, 2)
+    }
+
+    func test_fetchMatches_givenFetchUpcomeMatchesFailure_givenMatchesIsEmpty_shouldDisplayErrorState() {
+        matchesRepositorySpy.stubbedFetchRunningMatchesCompletionResult = .failure(ErrorDummy.error)
         matchesRepositorySpy.stubbedFetchUpcomingMatchesCompletionResult = .failure(ErrorDummy.error)
 
         sut.fetchMatches()
 
-        XCTAssertEqual(matchesRepositorySpy.invokedFetchRunningMatchesCount, 1)
-        XCTAssertEqual(matchesRepositorySpy.invokedFetchUpcomingMatchesCount, 1)
-        XCTAssertEqual(matchesRepositorySpy.invokedFetchUpcomingMatchesParameterPage, 1)
-        XCTAssertFalse(sut.isContinueRunningPagination)
         XCTAssertFalse(sut.isContinueUpcomePagination)
-        XCTAssertEqual(displaySpy.invokedDisplayStateCount, 2)
         XCTAssertEqual(displaySpy.invokedDisplayStateParameterState, .error)
+        XCTAssertEqual(displaySpy.invokedDisplayStateCount, 2)
     }
 
     func test_fetchMoreMatches_givenIsContinueRunningPaginationTrue_shouldFetchRunningMatches() {
@@ -135,5 +142,16 @@ final class MatchesViewModelTests: XCTestCase {
         XCTAssertEqual(matchesRepositorySpy.invokedFetchRunningMatchesParameterPage, 1)
         XCTAssertEqual(matchesRepositorySpy.invokedFetchUpcomingMatchesCount, 2)
         XCTAssertEqual(matchesRepositorySpy.invokedFetchUpcomingMatchesParameterPage, 2)
+    }
+
+    func test_refreshMatches_shouldSetInitialStateAndFetchRunningMatches() {
+        sut.refreshMatches()
+
+        XCTAssertEqual(sut.runningMachesPage, 1)
+        XCTAssertTrue(sut.isContinueRunningPagination)
+        XCTAssertEqual(sut.upcomeMachesPage, 1)
+        XCTAssertTrue(sut.isContinueUpcomePagination)
+        XCTAssertEqual(sut.matches.count, 0)
+        XCTAssertEqual(matchesRepositorySpy.invokedFetchRunningMatchesCount, 1)
     }
 }
