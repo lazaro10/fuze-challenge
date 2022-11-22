@@ -16,8 +16,8 @@ struct Localizable {
 enum Strings {
     @Localizable static var matches = "matches"
     @Localizable static var now = "now"
+    @Localizable static var canceled = "canceled"
     @Localizable static var tryAgain = "tryAgain"
     @Localizable static var matchNotFound = "matchNotFound"
     @Localizable static var matchesNotLoaded = "matchesNotLoaded"
-
 }

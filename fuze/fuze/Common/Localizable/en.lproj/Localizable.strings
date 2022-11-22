@@ -1,5 +1,6 @@
 "matches" = "Matches";
 "now" = "NOW";
+"canceled" = "Canceled";
 "tryAgain" = "Try again";
 "matchNotFound" = "We couldn't find any matches at this time.";
 "matchesNotLoaded" = "We were unable to load the matches, please try again.";

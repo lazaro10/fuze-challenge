@@ -74,6 +74,7 @@ final class ConfrontationOpponentsView: UIView {
         addSubview(leftOpponentLabel, constraints: [
             leftOpponentLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
             leftOpponentLabel.trailingAnchor.constraint(equalTo: versusLabel.leadingAnchor, constant: -20),
+            leftOpponentLabel.widthAnchor.constraint(greaterThanOrEqualToConstant: 60),
             leftOpponentLabel.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
 
@@ -88,6 +89,7 @@ final class ConfrontationOpponentsView: UIView {
         addSubview(rightOpponentLabel, constraints: [
             rightOpponentLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
             rightOpponentLabel.leadingAnchor.constraint(equalTo: versusLabel.trailingAnchor, constant: 20),
+            rightOpponentLabel.widthAnchor.constraint(greaterThanOrEqualToConstant: 60),
             rightOpponentLabel.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
 

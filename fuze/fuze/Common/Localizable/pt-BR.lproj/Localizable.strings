@@ -1,5 +1,6 @@
 "matches" = "Partidas";
 "now" = "AGORA";
+"canceled" = "Cancelado";
 "tryAgain" = "Tentar novamente";
 "matchNotFound" = "Não encontramos nenhuma partida neste momento.";
 "matchesNotLoaded" = "Não conseguimos carregar as partidas, por favor, tente novamente.";
