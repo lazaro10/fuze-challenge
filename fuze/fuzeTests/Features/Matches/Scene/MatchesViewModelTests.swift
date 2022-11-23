@@ -6,7 +6,7 @@ final class MatchesViewModelTests: XCTestCase {
     private let displaySpy = MatchesViewControllerDisplaySpy()
     private let converterSpy = MatchesConverterSpy()
 
-    lazy var sut: MatchesViewModel = {
+    private lazy var sut: MatchesViewModel = {
         let viewModel = MatchesViewModel(repository: matchesRepositorySpy, converter: converterSpy)
         viewModel.display = displaySpy
 
