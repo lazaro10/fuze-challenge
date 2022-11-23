@@ -53,7 +53,7 @@ final class PlayerTableViewCell: UITableViewCell, Reusable {
     func setup<ViewModel>(_ viewModel: ViewModel) {
         guard let viewModel = viewModel as? PlayerViewModel else { return }
 
-        playerImageView.donwload.setImage(viewModel.imageURL, placeholder: .placeholderRounded)
+      //  playerImageView.donwload.setImage(viewModel.imageURL, placeholder: .placeholderRounded)
         nicknameLabel.text = viewModel.nickname
         nameLabel.text = viewModel.name
 
