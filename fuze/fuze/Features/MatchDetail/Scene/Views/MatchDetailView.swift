@@ -28,6 +28,7 @@ final class MatchDetailView: UIView {
 
         setupConstraints()
         setupLayout()
+        changeState(.loading)
     }
 
     required init?(coder: NSCoder) {
@@ -78,12 +79,14 @@ extension MatchDetailView: MatchDetailViewLogic {
     func setMatch(_ viewModel: MatchViewModel) {
         headerView.setup(viewModel: viewModel)
 
-        let leftPlayersView = PlayersBuilder.build(teamId: viewModel.confrontationViewModel.leftOpponentId, alignment: .left)
-        let rightPlayersView = PlayersBuilder.build(teamId: viewModel.confrontationViewModel.rightOpponentId, alignment: .right)
+        let leftPlayersViewController = PlayersBuilder.build(teamId: viewModel.confrontationViewModel.leftOpponentId, alignment: .left)
+        let rightPlayersViewController = PlayersBuilder.build(teamId: viewModel.confrontationViewModel.rightOpponentId, alignment: .right)
 
-        stackView.addArrangedSubview(leftPlayersView.view)
-        stackView.addArrangedSubview(rightPlayersView.view)
+        stackView.addArrangedSubview(leftPlayersViewController.view)
+        stackView.addArrangedSubview(rightPlayersViewController.view)
 
-        changeState(.content)
+        rightPlayersViewController.loadedPlayersHandle = { [weak self] in
+            self?.changeState(.content)
+        }
     }
 }

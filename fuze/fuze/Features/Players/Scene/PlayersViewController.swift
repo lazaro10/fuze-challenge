@@ -6,6 +6,8 @@ protocol PlayersViewControllerDisplayble: AnyObject {
 }
 
 final class PlayersViewController: UIViewController {
+    var loadedPlayersHandle: (() -> Void)?
+
     private let viewModel: PlayersViewModelLogic
     private let contentView: PlayersViewLogic
 
@@ -35,6 +37,7 @@ extension PlayersViewController: PlayersViewControllerDisplayble {
     func displayPlayers(_ viewModels: [PlayerViewModel]) {
         DispatchQueue.main.async { [weak self] in
             self?.contentView.updatePlayers(viewModels: viewModels)
+            self?.loadedPlayersHandle?()
         }
     }
 
