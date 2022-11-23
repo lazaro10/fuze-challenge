@@ -2,11 +2,13 @@
 
 extension ConfrontationOpponentsViewModel {
     static func fixture() -> ConfrontationOpponentsViewModel {
-        .init(
+        ConfrontationOpponentsViewModel(
             leftOpponentImageURL: nil,
             rightOpponentImageURL: nil,
-            leftOpponentName: "Anonymo",
-            rightOpponentName: "SKADE X"
+            leftOpponentName: "180mgkoffein",
+            rightOpponentName: "SKADE X",
+            leftOpponentId: 3454,
+            rightOpponentId: 4543
         )
     }
 }

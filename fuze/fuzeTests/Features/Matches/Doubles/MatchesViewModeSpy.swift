@@ -19,4 +19,12 @@ final class MatchesViewModeSpy: MatchesViewModelLogic {
     func refreshMatches() {
         invokedRefreshMatchesCount += 1
     }
+
+    var invokedSelectMatchCount = 0
+    var invokedSelectMatchParameterIndex: Int?
+
+    func selectMatch(index: Int) {
+        invokedSelectMatchCount += 1
+        invokedSelectMatchParameterIndex = index
+    }
 }

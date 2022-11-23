@@ -2,12 +2,20 @@
 import Foundation
 
 final class MatchesViewControllerDisplaySpy: MatchesViewControllerDisplayble {
-    var invokedDisplayStateCount = 0
-    var invokedDisplayStateParameterState: MatchesView.State?
+    private(set) var invokedDisplayStateCount = 0
+    private(set) var invokedDisplayStateParameterState: MatchesView.State?
 
     func displayState(_ state: MatchesView.State) {
         invokedDisplayStateCount += 1
         invokedDisplayStateParameterState = state
+    }
+
+    private(set) var invokedDisplayMatchDetailCount = 0
+    private(set) var invokedDisplayMatchDetailParameterMatchViewModel: MatchViewModel?
+
+    func displayMatchDetail(matchViewModel: MatchViewModel) {
+        invokedDisplayMatchDetailCount += 1
+        invokedDisplayMatchDetailParameterMatchViewModel = matchViewModel
     }
 }
 

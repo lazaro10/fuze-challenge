@@ -47,11 +47,18 @@ final class MatchesViewControllerTests: XCTestCase {
         XCTAssertEqual(contentViewSpy.invokedChangeStateParameterState, .error)
     }
 
-    func test_matchesViewDidSelectMatch_whenCalled_shouldShowMatchDetail() {
-        sut.matchesViewDidSelectMatch(viewModel: .fixture())
+    func test_displayMatchDetail_whenCalled_shouldShowMatchDetail() {
+        sut.displayMatchDetail(matchViewModel: .fixture())
 
         XCTAssertEqual(coordinatorSpy.invokedShowMatchDetailCount, 1)
-        XCTAssertEqual(coordinatorSpy.invokedShowMatchDetailParameterViewModel?.id, 20)
+        XCTAssertEqual(coordinatorSpy.invokedShowMatchDetailParameterMatchViewModel, .fixture())
+    }
+
+    func test_matchesViewDidSelectMatch_whenCalled_shouldSelectMatch() {
+        sut.matchesViewDidSelectMatch(index: 3)
+
+        XCTAssertEqual(viewModelSpy.invokedSelectMatchCount, 1)
+        XCTAssertEqual(viewModelSpy.invokedSelectMatchParameterIndex, 3)
     }
 
     func test_matchesViewDidScrollEnded_whenCalled_shouldFetchMoreMatches() {

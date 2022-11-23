@@ -4,11 +4,12 @@ extension MatchViewModel {
     static func fixture() -> MatchViewModel {
         .init(
             id: 20,
-            matchTime: "22.04 15:00",
+            matchTime: "Sun 06:30",
             matchTimeViewColor: nil,
             confrontationViewModel: .fixture(),
             leagueImageURL: nil,
-            leagueSerie: "Season 6 2022"
+            leagueSerie: "Closed Qualifier Season 6 2022"
         )
     }
 }
+

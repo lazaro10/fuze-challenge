@@ -1,6 +1,6 @@
 import UIKit
 
-struct MatchViewModel {
+struct MatchViewModel: Equatable {
     let id: Int
     let matchTime: String
     let matchTimeViewColor: UIColor?

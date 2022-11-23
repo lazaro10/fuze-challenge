@@ -3,10 +3,10 @@ import Foundation
 
 final class MatchesCoordinatorSpy: MatchesCoordinatorLogic {
     private(set) var invokedShowMatchDetailCount = 0
-    private(set) var invokedShowMatchDetailParameterViewModel: MatchViewModel?
+    private(set) var invokedShowMatchDetailParameterMatchViewModel: MatchViewModel?
 
-    func showMatchDetail(viewModel: MatchViewModel) {
+    func showMatchDetail(matchViewModel: MatchViewModel) {
         invokedShowMatchDetailCount += 1
-        invokedShowMatchDetailParameterViewModel = viewModel
+        invokedShowMatchDetailParameterMatchViewModel = matchViewModel
     }
 }

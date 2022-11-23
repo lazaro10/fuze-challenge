@@ -1,6 +1,6 @@
 import UIKit
 
-struct ConfrontationOpponentsViewModel {
+struct ConfrontationOpponentsViewModel: Equatable {
     let leftOpponentImageURL: URL?
     let rightOpponentImageURL: URL?
     let leftOpponentName: String
