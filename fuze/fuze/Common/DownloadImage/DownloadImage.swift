@@ -19,7 +19,7 @@ final class DownloadImage {
             return
         }
 
-        networkDownload.loadData(url: url) { [weak self] result in
+        NetworkDownload.shared.loadData(url: url) { [weak self] result in
             switch result {
             case .success(let data):
                 if !Thread.isMainThread {
@@ -33,6 +33,7 @@ final class DownloadImage {
                 break
             }
         }
+
     }
 }
 

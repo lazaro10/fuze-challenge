@@ -4,5 +4,6 @@ enum NetworkDownloadBuilder {
         let cacheManager = CacheManager(fileManager: FileManagerProvider())
 
         return NetworkDownload(session: session, cacheManager: cacheManager)
+     //   return NetworkDownload(session: session, fileManagerProvdider: FileManagerProvider())
     }
 }

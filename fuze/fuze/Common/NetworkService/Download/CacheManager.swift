@@ -21,7 +21,7 @@ final class CacheManager: CacheManagerLogic {
                 try fileManager.removeItem(url: file)
             }
 
-            memoryCache[file.path] = data
+         //   memoryCache[file.path] = data
 
             try fileManager.copyItem(srcURL: data, dstURL: file)
         }
@@ -29,11 +29,11 @@ final class CacheManager: CacheManagerLogic {
 
     func get(url: URL) throws -> Data  {
         let file = fileManager.appendingPathComponent(url.lastPathComponent, isDirectory: false)
-
-        if let memoryData = memoryCache[file.path] {
-            return try Data(contentsOf: memoryData)
-        } else {
-            return try Data(contentsOf: file)
-        }
+        return try Data(contentsOf: file)
+//        if let memoryData = memoryCache[file.path] {
+//            return try Data(contentsOf: memoryData)
+//        } else {
+//            return try Data(contentsOf: file)
+//        }
     }
 }
