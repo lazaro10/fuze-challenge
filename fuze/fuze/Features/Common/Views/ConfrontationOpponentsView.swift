@@ -1,4 +1,5 @@
 import UIKit
+import Kingfisher
 
 struct ConfrontationOpponentsViewModel: Equatable {
     let leftOpponentImageURL: URL?
@@ -61,8 +62,8 @@ final class ConfrontationOpponentsView: UIView {
     }
 
     func setup(viewModel: ConfrontationOpponentsViewModel) {
-   //     leftOpponentImageView.donwload.setImage(viewModel.leftOpponentImageURL, placeholder: .placeholderCircle)
-   //     rightOpponentImageView.donwload.setImage(viewModel.rightOpponentImageURL, placeholder: .placeholderCircle)
+        leftOpponentImageView.kf.setImage(with: viewModel.leftOpponentImageURL, placeholder: UIImage.placeholderCircle)
+        rightOpponentImageView.kf.setImage(with: viewModel.rightOpponentImageURL, placeholder: UIImage.placeholderCircle)
         leftOpponentLabel.text = viewModel.leftOpponentName
         rightOpponentLabel.text = viewModel.rightOpponentName
     }

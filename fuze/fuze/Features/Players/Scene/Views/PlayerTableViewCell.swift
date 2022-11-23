@@ -1,4 +1,5 @@
 import UIKit
+import Kingfisher
 
 struct PlayerViewModel: Equatable {
     let imageURL: URL?
@@ -10,7 +11,6 @@ struct PlayerViewModel: Equatable {
 final class PlayerTableViewCell: UITableViewCell, Reusable {
     private let playerBackgroundView: UIView = {
         let view = UIView()
-        view.backgroundColor = .secondaryBackground
         view.layer.cornerRadius = 12
         view.clipsToBounds = true
 
@@ -20,6 +20,7 @@ final class PlayerTableViewCell: UITableViewCell, Reusable {
     private let playerImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
+        imageView.image = .placeholderRounded
 
         return imageView
     }()
@@ -53,7 +54,7 @@ final class PlayerTableViewCell: UITableViewCell, Reusable {
     func setup<ViewModel>(_ viewModel: ViewModel) {
         guard let viewModel = viewModel as? PlayerViewModel else { return }
 
-      //  playerImageView.donwload.setImage(viewModel.imageURL, placeholder: .placeholderRounded)
+        playerImageView.kf.setImage(with: viewModel.imageURL, placeholder: UIImage.placeholderRounded)
         nicknameLabel.text = viewModel.nickname
         nameLabel.text = viewModel.name
 

@@ -1,4 +1,5 @@
 import UIKit
+import Kingfisher
 
 struct MatchViewModel: Equatable {
     let id: Int
@@ -76,7 +77,7 @@ final class MatchTableViewCell: UITableViewCell, Reusable {
         matchTimeView.backgroundColor = viewModel.matchTimeViewColor
         confrontationView.setup(viewModel: viewModel.confrontationViewModel)
         leagueSerieLabel.text = viewModel.leagueSerie
-     //   leagueImageView.donwload.setImage(viewModel.leagueImageURL, placeholder: .placeholderCircleSmall)
+        leagueImageView.kf.setImage(with: viewModel.leagueImageURL, placeholder: UIImage.placeholderCircleSmall)
     }
 
     private func setupConstraints() {
