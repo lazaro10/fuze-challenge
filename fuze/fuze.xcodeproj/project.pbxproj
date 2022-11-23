@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		A13F6178292EB87200F58BE9 /* DispatchQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13F6177292EB87200F58BE9 /* DispatchQueue.swift */; };
 		A13F617E292EDB7200F58BE9 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = A13F617D292EDB7200F58BE9 /* Kingfisher */; };
+		A13F6181292EE02D00F58BE9 /* DateFormatterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13F6180292EE02D00F58BE9 /* DateFormatterTest.swift */; };
 		A14A00AC2929C0A500B918D1 /* MatchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14A00AB2929C0A500B918D1 /* MatchModel.swift */; };
 		A14A00B12929DB4400B918D1 /* MatchesNetworkRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14A00B02929DB4400B918D1 /* MatchesNetworkRequestTests.swift */; };
 		A14A00B32929DED800B918D1 /* MatchesRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14A00B22929DED800B918D1 /* MatchesRepositoryTests.swift */; };
@@ -128,6 +129,7 @@
 
 /* Begin PBXFileReference section */
 		A13F6177292EB87200F58BE9 /* DispatchQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchQueue.swift; sourceTree = "<group>"; };
+		A13F6180292EE02D00F58BE9 /* DateFormatterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterTest.swift; sourceTree = "<group>"; };
 		A14A00AB2929C0A500B918D1 /* MatchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchModel.swift; sourceTree = "<group>"; };
 		A14A00B02929DB4400B918D1 /* MatchesNetworkRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesNetworkRequestTests.swift; sourceTree = "<group>"; };
 		A14A00B22929DED800B918D1 /* MatchesRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesRepositoryTests.swift; sourceTree = "<group>"; };
@@ -266,6 +268,14 @@
 				A13F6177292EB87200F58BE9 /* DispatchQueue.swift */,
 			);
 			path = DispatchQueue;
+			sourceTree = "<group>";
+		};
+		A13F617F292EE02300F58BE9 /* Formatters */ = {
+			isa = PBXGroup;
+			children = (
+				A13F6180292EE02D00F58BE9 /* DateFormatterTest.swift */,
+			);
+			path = Formatters;
 			sourceTree = "<group>";
 		};
 		A14A00AD2929DB0900B918D1 /* Features */ = {
@@ -551,6 +561,7 @@
 		A1876A4A29284F0F006CE7C9 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				A13F617F292EE02300F58BE9 /* Formatters */,
 				A19F31CE292AC8C600EAABDE /* Images */,
 				A14A00BF2929E82E00B918D1 /* Localizable */,
 				A14A00BC2929E62D00B918D1 /* Fonts */,
@@ -1119,6 +1130,7 @@
 				A1876A4E29284F54006CE7C9 /* BaseURLProviderTests.swift in Sources */,
 				A194CE05292E54D500CC5A8E /* MatchDetailViewModelTests.swift in Sources */,
 				A196D86829287B72000ADDEE /* NetworkErrorEquatable.swift in Sources */,
+				A13F6181292EE02D00F58BE9 /* DateFormatterTest.swift in Sources */,
 				A1876A5B29285504006CE7C9 /* NetworkRequestTests.swift in Sources */,
 				A194CE0A292E574C00CC5A8E /* MatchDetailViewControllerTests.swift in Sources */,
 				A14A00B82929E0C400B918D1 /* MatchModelFixture.swift in Sources */,
