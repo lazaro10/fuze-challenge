@@ -1,7 +1,7 @@
 @testable import fuze
 import Foundation
 
-final class PlayersConverterSpy: PlayersConverterLogic {
+final class PlayersConverterSpy: PlayersConvertable {
     private(set) var invokedConvertCount = 0
     private(set) var invokedConvertParameterPlayers: [PlayerModel]?
     private(set) var invokedConvertParameterAligment: PlayersAligment?

@@ -15,10 +15,10 @@ final class MatchesViewModel {
     private(set) var matches: [MatchModel] = []
     weak var display: MatchesViewControllerDisplayble?
 
-    private let repository: MatchesRepositoryLogic
-    private let converter: MatchesConverterLogic
+    private let repository: MatchesRepositable
+    private let converter: MatchesConvertable
 
-    init(repository: MatchesRepositoryLogic, converter: MatchesConverterLogic) {
+    init(repository: MatchesRepositable, converter: MatchesConvertable) {
         self.repository = repository
         self.converter = converter
     }

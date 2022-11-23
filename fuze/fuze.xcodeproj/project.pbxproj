@@ -82,8 +82,6 @@
 		A196D86829287B72000ADDEE /* NetworkErrorEquatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A196D86729287B72000ADDEE /* NetworkErrorEquatable.swift */; };
 		A196D86A29287CC6000ADDEE /* NetworkErrorDummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A196D86929287CC6000ADDEE /* NetworkErrorDummy.swift */; };
 		A196D86C29287ED5000ADDEE /* NetworkDeserializationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A196D86B29287ED5000ADDEE /* NetworkDeserializationTests.swift */; };
-		A19B685D29291D6100145256 /* FileManagerProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19B685C29291D6100145256 /* FileManagerProvider.swift */; };
-		A19B685F2929254E00145256 /* FileManagerProviderSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19B685E2929254E00145256 /* FileManagerProviderSpy.swift */; };
 		A19B686B29295C4500145256 /* MatchesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19B686A29295C4500145256 /* MatchesViewController.swift */; };
 		A19B687029295DC000145256 /* MatchesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19B686F29295DC000145256 /* MatchesViewModel.swift */; };
 		A19B687229295DF600145256 /* MatchesBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19B687129295DF600145256 /* MatchesBuilder.swift */; };
@@ -206,8 +204,6 @@
 		A196D86729287B72000ADDEE /* NetworkErrorEquatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorEquatable.swift; sourceTree = "<group>"; };
 		A196D86929287CC6000ADDEE /* NetworkErrorDummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorDummy.swift; sourceTree = "<group>"; };
 		A196D86B29287ED5000ADDEE /* NetworkDeserializationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDeserializationTests.swift; sourceTree = "<group>"; };
-		A19B685C29291D6100145256 /* FileManagerProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerProvider.swift; sourceTree = "<group>"; };
-		A19B685E2929254E00145256 /* FileManagerProviderSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerProviderSpy.swift; sourceTree = "<group>"; };
 		A19B686A29295C4500145256 /* MatchesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesViewController.swift; sourceTree = "<group>"; };
 		A19B686F29295DC000145256 /* MatchesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesViewModel.swift; sourceTree = "<group>"; };
 		A19B687129295DF600145256 /* MatchesBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesBuilder.swift; sourceTree = "<group>"; };
@@ -545,7 +541,6 @@
 				A1876A3929281FAD006CE7C9 /* BaseURLProvider.swift */,
 				A1876A442928429A006CE7C9 /* AccessTokenProvider.swift */,
 				A1876A6B29286A88006CE7C9 /* NetworkProvider.swift */,
-				A19B685C29291D6100145256 /* FileManagerProvider.swift */,
 			);
 			path = Providers;
 			sourceTree = "<group>";
@@ -607,7 +602,6 @@
 				A1876A6129285DED006CE7C9 /* BaseURLProviderSpy.swift */,
 				A1876A6329285EF4006CE7C9 /* AccessTokenProviderSpy.swift */,
 				A1876A6929286871006CE7C9 /* NetworkProviderSpy.swift */,
-				A19B685E2929254E00145256 /* FileManagerProviderSpy.swift */,
 				A14A00B42929DF2200B918D1 /* NetworkSpy.swift */,
 				A196D86929287CC6000ADDEE /* NetworkErrorDummy.swift */,
 				A196D86729287B72000ADDEE /* NetworkErrorEquatable.swift */,
@@ -1059,7 +1053,6 @@
 				A17BDED1292BF526001BF682 /* EmptyStateView.swift in Sources */,
 				A1876A4229283743006CE7C9 /* NetworkDeserialization.swift in Sources */,
 				A194CE35292E7EA000CC5A8E /* DispatchQueueTestingOverrides.swift in Sources */,
-				A19B685D29291D6100145256 /* FileManagerProvider.swift in Sources */,
 				A17BDED3292BF52E001BF682 /* ErrorView.swift in Sources */,
 				A19B688B29297C8A00145256 /* MatchesNetworkRequest.swift in Sources */,
 				A18769FE29280E7E006CE7C9 /* SceneDelegate.swift in Sources */,
@@ -1102,7 +1095,6 @@
 				A17BDEBC292BBACA001BF682 /* MatchesViewModelTests.swift in Sources */,
 				A194CE29292E640700CC5A8E /* PlayersConverterTests.swift in Sources */,
 				A194CE1E292E5DB800CC5A8E /* PlayerModelFixture.swift in Sources */,
-				A19B685F2929254E00145256 /* FileManagerProviderSpy.swift in Sources */,
 				A194CE0C292E577E00CC5A8E /* MatchDetailViewModelSpy.swift in Sources */,
 				A194CE20292E5E7400CC5A8E /* PlayerViewModelFixture.swift in Sources */,
 				A17BDEC7292BDB70001BF682 /* ConfrontationOpponentsViewModelFixture.swift in Sources */,

@@ -1,7 +1,7 @@
 @testable import fuze
 import Foundation
 
-final class MatchesConverterSpy: MatchesConverterLogic {
+final class MatchesConverterSpy: MatchesConvertable {
     private(set) var invokedConvertMatchModelCount = 0
     private(set) var invokedConvertMatchModelParameterMatchModel: MatchModel?
     var stubbedConvertMatchModelResult: MatchViewModel = .fixture()

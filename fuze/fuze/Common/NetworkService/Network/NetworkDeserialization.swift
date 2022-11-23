@@ -1,10 +1,10 @@
 import Foundation
 
-protocol NetworkDeserializationLogic {
+protocol NetworkDeserializable {
     func decode<T: Decodable>(data: Data?) throws -> T
 }
 
-final class NetworkDeserialization: NetworkDeserializationLogic {
+final class NetworkDeserialization: NetworkDeserializable {
     func decode<T: Decodable>(data: Data?) throws -> T {
         guard let data = data else {
             throw NetworkDeserializationError.invalidData

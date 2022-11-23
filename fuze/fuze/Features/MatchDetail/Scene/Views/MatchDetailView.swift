@@ -1,6 +1,6 @@
 import UIKit
 
-protocol MatchDetailViewLogic: UIView {
+protocol MatchDetailViewProtocol: UIView {
     func setMatch(_ viewModel: MatchViewModel)
 }
 
@@ -75,7 +75,7 @@ final class MatchDetailView: UIView {
     }
 }
 
-extension MatchDetailView: MatchDetailViewLogic {
+extension MatchDetailView: MatchDetailViewProtocol {
     func setMatch(_ viewModel: MatchViewModel) {
         headerView.setup(viewModel: viewModel)
 

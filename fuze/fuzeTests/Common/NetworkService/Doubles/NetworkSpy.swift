@@ -1,7 +1,7 @@
 @testable import fuze
 import Foundation
 
-final class NetworkSpy: NetworkLogic {
+final class NetworkSpy: NetworkRequestable {
     private(set) var invokedRequestCount = 0
     private(set) var invokedRequestParameterRequest: NetworkRequest?
     var stubbedRequestCompletionResult: Any?

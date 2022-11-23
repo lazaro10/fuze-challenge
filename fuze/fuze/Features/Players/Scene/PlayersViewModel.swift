@@ -20,10 +20,10 @@ final class PlayersViewModel {
     
     private let teamId: Int
     private let alignment: PlayersAligment
-    private let repository: PlayersRepositoryLogic
-    private let converter: PlayersConverterLogic
+    private let repository: PlayersRepositable
+    private let converter: PlayersConvertable
 
-    init(teamId: Int, alignment: PlayersAligment, repository: PlayersRepositoryLogic, converter: PlayersConverterLogic) {
+    init(teamId: Int, alignment: PlayersAligment, repository: PlayersRepositable, converter: PlayersConvertable) {
         self.teamId = teamId
         self.alignment = alignment
         self.repository = repository

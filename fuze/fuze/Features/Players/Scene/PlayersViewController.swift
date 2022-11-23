@@ -9,9 +9,9 @@ final class PlayersViewController: UIViewController {
     var loadedPlayersHandle: (() -> Void)?
 
     private let viewModel: PlayersViewModelLogic
-    private let contentView: PlayersViewLogic
+    private let contentView: PlayersViewProtocol
 
-    init(viewModel: PlayersViewModelLogic, contentView: PlayersViewLogic) {
+    init(viewModel: PlayersViewModelLogic, contentView: PlayersViewProtocol) {
         self.viewModel = viewModel
         self.contentView = contentView
         super.init(nibName: nil, bundle: nil)

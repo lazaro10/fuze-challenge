@@ -1,6 +1,6 @@
 import Foundation
 
-protocol NetworkProviderLogic {
+protocol NetworkProviding {
     func dataTask(
         request: URLRequest,
         completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void
@@ -12,7 +12,7 @@ protocol NetworkProviderLogic {
     ) -> URLSessionDownloadTask?
 }
 
-struct NetworkProvider: NetworkProviderLogic {
+struct NetworkProvider: NetworkProviding {
     func dataTask(
         request: URLRequest,
         completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void

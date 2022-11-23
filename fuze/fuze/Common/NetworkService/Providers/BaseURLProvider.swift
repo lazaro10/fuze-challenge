@@ -1,10 +1,10 @@
 import Foundation
 
-protocol BaseURLProviderLogic {
+protocol BaseURLProviding {
     func getURL(api: ApiProvider) -> URL
 }
 
-struct BaseURLProvider: BaseURLProviderLogic {
+struct BaseURLProvider: BaseURLProviding {
     func getURL(api: ApiProvider) -> URL {
         switch api {
         case .pandaScore:

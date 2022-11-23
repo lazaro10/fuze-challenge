@@ -1,7 +1,7 @@
 @testable import fuze
 import Foundation
 
-final class PlayersRepositorySpy: PlayersRepositoryLogic {
+final class PlayersRepositorySpy: PlayersRepositable {
     var invokedFetchPlayersCount = 0
     var invokedFetchPlayersParameterPage: Int?
     var invokedFetchPlayersParameterTeamId: Int?

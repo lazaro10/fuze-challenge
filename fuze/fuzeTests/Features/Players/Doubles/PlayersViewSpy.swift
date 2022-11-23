@@ -2,7 +2,7 @@
 import Foundation
 import UIKit
 
-final class PlayersViewSpy: UIView, PlayersViewLogic {
+final class PlayersViewSpy: UIView, PlayersViewProtocol {
     private(set) var invokedDelegateSetterCount = 0
     private(set) var invokedDelegate: PlayersViewDelegate?
     private(set) var invokedDelegateGetterCount = 0

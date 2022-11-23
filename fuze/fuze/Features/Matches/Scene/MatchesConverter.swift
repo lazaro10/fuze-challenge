@@ -1,9 +1,9 @@
-protocol MatchesConverterLogic {
+protocol MatchesConvertable {
     func convert(_ match: MatchModel) -> MatchViewModel
     func convert(_ matches: [MatchModel]) -> [MatchViewModel]
 }
 
-struct MatchesConverter: MatchesConverterLogic {
+struct MatchesConverter: MatchesConvertable {
     func convert(_ match: MatchModel) -> MatchViewModel {
         let confrontationViewModel = ConfrontationOpponentsViewModel(
             leftOpponentImageURL: match.opponents[0].opponent.imageUrl,

@@ -1,7 +1,7 @@
 @testable import fuze
 import Foundation
 
-final class MatchesRepositorySpy: MatchesRepositoryLogic {
+final class MatchesRepositorySpy: MatchesRepositable {
     private(set) var invokedFetchRunningMatchesCount = 0
     private(set) var invokedFetchRunningMatchesParameterPage: Int?
     var stubbedFetchRunningMatchesCompletionResult: Result<[MatchModel], Error>?

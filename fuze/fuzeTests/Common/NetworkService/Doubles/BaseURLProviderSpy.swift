@@ -1,7 +1,7 @@
 @testable import fuze
 import Foundation
 
-final class BaseURLProviderSpy: BaseURLProviderLogic {
+final class BaseURLProviderSpy: BaseURLProviding {
     private(set) var invokedGetURLCount = 0
     private(set) var invokedGetURLParameterApi: ApiProvider?
     var stubbedGetURLResult: URL?

@@ -1,7 +1,7 @@
 @testable import fuze
 import Foundation
 
-final class NetworkProviderSpy: NetworkProviderLogic {
+final class NetworkProviderSpy: NetworkProviding {
     private(set) var invokedDataTaskCount = 0
     private(set) var invokedDataTaskParameterRequest: URLRequest?
     var stubbedDataTaskCompletionHandlerResult: (Data?, URLResponse?, Error?)?

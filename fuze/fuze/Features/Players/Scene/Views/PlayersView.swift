@@ -1,6 +1,6 @@
 import UIKit
 
-protocol PlayersViewLogic: UIView {
+protocol PlayersViewProtocol: UIView {
     var delegate: PlayersViewDelegate? { get set }
     func updatePlayers(viewModels: [PlayerViewModel])
     func playersAreFinished()
@@ -48,7 +48,7 @@ final class PlayersView: UIView {
     }
 }
 
-extension PlayersView: PlayersViewLogic {
+extension PlayersView: PlayersViewProtocol {
     func updatePlayers(viewModels: [PlayerViewModel]) {
         tableViewProvider.viewModels = viewModels
     }

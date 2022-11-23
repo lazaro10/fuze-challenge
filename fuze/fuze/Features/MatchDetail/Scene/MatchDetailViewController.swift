@@ -6,9 +6,9 @@ protocol MatchDetailViewControllerDisplayble: AnyObject {
 
 final class MatchDetailViewController: UIViewController {
     private let viewModel: MatchDetailViewModelLogic
-    private let contentView: MatchDetailViewLogic
+    private let contentView: MatchDetailViewProtocol
 
-    init(viewModel: MatchDetailViewModelLogic, contentView: MatchDetailViewLogic) {
+    init(viewModel: MatchDetailViewModelLogic, contentView: MatchDetailViewProtocol) {
         self.viewModel = viewModel
         self.contentView = contentView
         super.init(nibName: nil, bundle: nil)

@@ -2,7 +2,7 @@
 import UIKit
 import Foundation
 
-final class MatchesViewSpy: UIView, MatchesViewLogic {
+final class MatchesViewSpy: UIView, MatchesViewProtocol {
     private(set) var invokedDelegateSetterCount = 0
     private(set) var invokedDelegate: MatchesViewDelegate?
     private(set) var invokedDelegateGetterCount = 0

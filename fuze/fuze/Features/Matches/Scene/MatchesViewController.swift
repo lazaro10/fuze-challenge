@@ -8,13 +8,13 @@ protocol MatchesViewControllerDisplayble: AnyObject {
 
 final class MatchesViewController: UIViewController {
     private let viewModel: MatchesViewModelLogic
-    private let contentView: MatchesViewLogic
-    private let coordinator: MatchesCoordinatorLogic
+    private let contentView: MatchesViewProtocol
+    private let coordinator: MatchesCoordinating
 
     init(
         viewModel: MatchesViewModelLogic,
-        contentView: MatchesViewLogic,
-        coordinator: MatchesCoordinatorLogic
+        contentView: MatchesViewProtocol,
+        coordinator: MatchesCoordinating
     ) {
         self.viewModel = viewModel
         self.contentView = contentView

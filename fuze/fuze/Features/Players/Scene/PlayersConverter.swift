@@ -1,8 +1,8 @@
-protocol PlayersConverterLogic {
+protocol PlayersConvertable {
     func convert(_ players: [PlayerModel], alignment: PlayersAligment) -> [PlayerViewModel]
 }
 
-struct PlayersConverter: PlayersConverterLogic {
+struct PlayersConverter: PlayersConvertable {
     func convert(_ players: [PlayerModel], alignment: PlayersAligment) -> [PlayerViewModel] {
         players.map {
             PlayerViewModel(

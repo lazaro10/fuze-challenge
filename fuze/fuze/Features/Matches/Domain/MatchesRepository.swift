@@ -1,12 +1,12 @@
-protocol MatchesRepositoryLogic {
+protocol MatchesRepositable {
     func fetchRunningMatches(page: Int, completion: @escaping (Result<[MatchModel], Error>) -> Void)
     func fetchUpcomingMatches(page: Int, completion: @escaping (Result<[MatchModel], Error>) -> Void)
 }
 
-final class MatchesRepository: MatchesRepositoryLogic {
-    let network: NetworkLogic
+final class MatchesRepository: MatchesRepositable {
+    let network: NetworkRequestable
 
-    init(network: NetworkLogic) {
+    init(network: NetworkRequestable) {
         self.network = network
     }
 

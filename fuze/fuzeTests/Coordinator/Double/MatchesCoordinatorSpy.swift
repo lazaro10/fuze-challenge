@@ -1,7 +1,7 @@
 @testable import fuze
 import Foundation
 
-final class MatchesCoordinatorSpy: MatchesCoordinatorLogic {
+final class MatchesCoordinatorSpy: MatchesCoordinating {
     private(set) var invokedShowMatchDetailCount = 0
     private(set) var invokedShowMatchDetailParameterMatchViewModel: MatchViewModel?
 

@@ -1,11 +1,11 @@
-protocol PlayersRepositoryLogic {
+protocol PlayersRepositable {
     func fetchPlayers(page: Int, teamId: Int, completion: @escaping (Result<[PlayerModel], Error>) -> Void)
 }
 
-final class PlayersRepository: PlayersRepositoryLogic {
-    let network: NetworkLogic
+final class PlayersRepository: PlayersRepositable {
+    let network: NetworkRequestable
 
-    init(network: NetworkLogic) {
+    init(network: NetworkRequestable) {
         self.network = network
     }
 

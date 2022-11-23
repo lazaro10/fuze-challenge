@@ -2,7 +2,7 @@
 import Foundation
 import UIKit
 
-final class MatchDetailViewSpy: UIView, MatchDetailViewLogic {
+final class MatchDetailViewSpy: UIView, MatchDetailViewProtocol {
     private(set) var invokedSetMatchCount = 0
     private(set) var invokedSetMatchParameterViewModel: MatchViewModel?
 

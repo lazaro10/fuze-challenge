@@ -1,7 +1,7 @@
 @testable import fuze
 import Foundation
 
-final class AccessTokenProviderSpy: AccessTokenProviderLogic {
+final class AccessTokenProviderSpy: AccessTokenProviding {
     private(set) var invokedGetAccessTokenCount = 0
     private(set) var invokedGetAccessTokenParameterApi: ApiProvider?
     var stubbedGetAccessTokenResult: (key: String, value: String)?

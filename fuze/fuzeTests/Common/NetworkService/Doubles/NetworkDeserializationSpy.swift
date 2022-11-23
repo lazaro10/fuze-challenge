@@ -1,7 +1,7 @@
 @testable import fuze
 import Foundation
 
-final class NetworkDeserializationSpy: NetworkDeserializationLogic {
+final class NetworkDeserializationSpy: NetworkDeserializable {
     private(set) var invokedDecodeCount = 0
     private(set) var invokedDecodeParameterData: Data?
     var stubbedDecodeResult: Decodable?

@@ -1,6 +1,6 @@
 import UIKit
 
-protocol MatchesViewLogic: UIView {
+protocol MatchesViewProtocol: UIView {
     var delegate: MatchesViewDelegate? { get set }
     func changeState(_ state: MatchesView.State)
     func matchesAreFinished()
@@ -96,7 +96,7 @@ final class MatchesView: UIView {
     }
 }
 
-extension MatchesView: MatchesViewLogic {
+extension MatchesView: MatchesViewProtocol {
     func changeState(_ state: MatchesView.State) {
         switch state {
         case .content(let viewModels):

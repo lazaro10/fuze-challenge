@@ -6,21 +6,21 @@ enum NetworkError: Error {
     case failureResponse
 }
 
-protocol NetworkLogic {
+protocol NetworkRequestable {
     func request<T: Decodable>(_ networkRequest: NetworkRequest, completion: @escaping (Result<T, Error>) -> Void)
 }
 
 final class Network {
-    private let session: NetworkProviderLogic
-    private let deserialization: NetworkDeserializationLogic
-    private let urlProvider: BaseURLProviderLogic
-    private let accessTokenProvider: AccessTokenProviderLogic
+    private let session: NetworkProviding
+    private let deserialization: NetworkDeserializable
+    private let urlProvider: BaseURLProviding
+    private let accessTokenProvider: AccessTokenProviding
     
     init(
-        session: NetworkProviderLogic,
-        deserialization: NetworkDeserializationLogic,
-        urlProvider: BaseURLProviderLogic,
-        accessTokenProvider: AccessTokenProviderLogic
+        session: NetworkProviding,
+        deserialization: NetworkDeserializable,
+        urlProvider: BaseURLProviding,
+        accessTokenProvider: AccessTokenProviding
     ) {
         self.session = session
         self.deserialization = deserialization
@@ -47,7 +47,7 @@ final class Network {
     }
 }
 
-extension Network: NetworkLogic {
+extension Network: NetworkRequestable {
     func request<T>(_ networkRequest: NetworkRequest, completion: @escaping (Result<T, Error>) -> Void) where T : Decodable {
         do {
             let accessToken = accessTokenProvider.getAccessToken(api: networkRequest.baseURL)
