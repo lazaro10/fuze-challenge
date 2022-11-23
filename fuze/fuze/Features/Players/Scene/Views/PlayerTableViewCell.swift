@@ -1,6 +1,6 @@
 import UIKit
 
-struct PlayerViewModel {
+struct PlayerViewModel: Equatable {
     let imageURL: URL?
     let nickname: String
     let name: String

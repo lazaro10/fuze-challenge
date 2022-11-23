@@ -63,6 +63,18 @@
 		A194CE0A292E574C00CC5A8E /* MatchDetailViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A194CE09292E574C00CC5A8E /* MatchDetailViewControllerTests.swift */; };
 		A194CE0C292E577E00CC5A8E /* MatchDetailViewModelSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A194CE0B292E577E00CC5A8E /* MatchDetailViewModelSpy.swift */; };
 		A194CE0E292E57A500CC5A8E /* MatchDetailViewSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A194CE0D292E57A500CC5A8E /* MatchDetailViewSpy.swift */; };
+		A194CE13292E5A3D00CC5A8E /* PlayersRepositorySpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A194CE12292E5A3D00CC5A8E /* PlayersRepositorySpy.swift */; };
+		A194CE15292E5AB800CC5A8E /* PlayersConverterSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A194CE14292E5AB800CC5A8E /* PlayersConverterSpy.swift */; };
+		A194CE17292E5B2300CC5A8E /* PlayersViewModelSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A194CE16292E5B2300CC5A8E /* PlayersViewModelSpy.swift */; };
+		A194CE19292E5B9600CC5A8E /* PlayersViewControllerDisplaySpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A194CE18292E5B9600CC5A8E /* PlayersViewControllerDisplaySpy.swift */; };
+		A194CE1B292E5CFE00CC5A8E /* PlayersViewSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A194CE1A292E5CFE00CC5A8E /* PlayersViewSpy.swift */; };
+		A194CE1E292E5DB800CC5A8E /* PlayerModelFixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = A194CE1D292E5DB800CC5A8E /* PlayerModelFixture.swift */; };
+		A194CE20292E5E7400CC5A8E /* PlayerViewModelFixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = A194CE1F292E5E7400CC5A8E /* PlayerViewModelFixture.swift */; };
+		A194CE24292E601D00CC5A8E /* PlayersNetworkRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A194CE23292E601D00CC5A8E /* PlayersNetworkRequestTests.swift */; };
+		A194CE26292E621800CC5A8E /* PlayersRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A194CE25292E621800CC5A8E /* PlayersRepositoryTests.swift */; };
+		A194CE29292E640700CC5A8E /* PlayersConverterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A194CE28292E640700CC5A8E /* PlayersConverterTests.swift */; };
+		A194CE2B292E651D00CC5A8E /* PlayersViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A194CE2A292E651D00CC5A8E /* PlayersViewModelTests.swift */; };
+		A194CE2D292E6BF600CC5A8E /* PlayersViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A194CE2C292E6BF600CC5A8E /* PlayersViewControllerTests.swift */; };
 		A196D86829287B72000ADDEE /* NetworkErrorEquatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A196D86729287B72000ADDEE /* NetworkErrorEquatable.swift */; };
 		A196D86A29287CC6000ADDEE /* NetworkErrorDummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A196D86929287CC6000ADDEE /* NetworkErrorDummy.swift */; };
 		A196D86C29287ED5000ADDEE /* NetworkDeserializationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A196D86B29287ED5000ADDEE /* NetworkDeserializationTests.swift */; };
@@ -175,6 +187,18 @@
 		A194CE09292E574C00CC5A8E /* MatchDetailViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchDetailViewControllerTests.swift; sourceTree = "<group>"; };
 		A194CE0B292E577E00CC5A8E /* MatchDetailViewModelSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchDetailViewModelSpy.swift; sourceTree = "<group>"; };
 		A194CE0D292E57A500CC5A8E /* MatchDetailViewSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchDetailViewSpy.swift; sourceTree = "<group>"; };
+		A194CE12292E5A3D00CC5A8E /* PlayersRepositorySpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersRepositorySpy.swift; sourceTree = "<group>"; };
+		A194CE14292E5AB800CC5A8E /* PlayersConverterSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersConverterSpy.swift; sourceTree = "<group>"; };
+		A194CE16292E5B2300CC5A8E /* PlayersViewModelSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersViewModelSpy.swift; sourceTree = "<group>"; };
+		A194CE18292E5B9600CC5A8E /* PlayersViewControllerDisplaySpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersViewControllerDisplaySpy.swift; sourceTree = "<group>"; };
+		A194CE1A292E5CFE00CC5A8E /* PlayersViewSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersViewSpy.swift; sourceTree = "<group>"; };
+		A194CE1D292E5DB800CC5A8E /* PlayerModelFixture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerModelFixture.swift; sourceTree = "<group>"; };
+		A194CE1F292E5E7400CC5A8E /* PlayerViewModelFixture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewModelFixture.swift; sourceTree = "<group>"; };
+		A194CE23292E601D00CC5A8E /* PlayersNetworkRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersNetworkRequestTests.swift; sourceTree = "<group>"; };
+		A194CE25292E621800CC5A8E /* PlayersRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersRepositoryTests.swift; sourceTree = "<group>"; };
+		A194CE28292E640700CC5A8E /* PlayersConverterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersConverterTests.swift; sourceTree = "<group>"; };
+		A194CE2A292E651D00CC5A8E /* PlayersViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersViewModelTests.swift; sourceTree = "<group>"; };
+		A194CE2C292E6BF600CC5A8E /* PlayersViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersViewControllerTests.swift; sourceTree = "<group>"; };
 		A196D86729287B72000ADDEE /* NetworkErrorEquatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorEquatable.swift; sourceTree = "<group>"; };
 		A196D86929287CC6000ADDEE /* NetworkErrorDummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorDummy.swift; sourceTree = "<group>"; };
 		A196D86B29287ED5000ADDEE /* NetworkDeserializationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDeserializationTests.swift; sourceTree = "<group>"; };
@@ -241,6 +265,7 @@
 			children = (
 				A14A00AE2929DB1200B918D1 /* Matches */,
 				A194CE01292E539700CC5A8E /* MatchDetail */,
+				A194CE10292E59E300CC5A8E /* Players */,
 				A17BDEC4292BDB51001BF682 /* Common */,
 			);
 			path = Features;
@@ -249,7 +274,7 @@
 		A14A00AE2929DB1200B918D1 /* Matches */ = {
 			isa = PBXGroup;
 			children = (
-				A14A00B62929E0B300B918D1 /* Fixture */,
+				A14A00B62929E0B300B918D1 /* Fixtures */,
 				A17BDEBD292BBC0D001BF682 /* Doubles */,
 				A14A00AF2929DB1E00B918D1 /* Domain */,
 				A17BDEBA292BBAA2001BF682 /* Scene */,
@@ -266,13 +291,13 @@
 			path = Domain;
 			sourceTree = "<group>";
 		};
-		A14A00B62929E0B300B918D1 /* Fixture */ = {
+		A14A00B62929E0B300B918D1 /* Fixtures */ = {
 			isa = PBXGroup;
 			children = (
 				A14A00B72929E0C400B918D1 /* MatchModelFixture.swift */,
 				A17BDEC2292BDB21001BF682 /* MatchViewModelFixture.swift */,
 			);
-			path = Fixture;
+			path = Fixtures;
 			sourceTree = "<group>";
 		};
 		A14A00B92929E4DD00B918D1 /* Colors */ = {
@@ -607,6 +632,57 @@
 				A194CE0D292E57A500CC5A8E /* MatchDetailViewSpy.swift */,
 			);
 			path = Doubles;
+			sourceTree = "<group>";
+		};
+		A194CE10292E59E300CC5A8E /* Players */ = {
+			isa = PBXGroup;
+			children = (
+				A194CE1C292E5D9D00CC5A8E /* Fixtures */,
+				A194CE11292E5A1E00CC5A8E /* Doubles */,
+				A194CE22292E600200CC5A8E /* Domain */,
+				A194CE27292E63EB00CC5A8E /* Scene */,
+			);
+			path = Players;
+			sourceTree = "<group>";
+		};
+		A194CE11292E5A1E00CC5A8E /* Doubles */ = {
+			isa = PBXGroup;
+			children = (
+				A194CE12292E5A3D00CC5A8E /* PlayersRepositorySpy.swift */,
+				A194CE14292E5AB800CC5A8E /* PlayersConverterSpy.swift */,
+				A194CE16292E5B2300CC5A8E /* PlayersViewModelSpy.swift */,
+				A194CE18292E5B9600CC5A8E /* PlayersViewControllerDisplaySpy.swift */,
+				A194CE1A292E5CFE00CC5A8E /* PlayersViewSpy.swift */,
+			);
+			path = Doubles;
+			sourceTree = "<group>";
+		};
+		A194CE1C292E5D9D00CC5A8E /* Fixtures */ = {
+			isa = PBXGroup;
+			children = (
+				A194CE1D292E5DB800CC5A8E /* PlayerModelFixture.swift */,
+				A194CE1F292E5E7400CC5A8E /* PlayerViewModelFixture.swift */,
+			);
+			path = Fixtures;
+			sourceTree = "<group>";
+		};
+		A194CE22292E600200CC5A8E /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				A194CE23292E601D00CC5A8E /* PlayersNetworkRequestTests.swift */,
+				A194CE25292E621800CC5A8E /* PlayersRepositoryTests.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		A194CE27292E63EB00CC5A8E /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				A194CE28292E640700CC5A8E /* PlayersConverterTests.swift */,
+				A194CE2A292E651D00CC5A8E /* PlayersViewModelTests.swift */,
+				A194CE2C292E6BF600CC5A8E /* PlayersViewControllerTests.swift */,
+			);
+			path = Scene;
 			sourceTree = "<group>";
 		};
 		A19B686329292BEC00145256 /* Network */ = {
@@ -1003,9 +1079,13 @@
 				A196D86A29287CC6000ADDEE /* NetworkErrorDummy.swift in Sources */,
 				A17BDECB292BE7EE001BF682 /* MatchesViewModeSpy.swift in Sources */,
 				A1876A6829286700006CE7C9 /* ResponseModeFixture.swift in Sources */,
+				A194CE19292E5B9600CC5A8E /* PlayersViewControllerDisplaySpy.swift in Sources */,
 				A19F31D0292AC8D200EAABDE /* FuzeImagesTests.swift in Sources */,
 				A194CE08292E55A500CC5A8E /* MatchDetailViewControllerDisplaySpy.swift in Sources */,
 				A14A00BB2929E4ED00B918D1 /* FuzeColorsTests.swift in Sources */,
+				A194CE24292E601D00CC5A8E /* PlayersNetworkRequestTests.swift in Sources */,
+				A194CE15292E5AB800CC5A8E /* PlayersConverterSpy.swift in Sources */,
+				A194CE26292E621800CC5A8E /* PlayersRepositoryTests.swift in Sources */,
 				A1876A5D29285C51006CE7C9 /* NetworkTests.swift in Sources */,
 				A1876A59292854EF006CE7C9 /* NetworkRequestFixture.swift in Sources */,
 				A1876A6029285C89006CE7C9 /* NetworkDeserializationSpy.swift in Sources */,
@@ -1013,25 +1093,33 @@
 				A19B686829292D0A00145256 /* NetworkDownloadTests.swift in Sources */,
 				A194CE0E292E57A500CC5A8E /* MatchDetailViewSpy.swift in Sources */,
 				A17BDEBC292BBACA001BF682 /* MatchesViewModelTests.swift in Sources */,
+				A194CE29292E640700CC5A8E /* PlayersConverterTests.swift in Sources */,
+				A194CE1E292E5DB800CC5A8E /* PlayerModelFixture.swift in Sources */,
 				A19B685F2929254E00145256 /* FileManagerProviderSpy.swift in Sources */,
 				A194CE0C292E577E00CC5A8E /* MatchDetailViewModelSpy.swift in Sources */,
+				A194CE20292E5E7400CC5A8E /* PlayerViewModelFixture.swift in Sources */,
 				A17BDEC7292BDB70001BF682 /* ConfrontationOpponentsViewModelFixture.swift in Sources */,
+				A194CE17292E5B2300CC5A8E /* PlayersViewModelSpy.swift in Sources */,
 				A14A00B52929DF2200B918D1 /* NetworkSpy.swift in Sources */,
 				A17BDEC9292BE7BC001BF682 /* MatchesViewControllerTests.swift in Sources */,
 				A196D86C29287ED5000ADDEE /* NetworkDeserializationTests.swift in Sources */,
 				A1876A6A29286871006CE7C9 /* NetworkProviderSpy.swift in Sources */,
 				A14A00B32929DED800B918D1 /* MatchesRepositoryTests.swift in Sources */,
 				A17BDEEA292C6D08001BF682 /* MatchesConverterSpy.swift in Sources */,
+				A194CE2B292E651D00CC5A8E /* PlayersViewModelTests.swift in Sources */,
 				A17BDEC3292BDB21001BF682 /* MatchViewModelFixture.swift in Sources */,
 				A17BDEC1292BC7F9001BF682 /* MatchesViewControllerDisplaySpy.swift in Sources */,
 				A17BDEBF292BBC1E001BF682 /* MatchesRepositorySpy.swift in Sources */,
 				A1876A6429285EF4006CE7C9 /* AccessTokenProviderSpy.swift in Sources */,
+				A194CE1B292E5CFE00CC5A8E /* PlayersViewSpy.swift in Sources */,
+				A194CE2D292E6BF600CC5A8E /* PlayersViewControllerTests.swift in Sources */,
 				A17BDECD292BE83B001BF682 /* MatchesViewSpy.swift in Sources */,
 				A14A00BE2929E64000B918D1 /* FuzeFontsTests.swift in Sources */,
 				A14A00C12929E87100B918D1 /* LocalizableTests.swift in Sources */,
 				A14A00B12929DB4400B918D1 /* MatchesNetworkRequestTests.swift in Sources */,
 				A17BDEE2292C2CD8001BF682 /* MatchesCoordinatorSpy.swift in Sources */,
 				A17BDEE8292C6C30001BF682 /* MatchesConverterTests.swift in Sources */,
+				A194CE13292E5A3D00CC5A8E /* PlayersRepositorySpy.swift in Sources */,
 				A1876A4E29284F54006CE7C9 /* BaseURLProviderTests.swift in Sources */,
 				A194CE05292E54D500CC5A8E /* MatchDetailViewModelTests.swift in Sources */,
 				A196D86829287B72000ADDEE /* NetworkErrorEquatable.swift in Sources */,

@@ -16,4 +16,11 @@ struct PlayerModel: Decodable {
         case firstName = "first_name"
         case lastName = "last_name"
     }
+
+    init(imageUrl: URL?, nickname: String, firstName: String?, lastName: String?) {
+        self.imageUrl = imageUrl
+        self.nickname = nickname
+        self.firstName = firstName
+        self.lastName = lastName
+    }
 }

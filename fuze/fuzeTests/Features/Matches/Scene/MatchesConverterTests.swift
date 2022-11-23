@@ -4,7 +4,7 @@ import XCTest
 final class MatchesConverterTests: XCTestCase {
     let sut = MatchesConverter()
 
-    func test_conver_shouldConverterInViewModel() {
+    func test_convert_shouldConverterInViewModel() {
         let viewModel: MatchViewModel = sut.convert(.fixture())
 
         XCTAssertEqual(viewModel.confrontationViewModel.rightOpponentId, 4543)

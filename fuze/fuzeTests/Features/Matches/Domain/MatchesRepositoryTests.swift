@@ -16,10 +16,10 @@ final class MatchesRepositoryTests: XCTestCase {
         }
 
         switch resultRequest {
-        case .success(let response):
+        case .success(let matches):
             XCTAssertEqual(networkSpy.invokedRequestCount, 1)
             XCTAssertNotNil(networkSpy.invokedRequestParameterRequest)
-            XCTAssertEqual(response.count, 1)
+            XCTAssertEqual(matches.count, 1)
         default:
             XCTFail("Expected to be success")
         }

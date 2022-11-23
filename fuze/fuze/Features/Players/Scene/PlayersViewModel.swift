@@ -14,7 +14,7 @@ protocol PlayersViewModelLogic {
 final class PlayersViewModel {
     private(set) var page = 1
     private(set) var isContinuePagination = true
-    private var players: [PlayerModel] = []
+    private(set) var players: [PlayerModel] = []
 
     weak var display: PlayersViewControllerDisplayble?
     
