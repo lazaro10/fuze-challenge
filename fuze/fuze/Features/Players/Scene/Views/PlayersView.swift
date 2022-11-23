@@ -3,6 +3,7 @@ import UIKit
 protocol PlayersViewLogic: UIView {
     var delegate: PlayersViewDelegate? { get set }
     func updatePlayers(viewModels: [PlayerViewModel])
+    func playersAreFinished()
 }
 
 protocol PlayersViewDelegate: AnyObject {
@@ -11,20 +12,12 @@ protocol PlayersViewDelegate: AnyObject {
 }
 
 final class PlayersView: UIView {
-    private var playerViewModels: [PlayerViewModel] = [] {
-        didSet {
-            tableView.reloadData()
-        }
-    }
-
-    private lazy var tableView: UITableView = {
+    private lazy var tableViewProvider = PageableTableViewProvider<PlayerTableViewCell, PlayerViewModel>(tableView: tableView, delegate: self)
+    
+    private let tableView: UITableView = {
         let tableView = UITableView()
-        tableView.registerReusableCell(PlayerTableViewCell.self)
-        tableView.showsHorizontalScrollIndicator = false
         tableView.backgroundColor = .primaryBackground
-        tableView.separatorStyle = .none
-        tableView.dataSource = self
-
+        
         return tableView
     }()
 
@@ -57,19 +50,20 @@ final class PlayersView: UIView {
 
 extension PlayersView: PlayersViewLogic {
     func updatePlayers(viewModels: [PlayerViewModel]) {
-        playerViewModels = viewModels
+        tableViewProvider.viewModels = viewModels
+    }
+
+    func playersAreFinished() {
+        tableViewProvider.isPaginationFinished = true
     }
 }
 
-extension PlayersView: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        playerViewModels.count
+extension PlayersView: TableViewProviderDelegate {
+    func tableViewProviderDidScrollEnded() {
+        delegate?.playersViewDidScrollEnded()
     }
 
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let playerTableViewCell: PlayerTableViewCell = tableView.dequeueReusableCell(indexPath: indexPath)
-        playerTableViewCell.setup(playerViewModels[indexPath.row])
-
-        return playerTableViewCell
+    func tableViewProviderDidPullToRefresh() {
+        delegate?.playersViewDidPullToRefresh()
     }
 }

@@ -27,4 +27,10 @@ final class MatchesViewSpy: UIView, MatchesViewLogic {
         invokedChangeStateCount += 1
         invokedChangeStateParameterState = state
     }
+
+    private(set) var invokedMatchesAreFinishedCount = 0
+
+    func matchesAreFinished() {
+        invokedMatchesAreFinishedCount += 1
+    }
 }

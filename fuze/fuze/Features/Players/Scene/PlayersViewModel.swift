@@ -48,8 +48,13 @@ extension PlayersViewModel: PlayersViewModelLogic {
                 self.page += 1
                 self.isContinuePagination = !players.isEmpty
                 self.display?.displayPlayers(self.converter.convert(self.players, alignment: self.alignment))
+
+                if players.isEmpty {
+                    self.display?.notifyPlayersAreFinished()
+                }
             case .failure:
                 self.isContinuePagination = false
+                self.display?.notifyPlayersAreFinished()
             }
         }
     }

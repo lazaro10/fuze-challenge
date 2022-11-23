@@ -69,7 +69,9 @@ final class MatchTableViewCell: UITableViewCell, Reusable {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func setup(_ viewModel: MatchViewModel) {
+    func setup<ViewModel>(_ viewModel: ViewModel) {
+        guard let viewModel = viewModel as? MatchViewModel else { return }
+        
         matchTimeLabel.text = viewModel.matchTime
         matchTimeView.backgroundColor = viewModel.matchTimeViewColor
         confrontationView.setup(viewModel: viewModel.confrontationViewModel)

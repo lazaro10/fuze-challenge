@@ -70,15 +70,20 @@ final class MatchesViewModel {
             case .success(let matches):
                 self.upcomeMachesPage += 1
 
-                if matches.count < 10 && self.matches.isEmpty {
+                if matches.count < 10 {
                     self.isContinueUpcomePagination = false
-                    self.display?.displayState(.empty)
+                    self.display?.notifyPlayersAreFinished()
+                    
+                    if self.matches.isEmpty {
+                        self.display?.displayState(.empty)
+                    }
                 } else {
                     self.isContinueUpcomePagination = true
                     self.setupMatchesToDisplay(matches: matches)
                 }
             case .failure:
                 self.isContinueUpcomePagination = false
+                self.display?.notifyPlayersAreFinished()
                 if self.matches.isEmpty {
                     self.display?.displayState(.error)
                 }

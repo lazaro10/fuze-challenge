@@ -45,11 +45,11 @@ final class MatchesViewModelTests: XCTestCase {
 
         sut.fetchMatches()
 
-        XCTAssertEqual(displaySpy.invokedDisplayStateParameterState, .content(viewModels: viewModels))
+        XCTAssertTrue(sut.isContinueRunningPagination)
         XCTAssertEqual(displaySpy.invokedDisplayStateCount, 2)
+        XCTAssertEqual(displaySpy.invokedDisplayStateParameterState, .content(viewModels: viewModels))
         XCTAssertEqual(converterSpy.invokedConvertCount, 1)
         XCTAssertEqual(sut.matches.count, 10)
-        XCTAssertTrue(sut.isContinueRunningPagination)
     }
 
     func test_fetchMatches_givenRunningMatchesFailure_shouldShouldCallMatchesUpcome() {
@@ -65,6 +65,7 @@ final class MatchesViewModelTests: XCTestCase {
 
         sut.fetchMatches()
 
+        XCTAssertFalse(sut.isContinueRunningPagination)
         XCTAssertEqual(matchesRepositorySpy.invokedFetchUpcomingMatchesCount, 1)
         XCTAssertEqual(matchesRepositorySpy.invokedFetchUpcomingMatchesParameterPage, 1)
     }
@@ -78,17 +79,25 @@ final class MatchesViewModelTests: XCTestCase {
         XCTAssertEqual(sut.upcomeMachesPage, 2)
     }
 
+    func test_fetchMatches_givenFetchUpcomeMatchesSuccess_givenMatchesLessThan10_shouldNotifyPlayersAreFinished() {
+        matchesRepositorySpy.stubbedFetchRunningMatchesCompletionResult = .failure(ErrorDummy.error)
+        matchesRepositorySpy.stubbedFetchUpcomingMatchesCompletionResult = .success([.fixture()])
+
+        sut.fetchMatches()
+
+        XCTAssertFalse(sut.isContinueUpcomePagination)
+        XCTAssertEqual(displaySpy.invokedNotifyPlayersAreFinishedCount, 1)
+    }
+
     func test_fetchMatches_givenFetchUpcomeMatchesSuccessEmpty_givenMatchesLessThan10_shouldDisplayEmptyState() {
         matchesRepositorySpy.stubbedFetchRunningMatchesCompletionResult = .failure(ErrorDummy.error)
         matchesRepositorySpy.stubbedFetchUpcomingMatchesCompletionResult = .success([])
 
         sut.fetchMatches()
 
-        XCTAssertFalse(sut.isContinueUpcomePagination)
         XCTAssertEqual(displaySpy.invokedDisplayStateParameterState, .empty)
         XCTAssertEqual(displaySpy.invokedDisplayStateCount, 2)
     }
-
 
     func test_fetchMatches_givenFetchUpcomeMatchesSuccess_givenMatchesEqualTo10_shouldDisplayContentState() {
         matchesRepositorySpy.stubbedFetchRunningMatchesCompletionResult = .failure(ErrorDummy.error)
@@ -107,13 +116,22 @@ final class MatchesViewModelTests: XCTestCase {
         XCTAssertEqual(sut.matches.count, 10)
     }
 
+    func test_fetchMatches_givenFetchUpcomeMatchesFailure_shouldNotifyPlayersAreFinished() {
+        matchesRepositorySpy.stubbedFetchRunningMatchesCompletionResult = .success([.fixture()])
+        matchesRepositorySpy.stubbedFetchUpcomingMatchesCompletionResult = .failure(ErrorDummy.error)
+
+        sut.fetchMatches()
+
+        XCTAssertFalse(sut.isContinueUpcomePagination)
+        XCTAssertEqual(displaySpy.invokedNotifyPlayersAreFinishedCount, 1)
+    }
+
     func test_fetchMatches_givenFetchUpcomeMatchesFailure_givenMatchesIsEmpty_shouldDisplayErrorState() {
         matchesRepositorySpy.stubbedFetchRunningMatchesCompletionResult = .failure(ErrorDummy.error)
         matchesRepositorySpy.stubbedFetchUpcomingMatchesCompletionResult = .failure(ErrorDummy.error)
 
         sut.fetchMatches()
 
-        XCTAssertFalse(sut.isContinueUpcomePagination)
         XCTAssertEqual(displaySpy.invokedDisplayStateParameterState, .error)
         XCTAssertEqual(displaySpy.invokedDisplayStateCount, 2)
     }
@@ -151,5 +169,16 @@ final class MatchesViewModelTests: XCTestCase {
         XCTAssertTrue(sut.isContinueUpcomePagination)
         XCTAssertEqual(sut.matches.count, 0)
         XCTAssertEqual(matchesRepositorySpy.invokedFetchRunningMatchesCount, 1)
+    }
+
+    func test_selectMatch_shouldDisplayMatchDetail() {
+        let matches = [MatchModel](repeating: .fixture(), count: 10)
+        matchesRepositorySpy.stubbedFetchRunningMatchesCompletionResult = .success(matches)
+        sut.fetchMatches()
+    
+        sut.selectMatch(index: 1)
+
+        XCTAssertEqual(converterSpy.invokedConvertCount, 1)
+        XCTAssertEqual(displaySpy.invokedDisplayMatchDetailCount, 1)
     }
 }

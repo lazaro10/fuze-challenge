@@ -47,12 +47,19 @@ final class MatchesViewControllerTests: XCTestCase {
         XCTAssertEqual(contentViewSpy.invokedChangeStateParameterState, .error)
     }
 
+    func test_notifyPlayersAreFinished_whenCalled_shoulFinishedPagination() {
+        sut.notifyPlayersAreFinished()
+
+        XCTAssertEqual(contentViewSpy.invokedMatchesAreFinishedCount, 1)
+    }
+
     func test_displayMatchDetail_whenCalled_shouldShowMatchDetail() {
         sut.displayMatchDetail(matchViewModel: .fixture())
 
         XCTAssertEqual(coordinatorSpy.invokedShowMatchDetailCount, 1)
         XCTAssertEqual(coordinatorSpy.invokedShowMatchDetailParameterMatchViewModel, .fixture())
     }
+
 
     func test_matchesViewDidSelectMatch_whenCalled_shouldSelectMatch() {
         sut.matchesViewDidSelectMatch(index: 3)

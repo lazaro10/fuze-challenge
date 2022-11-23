@@ -2,6 +2,7 @@ import UIKit
 
 protocol Reusable: AnyObject {
     static var reuseIdentifier: String { get }
+    func setup<ViewModel>(_ viewModel: ViewModel)
 }
 
 extension Reusable {

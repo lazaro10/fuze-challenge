@@ -10,6 +10,12 @@ final class MatchesViewControllerDisplaySpy: MatchesViewControllerDisplayble {
         invokedDisplayStateParameterState = state
     }
 
+    private(set) var invokedNotifyPlayersAreFinishedCount = 0
+
+    func notifyPlayersAreFinished() {
+        invokedNotifyPlayersAreFinishedCount += 1
+    }
+
     private(set) var invokedDisplayMatchDetailCount = 0
     private(set) var invokedDisplayMatchDetailParameterMatchViewModel: MatchViewModel?
 

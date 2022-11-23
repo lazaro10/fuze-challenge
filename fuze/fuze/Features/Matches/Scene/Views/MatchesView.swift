@@ -1,8 +1,9 @@
 import UIKit
 
 protocol MatchesViewLogic: UIView {
-    func changeState(_ state: MatchesView.State)
     var delegate: MatchesViewDelegate? { get set }
+    func changeState(_ state: MatchesView.State)
+    func matchesAreFinished()
 }
 
 protocol MatchesViewDelegate: AnyObject {
@@ -19,7 +20,6 @@ final class MatchesView: UIView {
         case error
     }
 
-    private lazy var tableViewDataSource = MatchesTableViewDataSource(tableView: tableView, delegate: self)
 
     private let topLineView: UIView = {
         let view = UIView()
@@ -28,7 +28,15 @@ final class MatchesView: UIView {
         return view
     }()
 
-    private let tableView = UITableView()
+    private lazy var tableViewProvider = PageableTableViewProvider<MatchTableViewCell, MatchViewModel>(tableView: tableView, delegate: self)
+
+    private let tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.backgroundColor = .primaryBackground
+
+        return tableView
+    }()
+    
     private let loadinView = LoadingView()
     private let emptyStateView = EmptyStateView(message: Strings.matchNotFound)
     private let errorView = ErrorView(message: Strings.matchesNotLoaded)
@@ -96,7 +104,7 @@ extension MatchesView: MatchesViewLogic {
             loadinView.isHidden = true
             emptyStateView.isHidden = true
             errorView.isHidden = true
-            tableViewDataSource.matchViewModels = viewModels
+            tableViewProvider.viewModels = viewModels
         case .loading:
             tableView.isHidden = true
             loadinView.isHidden = false
@@ -114,18 +122,22 @@ extension MatchesView: MatchesViewLogic {
             errorView.isHidden = false
         }
     }
+
+    func matchesAreFinished() {
+        tableViewProvider.isPaginationFinished = true
+    }
 }
 
-extension MatchesView: MatchesTableViewDataSourceDelegate {
-    func matchesTableViewDidSelectMatch(index: Int) {
+extension MatchesView: TableViewProviderDelegate {
+    func tableViewProviderDidSelectCell(index: Int) {
         delegate?.matchesViewDidSelectMatch(index: index)
     }
 
-    func matchesTableViewDidScrollEnded() {
+    func tableViewProviderDidScrollEnded() {
         delegate?.matchesViewDidScrollEnded()
     }
 
-    func matchesTableViewDidPullToRefresh() {
+    func tableViewProviderDidPullToRefresh() {
         delegate?.matchesViewDidPullToRefresh()
     }
 }

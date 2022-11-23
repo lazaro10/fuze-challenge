@@ -2,6 +2,7 @@ import UIKit
 
 protocol MatchesViewControllerDisplayble: AnyObject {
     func displayState(_ state: MatchesView.State)
+    func notifyPlayersAreFinished()
     func displayMatchDetail(matchViewModel: MatchViewModel)
 }
 
@@ -42,6 +43,12 @@ extension MatchesViewController: MatchesViewControllerDisplayble {
     func displayState(_ state: MatchesView.State) {
         DispatchQueue.main.async { [weak self] in
             self?.contentView.changeState(state)
+        }
+    }
+
+    func notifyPlayersAreFinished() {
+        DispatchQueue.main.async { [weak self] in
+            self?.contentView.matchesAreFinished()
         }
     }
 

@@ -1,19 +1,26 @@
 import UIKit
 
-protocol MatchesTableViewDataSourceDelegate: AnyObject {
-    func matchesTableViewDidSelectMatch(index: Int)
-    func matchesTableViewDidScrollEnded()
-    func matchesTableViewDidPullToRefresh()
+protocol TableViewProviderDelegate: AnyObject {
+    func tableViewProviderDidSelectCell(index: Int)
+    func tableViewProviderDidScrollEnded()
+    func tableViewProviderDidPullToRefresh()
 }
 
-final class MatchesTableViewDataSource: NSObject {
-    var matchViewModels: [MatchViewModel] = [] {
+extension TableViewProviderDelegate {
+    func tableViewProviderDidSelectCell(index: Int) {}
+}
+
+final class PageableTableViewProvider<TableViewCell: UITableViewCell, ViewModel>: NSObject, UITableViewDelegate, UITableViewDataSource where TableViewCell: Reusable {
+
+    var viewModels: [ViewModel] = [] {
         didSet {
             pullRefreshControl.endRefreshing()
             hideFooterActivityIndicatorView()
             tableView?.reloadData()
         }
     }
+
+    var isPaginationFinished = false
 
     private lazy var pullRefreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
@@ -30,9 +37,9 @@ final class MatchesTableViewDataSource: NSObject {
     }()
 
     private weak var tableView: UITableView?
-    private weak var delegate: MatchesTableViewDataSourceDelegate?
+    private weak var delegate: TableViewProviderDelegate?
 
-    init(tableView: UITableView, delegate: MatchesTableViewDataSourceDelegate?) {
+    init(tableView: UITableView, delegate: TableViewProviderDelegate?) {
         self.tableView = tableView
         self.delegate = delegate
         super.init()
@@ -41,8 +48,8 @@ final class MatchesTableViewDataSource: NSObject {
     }
 
     private func setupTableView() {
-        tableView?.registerReusableCell(MatchTableViewCell.self)
-        tableView?.backgroundColor = .primaryBackground
+        tableView?.registerReusableCell(TableViewCell.self)
+        tableView?.showsVerticalScrollIndicator = false
         tableView?.separatorStyle = .none
         tableView?.refreshControl = pullRefreshControl
         tableView?.tableFooterView = footerActivityIndicatorView
@@ -51,7 +58,8 @@ final class MatchesTableViewDataSource: NSObject {
     }
 
     @objc private func refresh() {
-        delegate?.matchesTableViewDidPullToRefresh()
+        delegate?.tableViewProviderDidPullToRefresh()
+        isPaginationFinished = false
     }
 
     private func showFooterActivityIndicatorView() {
@@ -63,11 +71,9 @@ final class MatchesTableViewDataSource: NSObject {
         footerActivityIndicatorView.stopAnimating()
         footerActivityIndicatorView.isHidden = true
     }
-}
 
-extension MatchesTableViewDataSource: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        delegate?.matchesTableViewDidSelectMatch(index: indexPath.row)
+        delegate?.tableViewProviderDidSelectCell(index: indexPath.row)
     }
 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -77,21 +83,19 @@ extension MatchesTableViewDataSource: UITableViewDelegate {
         let contentSize = tableViewHeight  - 50
         let scrollHeight = scrollView.frame.size.height
 
-        if offsetY > contentSize - scrollHeight {
-            delegate?.matchesTableViewDidScrollEnded()
+        if offsetY > contentSize - scrollHeight && !isPaginationFinished {
+            delegate?.tableViewProviderDidScrollEnded()
             showFooterActivityIndicatorView()
         }
     }
-}
 
-extension MatchesTableViewDataSource: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        matchViewModels.count
+        viewModels.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let matchTableViewCell: MatchTableViewCell = tableView.dequeueReusableCell(indexPath: indexPath)
-        let viewModel = matchViewModels[indexPath.row]
+        let matchTableViewCell: TableViewCell = tableView.dequeueReusableCell(indexPath: indexPath)
+        let viewModel = viewModels[indexPath.row]
         matchTableViewCell.setup(viewModel)
 
         return matchTableViewCell

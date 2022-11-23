@@ -50,7 +50,9 @@ final class PlayerTableViewCell: UITableViewCell, Reusable {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func setup(_ viewModel: PlayerViewModel) {
+    func setup<ViewModel>(_ viewModel: ViewModel) {
+        guard let viewModel = viewModel as? PlayerViewModel else { return }
+
         playerImageView.setImage(viewModel.imageURL, placeholder: .placeholderRounded)
         nicknameLabel.text = viewModel.nickname
         nameLabel.text = viewModel.name

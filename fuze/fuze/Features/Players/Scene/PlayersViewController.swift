@@ -2,6 +2,7 @@ import UIKit
 
 protocol PlayersViewControllerDisplayble: AnyObject {
     func displayPlayers(_ viewModels: [PlayerViewModel])
+    func notifyPlayersAreFinished()
 }
 
 final class PlayersViewController: UIViewController {
@@ -34,6 +35,12 @@ extension PlayersViewController: PlayersViewControllerDisplayble {
     func displayPlayers(_ viewModels: [PlayerViewModel]) {
         DispatchQueue.main.async { [weak self] in
             self?.contentView.updatePlayers(viewModels: viewModels)
+        }
+    }
+
+    func notifyPlayersAreFinished() {
+        DispatchQueue.main.async { [weak self] in
+            self?.contentView.playersAreFinished()
         }
     }
 }
