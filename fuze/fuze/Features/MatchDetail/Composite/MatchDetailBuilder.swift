@@ -1,9 +1,10 @@
 enum MatchDetailBuilder {
-    static func build(coordinator: MatchesCoordinatorLogic, viewModel: MatchViewModel) -> MatchDetailViewController {
+    static func build(viewModel: MatchViewModel) -> MatchDetailViewController {
+        let viewModel = MatchDetailViewModel(matchViewModel: viewModel)
         let viewController = MatchDetailViewController(
-            contentView: MatchDetailView(),
-            viewModel: viewModel
+            viewModel: viewModel, contentView: MatchDetailView()
         )
+        viewModel.display = viewController
 
         return viewController
     }

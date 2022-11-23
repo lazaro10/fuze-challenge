@@ -1,7 +1,7 @@
 import UIKit
 
 protocol MatchesCoordinatorLogic {
-    func showMatchDetail(viewModel: MatchViewModel)
+    func showMatchDetail(matchViewModel: MatchViewModel)
 }
 
 final class MatchesCoordinator: Coordinator {
@@ -23,8 +23,8 @@ final class MatchesCoordinator: Coordinator {
 }
 
 extension MatchesCoordinator: MatchesCoordinatorLogic {
-    func showMatchDetail(viewModel: MatchViewModel) {
-        let detailViewController = MatchDetailBuilder.build(coordinator: self, viewModel: viewModel)
+    func showMatchDetail(matchViewModel: MatchViewModel) {
+        let detailViewController = MatchDetailBuilder.build(viewModel: matchViewModel)
         navigationController.pushViewController(detailViewController, animated: true)
     }
 }

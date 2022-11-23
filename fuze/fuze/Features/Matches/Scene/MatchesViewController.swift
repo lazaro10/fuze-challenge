@@ -2,6 +2,7 @@ import UIKit
 
 protocol MatchesViewControllerDisplayble: AnyObject {
     func displayState(_ state: MatchesView.State)
+    func displayMatchDetail(matchViewModel: MatchViewModel)
 }
 
 final class MatchesViewController: UIViewController {
@@ -43,11 +44,15 @@ extension MatchesViewController: MatchesViewControllerDisplayble {
             self?.contentView.changeState(state)
         }
     }
+
+    func displayMatchDetail(matchViewModel: MatchViewModel) {
+        coordinator.showMatchDetail(matchViewModel: matchViewModel)
+    }
 }
 
 extension MatchesViewController: MatchesViewDelegate {
-    func matchesViewDidSelectMatch(viewModel: MatchViewModel) {
-        coordinator.showMatchDetail(viewModel: viewModel)
+    func matchesViewDidSelectMatch(index: Int) {
+        viewModel.selectMatch(index: index)
     }
 
     func matchesViewDidScrollEnded() {

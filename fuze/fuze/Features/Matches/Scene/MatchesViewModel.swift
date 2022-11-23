@@ -4,6 +4,7 @@ protocol MatchesViewModelLogic {
     func fetchMatches()
     func fetchMoreMatches()
     func refreshMatches()
+    func selectMatch(index: Int)
 }
 
 final class MatchesViewModel {
@@ -29,21 +30,28 @@ final class MatchesViewModel {
         isContinueUpcomePagination = true
         matches = []
     }
-    
+
+    private func setupMatchesToDisplay(matches: [MatchModel]) {
+        let matchesFiltered = matches.filter {
+            $0.opponents.count == 2
+        }
+        self.matches.append(contentsOf: matchesFiltered)
+        self.display?.displayState(.content(viewModels: self.converter.convert(self.matches)))
+    }
+
     private func fetchRunningMatches() {
         repository.fetchRunningMatches(page: runningMachesPage) { [weak self] result in
             guard let self = self else { return }
 
             switch result {
             case .success(let matches):
-                self.matches.append(contentsOf: matches)
                 self.runningMachesPage += 1
 
                 if matches.count < 10 {
                     self.fetchUpcomingMatches()
                 } else {
                     self.isContinueRunningPagination = true
-                    self.display?.displayState(.content(viewModels: self.converter.convert(self.matches)))
+                    self.setupMatchesToDisplay(matches: matches)
                 }
 
             case .failure:
@@ -60,7 +68,6 @@ final class MatchesViewModel {
 
             switch result {
             case .success(let matches):
-                self.matches.append(contentsOf: matches)
                 self.upcomeMachesPage += 1
 
                 if matches.count < 10 && self.matches.isEmpty {
@@ -68,7 +75,7 @@ final class MatchesViewModel {
                     self.display?.displayState(.empty)
                 } else {
                     self.isContinueUpcomePagination = true
-                    self.display?.displayState(.content(viewModels: self.converter.convert(self.matches)))
+                    self.setupMatchesToDisplay(matches: matches)
                 }
             case .failure:
                 self.isContinueUpcomePagination = false
@@ -99,5 +106,9 @@ extension MatchesViewModel: MatchesViewModelLogic {
     func refreshMatches() {
         setupInitialState()
         fetchRunningMatches()
+    }
+
+    func selectMatch(index: Int) {
+        display?.displayMatchDetail(matchViewModel: converter.convert(matches[index]))
     }
 }

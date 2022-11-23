@@ -1,12 +1,12 @@
 import UIKit
 
 protocol MatchDetailViewLogic: UIView {
-    func changeState(_ state: MatchDetailView.State)
+    func setMatch(_ viewModel: MatchViewModel)
 }
 
 final class MatchDetailView: UIView {
-    enum State {
-        case content(matchViewModel: MatchViewModel, leftPlayersViewModels: [PlayersViewModel], rightPlayersViewModels: [PlayersViewModel])
+    private enum State {
+        case content
         case loading
     }
 
@@ -47,23 +47,43 @@ final class MatchDetailView: UIView {
             stackView.trailingAnchor.constraint(equalTo: trailingAnchor),
             stackView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
+
+        addSubview(loadingView, constraints: [
+            loadingView.topAnchor.constraint(equalTo: topAnchor),
+            loadingView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            loadingView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            loadingView.bottomAnchor.constraint(equalTo: bottomAnchor)
+        ])
     }
 
     private func setupLayout() {
         backgroundColor = .primaryBackground
     }
+
+    private func changeState(_ state: State) {
+        switch state {
+        case .content:
+            headerView.isHidden = false
+            stackView.isHidden = false
+            loadingView.isHidden = true
+        case .loading:
+            headerView.isHidden = true
+            stackView.isHidden = true
+            loadingView.isHidden = false
+        }
+    }
 }
 
 extension MatchDetailView: MatchDetailViewLogic {
-    func changeState(_ state: State) {
-        switch state {
-        case let .content(matchViewModel, leftPlayersViewModels, rightPlayersViewModels):
-            headerView.isHidden = false
-            loadingView.isHidden = true
-            headerView.setup(viewModel: matchViewModel)
-        case .loading:
-            headerView.isHidden = true
-            loadingView.isHidden = false
-        }
+    func setMatch(_ viewModel: MatchViewModel) {
+        headerView.setup(viewModel: viewModel)
+
+        let leftPlayersView = PlayersBuilder.build(teamId: viewModel.confrontationViewModel.leftOpponentId, alignment: .left)
+        let rightPlayersView = PlayersBuilder.build(teamId: viewModel.confrontationViewModel.rightOpponentId, alignment: .right)
+
+        stackView.addArrangedSubview(leftPlayersView.view)
+        stackView.addArrangedSubview(rightPlayersView.view)
+
+        changeState(.content)
     }
 }

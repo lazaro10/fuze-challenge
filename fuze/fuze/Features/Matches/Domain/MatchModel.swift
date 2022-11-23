@@ -18,15 +18,17 @@ struct MatchModel: Decodable {
     }
 
     struct Opponent: Decodable {
-        let opponent: OpponentData?
+        let opponent: OpponentData
 
         struct OpponentData: Decodable {
             let name: String
             let imageUrl: URL?
+            let id: Int
 
             private enum CodingKeys: String, CodingKey {
                 case name
                 case imageUrl = "image_url"
+                case id
             }
         }
     }

@@ -20,6 +20,7 @@ final class PlayersView: UIView {
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.registerReusableCell(PlayerTableViewCell.self)
+        tableView.showsHorizontalScrollIndicator = false
         tableView.backgroundColor = .primaryBackground
         tableView.separatorStyle = .none
         tableView.dataSource = self

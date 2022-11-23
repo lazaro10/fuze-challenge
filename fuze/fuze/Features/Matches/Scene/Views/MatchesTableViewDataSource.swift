@@ -1,7 +1,7 @@
 import UIKit
 
 protocol MatchesTableViewDataSourceDelegate: AnyObject {
-    func matchesTableViewDidSelectMatch(viewModel: MatchViewModel)
+    func matchesTableViewDidSelectMatch(index: Int)
     func matchesTableViewDidScrollEnded()
     func matchesTableViewDidPullToRefresh()
 }
@@ -67,7 +67,7 @@ final class MatchesTableViewDataSource: NSObject {
 
 extension MatchesTableViewDataSource: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        delegate?.matchesTableViewDidSelectMatch(viewModel: matchViewModels[indexPath.row])
+        delegate?.matchesTableViewDidSelectMatch(index: indexPath.row)
     }
 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {

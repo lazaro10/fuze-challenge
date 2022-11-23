@@ -1,15 +1,16 @@
 import UIKit
 
-final class MatchDetailViewController: UIViewController {
-    private let contentView: MatchDetailViewLogic
-    private let viewModel: MatchViewModel
+protocol MatchDetailViewControllerDisplayble: AnyObject {
+    func displayMatch(_ viewModel: MatchViewModel)
+}
 
-    init(
-        contentView: MatchDetailViewLogic,
-        viewModel: MatchViewModel
-    ) {
-        self.contentView = contentView
+final class MatchDetailViewController: UIViewController {
+    private let viewModel: MatchDetailViewModelLogic
+    private let contentView: MatchDetailViewLogic
+
+    init(viewModel: MatchDetailViewModelLogic, contentView: MatchDetailViewLogic) {
         self.viewModel = viewModel
+        self.contentView = contentView
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -24,5 +25,12 @@ final class MatchDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        viewModel.prepareLayout()
+    }
+}
+
+extension MatchDetailViewController: MatchDetailViewControllerDisplayble {
+    func displayMatch(_ viewModel: MatchViewModel) {
+        contentView.setMatch(viewModel)
     }
 }

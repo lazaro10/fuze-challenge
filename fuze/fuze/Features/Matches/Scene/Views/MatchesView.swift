@@ -6,7 +6,7 @@ protocol MatchesViewLogic: UIView {
 }
 
 protocol MatchesViewDelegate: AnyObject {
-    func matchesViewDidSelectMatch(viewModel: MatchViewModel)
+    func matchesViewDidSelectMatch(index: Int)
     func matchesViewDidScrollEnded()
     func matchesViewDidPullToRefresh()
 }
@@ -117,8 +117,8 @@ extension MatchesView: MatchesViewLogic {
 }
 
 extension MatchesView: MatchesTableViewDataSourceDelegate {
-    func matchesTableViewDidSelectMatch(viewModel: MatchViewModel) {
-        delegate?.matchesViewDidSelectMatch(viewModel: viewModel)
+    func matchesTableViewDidSelectMatch(index: Int) {
+        delegate?.matchesViewDidSelectMatch(index: index)
     }
 
     func matchesTableViewDidScrollEnded() {

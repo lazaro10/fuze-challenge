@@ -96,6 +96,7 @@
 		A1A2435C292D81ED00A6EEEE /* PlayersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A2435B292D81ED00A6EEEE /* PlayersViewController.swift */; };
 		A1A2435E292D820000A6EEEE /* PlayersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A2435D292D820000A6EEEE /* PlayersView.swift */; };
 		A1A24361292D8DC400A6EEEE /* PlayersBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A24360292D8DC400A6EEEE /* PlayersBuilder.swift */; };
+		A1A24363292D928E00A6EEEE /* MatchDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A24362292D928E00A6EEEE /* MatchDetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -204,6 +205,7 @@
 		A1A2435B292D81ED00A6EEEE /* PlayersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersViewController.swift; sourceTree = "<group>"; };
 		A1A2435D292D820000A6EEEE /* PlayersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersView.swift; sourceTree = "<group>"; };
 		A1A24360292D8DC400A6EEEE /* PlayersBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersBuilder.swift; sourceTree = "<group>"; };
+		A1A24362292D928E00A6EEEE /* MatchDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchDetailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -336,6 +338,7 @@
 		A17BDED7292C1996001BF682 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				A1A24362292D928E00A6EEEE /* MatchDetailViewModel.swift */,
 				A17BDED5292C197D001BF682 /* MatchDetailViewController.swift */,
 				A17BDED8292C19A6001BF682 /* Views */,
 			);
@@ -906,6 +909,7 @@
 				A1876A3C292820A8006CE7C9 /* NetworkServiceMethod.swift in Sources */,
 				A19B686129292B0000145256 /* NetworkDownload.swift in Sources */,
 				A1876A47292843DC006CE7C9 /* ApiProvider.swift in Sources */,
+				A1A24363292D928E00A6EEEE /* MatchDetailViewModel.swift in Sources */,
 				A1876A33292812E8006CE7C9 /* Coordinator.swift in Sources */,
 				A1A24354292D4A2900A6EEEE /* PlayersViewModel.swift in Sources */,
 				A1A24356292D4A3D00A6EEEE /* PlayersConverter.swift in Sources */,

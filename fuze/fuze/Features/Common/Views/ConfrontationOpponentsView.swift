@@ -5,6 +5,8 @@ struct ConfrontationOpponentsViewModel {
     let rightOpponentImageURL: URL?
     let leftOpponentName: String
     let rightOpponentName: String
+    let leftOpponentId: Int
+    let rightOpponentId: Int
 }
 
 final class ConfrontationOpponentsView: UIView {
