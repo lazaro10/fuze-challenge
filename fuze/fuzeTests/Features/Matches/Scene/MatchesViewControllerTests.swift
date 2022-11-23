@@ -12,6 +12,14 @@ final class MatchesViewControllerTests: XCTestCase {
         coordinator: coordinatorSpy
     )
 
+    override func setUp() {
+        super.setUp()
+
+        DispatchQueueTestingOverrides.overriddenAsyncHandler = { function in
+            function()
+        }
+    }
+
     func test_viewDidLoad_givenCalled_shouldSetDelegateAndFetchMatches() {
         sut.viewDidLoad()
 

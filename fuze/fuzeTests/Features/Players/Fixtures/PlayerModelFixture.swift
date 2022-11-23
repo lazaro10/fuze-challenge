@@ -5,4 +5,3 @@ extension PlayerModel {
         .init(imageUrl: nil, nickname: "xc", firstName: "Cheng", lastName: "Xing")
     }
 }
-

@@ -7,6 +7,14 @@ final class PlayersViewControllerTests: XCTestCase {
 
     private lazy var sut = PlayersViewController(viewModel: viewModelSpy, contentView: contentViewSpy)
 
+    override func setUp() {
+        super.setUp()
+
+        DispatchQueueTestingOverrides.overriddenAsyncHandler = { function in
+            function()
+        }
+    }
+
     func test_viewDidLoad_whenCalled_shouldSetDelegateAndFetchPlayers() {
         sut.viewDidLoad()
 
@@ -18,7 +26,6 @@ final class PlayersViewControllerTests: XCTestCase {
         sut.displayPlayers([.fixture()])
 
         XCTAssertEqual(contentViewSpy.invokedUpdatePlayersCount, 1)
-        XCTAssertNotNil(sut.loadedPlayersHandle)
     }
 
     func test_notifyPlayersAreFinished_whenCalled_shouldPlayersAreFinished() {

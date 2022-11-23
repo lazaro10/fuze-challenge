@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A13F6175292EB71000F58BE9 /* CacheManagerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13F6174292EB71000F58BE9 /* CacheManagerSpy.swift */; };
+		A13F6178292EB87200F58BE9 /* DispatchQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13F6177292EB87200F58BE9 /* DispatchQueue.swift */; };
 		A14A00AC2929C0A500B918D1 /* MatchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14A00AB2929C0A500B918D1 /* MatchModel.swift */; };
 		A14A00B12929DB4400B918D1 /* MatchesNetworkRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14A00B02929DB4400B918D1 /* MatchesNetworkRequestTests.swift */; };
 		A14A00B32929DED800B918D1 /* MatchesRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14A00B22929DED800B918D1 /* MatchesRepositoryTests.swift */; };
@@ -132,6 +133,7 @@
 
 /* Begin PBXFileReference section */
 		A13F6174292EB71000F58BE9 /* CacheManagerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManagerSpy.swift; sourceTree = "<group>"; };
+		A13F6177292EB87200F58BE9 /* DispatchQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchQueue.swift; sourceTree = "<group>"; };
 		A14A00AB2929C0A500B918D1 /* MatchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchModel.swift; sourceTree = "<group>"; };
 		A14A00B02929DB4400B918D1 /* MatchesNetworkRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesNetworkRequestTests.swift; sourceTree = "<group>"; };
 		A14A00B22929DED800B918D1 /* MatchesRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesRepositoryTests.swift; sourceTree = "<group>"; };
@@ -268,6 +270,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A13F6176292EB86200F58BE9 /* DispatchQueue */ = {
+			isa = PBXGroup;
+			children = (
+				A13F6177292EB87200F58BE9 /* DispatchQueue.swift */,
+			);
+			path = DispatchQueue;
+			sourceTree = "<group>";
+		};
 		A14A00AD2929DB0900B918D1 /* Features */ = {
 			isa = PBXGroup;
 			children = (
@@ -506,6 +516,7 @@
 		A1876A3429281B2A006CE7C9 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				A13F6176292EB86200F58BE9 /* DispatchQueue */,
 				A19F31D4292AD40600EAABDE /* Formatters */,
 				A19F31D1292ACA5A00EAABDE /* DownloadImage */,
 				A19F31BE292A856700EAABDE /* ConstraintsTools */,
@@ -1060,6 +1071,7 @@
 				A1876A3A29281FAD006CE7C9 /* BaseURLProvider.swift in Sources */,
 				A1A2434B292D373700A6EEEE /* MatchDetailHeaderView.swift in Sources */,
 				A17BDECF292BF50F001BF682 /* LoadingView.swift in Sources */,
+				A13F6178292EB87200F58BE9 /* DispatchQueue.swift in Sources */,
 				A17BDEE4292C5AB5001BF682 /* PageableTableViewProvider.swift in Sources */,
 				A19F31BB292A82DA00EAABDE /* Reusable.swift in Sources */,
 				A1876A3E29282412006CE7C9 /* Network.swift in Sources */,
