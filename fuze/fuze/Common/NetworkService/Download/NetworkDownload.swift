@@ -5,35 +5,30 @@ protocol NetworkDownloadLogic {
 }
 
 final class NetworkDownload {
-    static let shared = NetworkDownload(session: NetworkProvider(), fileManagerProvdider: FileManagerProvider())
-
     private let session: NetworkProviderLogic
-    private let fileManagerProvdider: FileManagerProviderLogic
-    
+    private let cacheManager: CacheManagerLogic
+
     init(
         session: NetworkProviderLogic,
-        fileManagerProvdider: FileManagerProviderLogic
+        cacheManager: CacheManagerLogic
     ) {
         self.session = session
-        self.fileManagerProvdider = fileManagerProvdider
+        self.cacheManager = cacheManager
     }
-    
-    private func download(url: URL, file: URL, completion: @escaping (Error?) -> Void) {
+
+    private func download(url: URL, completion: @escaping (Error?) -> Void) {
         let task = session.downloadTask(url: url) { [weak self] dataURL, _, error in
             guard let self = self else { return }
+
             if let error = error {
                 return completion(error)
             }
 
             do {
-                if self.fileManagerProvdider.fileExists(path: file.path) {
-                    try self.fileManagerProvdider.removeItem(url: file)
+                if let dataURL = dataURL {
+                    try self.cacheManager.put(data: dataURL, url: url)
                 }
 
-                if let dataURL = dataURL {
-                    try self.fileManagerProvdider.copyItem(srcURL: dataURL, dstURL: file)
-                }
-                
                 completion(nil)
             } catch {
                 completion(error)
@@ -46,15 +41,14 @@ final class NetworkDownload {
 
 extension NetworkDownload: NetworkDownloadLogic {
     func loadData(url: URL, completion: @escaping (Result<Data, Error>) -> Void) {
-        let cachedFile = fileManagerProvdider.appendingPathComponent(url.lastPathComponent, isDirectory: false)
-
         do {
-            let data = try Data(contentsOf: cachedFile)
+            let data = try cacheManager.get(url: url)
             completion(.success(data))
         } catch {
-            download(url: url, file: cachedFile) { error in
+            download(url: url) { [weak self] error in
+                guard let self = self else { return }
                 do {
-                    let data = try Data(contentsOf: cachedFile)
+                    let data = try self.cacheManager.get(url: url)
                     completion(.success(data))
                 } catch {
                     completion(.failure(error))

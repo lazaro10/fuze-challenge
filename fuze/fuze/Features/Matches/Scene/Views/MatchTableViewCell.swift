@@ -76,7 +76,7 @@ final class MatchTableViewCell: UITableViewCell, Reusable {
         matchTimeView.backgroundColor = viewModel.matchTimeViewColor
         confrontationView.setup(viewModel: viewModel.confrontationViewModel)
         leagueSerieLabel.text = viewModel.leagueSerie
-        leagueImageView.setImage(viewModel.leagueImageURL, placeholder: .placeholderCircleSmall)
+        leagueImageView.donwload.setImage(viewModel.leagueImageURL, placeholder: .placeholderCircleSmall)
     }
 
     private func setupConstraints() {

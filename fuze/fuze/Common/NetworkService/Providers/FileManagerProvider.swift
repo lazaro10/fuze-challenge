@@ -9,7 +9,8 @@ protocol FileManagerProviderLogic {
 
 struct FileManagerProvider: FileManagerProviderLogic {
     func appendingPathComponent(_ pathComponent: String, isDirectory: Bool) -> URL {
-        FileManager.default.temporaryDirectory.appendingPathComponent(pathComponent, isDirectory: isDirectory)
+        FileManager.default.temporaryDirectory.appendingPathExtension(pathComponent)
+     //   FileManager.default.temporaryDirectory.appendingPathComponent(pathComponent, isDirectory: isDirectory)
     }
     
     func copyItem(srcURL: URL, dstURL: URL) throws {

@@ -75,6 +75,9 @@
 		A194CE29292E640700CC5A8E /* PlayersConverterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A194CE28292E640700CC5A8E /* PlayersConverterTests.swift */; };
 		A194CE2B292E651D00CC5A8E /* PlayersViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A194CE2A292E651D00CC5A8E /* PlayersViewModelTests.swift */; };
 		A194CE2D292E6BF600CC5A8E /* PlayersViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A194CE2C292E6BF600CC5A8E /* PlayersViewControllerTests.swift */; };
+		A194CE2F292E74B800CC5A8E /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A194CE2E292E74B800CC5A8E /* CacheManager.swift */; };
+		A194CE35292E7EA000CC5A8E /* DispatchQueueTestingOverrides.swift in Sources */ = {isa = PBXBuildFile; fileRef = A194CE34292E7EA000CC5A8E /* DispatchQueueTestingOverrides.swift */; };
+		A194CE38292E92AF00CC5A8E /* NetworkDownloadBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A194CE37292E92AF00CC5A8E /* NetworkDownloadBuilder.swift */; };
 		A196D86829287B72000ADDEE /* NetworkErrorEquatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A196D86729287B72000ADDEE /* NetworkErrorEquatable.swift */; };
 		A196D86A29287CC6000ADDEE /* NetworkErrorDummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A196D86929287CC6000ADDEE /* NetworkErrorDummy.swift */; };
 		A196D86C29287ED5000ADDEE /* NetworkDeserializationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A196D86B29287ED5000ADDEE /* NetworkDeserializationTests.swift */; };
@@ -199,6 +202,9 @@
 		A194CE28292E640700CC5A8E /* PlayersConverterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersConverterTests.swift; sourceTree = "<group>"; };
 		A194CE2A292E651D00CC5A8E /* PlayersViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersViewModelTests.swift; sourceTree = "<group>"; };
 		A194CE2C292E6BF600CC5A8E /* PlayersViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersViewControllerTests.swift; sourceTree = "<group>"; };
+		A194CE2E292E74B800CC5A8E /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
+		A194CE34292E7EA000CC5A8E /* DispatchQueueTestingOverrides.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchQueueTestingOverrides.swift; sourceTree = "<group>"; };
+		A194CE37292E92AF00CC5A8E /* NetworkDownloadBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDownloadBuilder.swift; sourceTree = "<group>"; };
 		A196D86729287B72000ADDEE /* NetworkErrorEquatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorEquatable.swift; sourceTree = "<group>"; };
 		A196D86929287CC6000ADDEE /* NetworkErrorDummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorDummy.swift; sourceTree = "<group>"; };
 		A196D86B29287ED5000ADDEE /* NetworkDeserializationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDeserializationTests.swift; sourceTree = "<group>"; };
@@ -685,6 +691,14 @@
 			path = Scene;
 			sourceTree = "<group>";
 		};
+		A194CE33292E7E8100CC5A8E /* Doubles */ = {
+			isa = PBXGroup;
+			children = (
+				A194CE34292E7EA000CC5A8E /* DispatchQueueTestingOverrides.swift */,
+			);
+			path = Doubles;
+			sourceTree = "<group>";
+		};
 		A19B686329292BEC00145256 /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -700,7 +714,9 @@
 		A19B686429292BFF00145256 /* Download */ = {
 			isa = PBXGroup;
 			children = (
+				A194CE2E292E74B800CC5A8E /* CacheManager.swift */,
 				A19B686029292B0000145256 /* NetworkDownload.swift */,
+				A194CE37292E92AF00CC5A8E /* NetworkDownloadBuilder.swift */,
 			);
 			path = Download;
 			sourceTree = "<group>";
@@ -816,6 +832,7 @@
 		A19F31C7292AA96C00EAABDE /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				A194CE33292E7E8100CC5A8E /* Doubles */,
 				A194CE00292E536E00CC5A8E /* DataProvider */,
 				A19F31C8292AA97900EAABDE /* Views */,
 			);
@@ -1035,6 +1052,7 @@
 				A1A24363292D928E00A6EEEE /* MatchDetailViewModel.swift in Sources */,
 				A1876A33292812E8006CE7C9 /* Coordinator.swift in Sources */,
 				A1A24354292D4A2900A6EEEE /* PlayersViewModel.swift in Sources */,
+				A194CE38292E92AF00CC5A8E /* NetworkDownloadBuilder.swift in Sources */,
 				A1A24356292D4A3D00A6EEEE /* PlayersConverter.swift in Sources */,
 				A1876A3A29281FAD006CE7C9 /* BaseURLProvider.swift in Sources */,
 				A1A2434B292D373700A6EEEE /* MatchDetailHeaderView.swift in Sources */,
@@ -1050,11 +1068,13 @@
 				A1876A452928429A006CE7C9 /* AccessTokenProvider.swift in Sources */,
 				A17BDED1292BF526001BF682 /* EmptyStateView.swift in Sources */,
 				A1876A4229283743006CE7C9 /* NetworkDeserialization.swift in Sources */,
+				A194CE35292E7EA000CC5A8E /* DispatchQueueTestingOverrides.swift in Sources */,
 				A19B685D29291D6100145256 /* FileManagerProvider.swift in Sources */,
 				A17BDED3292BF52E001BF682 /* ErrorView.swift in Sources */,
 				A19B688B29297C8A00145256 /* MatchesNetworkRequest.swift in Sources */,
 				A18769FE29280E7E006CE7C9 /* SceneDelegate.swift in Sources */,
 				A14A00AC2929C0A500B918D1 /* MatchModel.swift in Sources */,
+				A194CE2F292E74B800CC5A8E /* CacheManager.swift in Sources */,
 				A1A2434E292D47AD00A6EEEE /* PlayerModel.swift in Sources */,
 				A17BDEE6292C6B19001BF682 /* MatchesConverter.swift in Sources */,
 				A17BDEDA292C19B6001BF682 /* MatchDetailView.swift in Sources */,

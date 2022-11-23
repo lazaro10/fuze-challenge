@@ -61,8 +61,8 @@ final class ConfrontationOpponentsView: UIView {
     }
 
     func setup(viewModel: ConfrontationOpponentsViewModel) {
-        leftOpponentImageView.setImage(viewModel.leftOpponentImageURL, placeholder: .placeholderCircle)
-        rightOpponentImageView.setImage(viewModel.rightOpponentImageURL, placeholder: .placeholderCircle)
+        leftOpponentImageView.donwload.setImage(viewModel.leftOpponentImageURL, placeholder: .placeholderCircle)
+        rightOpponentImageView.donwload.setImage(viewModel.rightOpponentImageURL, placeholder: .placeholderCircle)
         leftOpponentLabel.text = viewModel.leftOpponentName
         rightOpponentLabel.text = viewModel.rightOpponentName
     }
