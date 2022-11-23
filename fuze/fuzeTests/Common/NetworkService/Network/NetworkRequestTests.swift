@@ -23,13 +23,4 @@ final class NetworkRequestTests: XCTestCase {
             XCTAssertEqual(error as? NetworkRequestError, .invalidPath)
         }
     }
-    
-    func test_toRequest_givenInvalidURL_shouldThrowInvalidURLError() throws {
-        let sut = Request.fixture()
-        let baseURL = try XCTUnwrap(URL(string: "--------------------00000----------"))
-        
-        XCTAssertThrowsError(try sut.toRequest(baseURL: baseURL, token: (key: "token", value: "u8y7t6hjhhj"))) { error in
-            XCTAssertEqual(error as? NetworkRequestError, .invalidURL)
-        }
-    }
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A13F6175292EB71000F58BE9 /* CacheManagerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13F6174292EB71000F58BE9 /* CacheManagerSpy.swift */; };
 		A14A00AC2929C0A500B918D1 /* MatchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14A00AB2929C0A500B918D1 /* MatchModel.swift */; };
 		A14A00B12929DB4400B918D1 /* MatchesNetworkRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14A00B02929DB4400B918D1 /* MatchesNetworkRequestTests.swift */; };
 		A14A00B32929DED800B918D1 /* MatchesRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14A00B22929DED800B918D1 /* MatchesRepositoryTests.swift */; };
@@ -130,6 +131,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A13F6174292EB71000F58BE9 /* CacheManagerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManagerSpy.swift; sourceTree = "<group>"; };
 		A14A00AB2929C0A500B918D1 /* MatchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchModel.swift; sourceTree = "<group>"; };
 		A14A00B02929DB4400B918D1 /* MatchesNetworkRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesNetworkRequestTests.swift; sourceTree = "<group>"; };
 		A14A00B22929DED800B918D1 /* MatchesRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesRepositoryTests.swift; sourceTree = "<group>"; };
@@ -597,6 +599,7 @@
 				A1876A6329285EF4006CE7C9 /* AccessTokenProviderSpy.swift */,
 				A1876A6929286871006CE7C9 /* NetworkProviderSpy.swift */,
 				A19B685E2929254E00145256 /* FileManagerProviderSpy.swift */,
+				A13F6174292EB71000F58BE9 /* CacheManagerSpy.swift */,
 				A14A00B42929DF2200B918D1 /* NetworkSpy.swift */,
 				A196D86929287CC6000ADDEE /* NetworkErrorDummy.swift */,
 				A196D86729287B72000ADDEE /* NetworkErrorEquatable.swift */,
@@ -1130,6 +1133,7 @@
 				A17BDEC3292BDB21001BF682 /* MatchViewModelFixture.swift in Sources */,
 				A17BDEC1292BC7F9001BF682 /* MatchesViewControllerDisplaySpy.swift in Sources */,
 				A17BDEBF292BBC1E001BF682 /* MatchesRepositorySpy.swift in Sources */,
+				A13F6175292EB71000F58BE9 /* CacheManagerSpy.swift in Sources */,
 				A1876A6429285EF4006CE7C9 /* AccessTokenProviderSpy.swift in Sources */,
 				A194CE1B292E5CFE00CC5A8E /* PlayersViewSpy.swift in Sources */,
 				A194CE2D292E6BF600CC5A8E /* PlayersViewControllerTests.swift in Sources */,
