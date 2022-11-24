@@ -31,7 +31,7 @@ final class MatchTableViewCell: UITableViewCell, Reusable {
 
     private let matchTimeLabel: UILabel = {
         let label = UILabel()
-        label.font = .robotoMeidum(size: 8)
+        label.font = .robotoBold(size: 8)
 
         return label
     }()
@@ -54,7 +54,7 @@ final class MatchTableViewCell: UITableViewCell, Reusable {
 
     private let leagueSerieLabel: UILabel = {
         let label = UILabel()
-        label.font = .robotoMeidum(size: 8)
+        label.font = .robotoRegular(size: 8)
 
         return label
     }()

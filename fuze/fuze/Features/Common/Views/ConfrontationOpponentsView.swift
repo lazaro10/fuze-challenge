@@ -20,7 +20,7 @@ final class ConfrontationOpponentsView: UIView {
 
     private let leftOpponentLabel: UILabel = {
         let label = UILabel()
-        label.font = .robotoMeidum(size: 10)
+        label.font = .robotoRegular(size: 10)
         label.textAlignment = .center
 
         return label
@@ -28,7 +28,7 @@ final class ConfrontationOpponentsView: UIView {
 
     private let versusLabel: UILabel = {
         let label = UILabel()
-        label.font = .robotoMeidum(size: 12)
+        label.font = .robotoRegular(size: 12)
         label.textColor = .secondaryGrey
         label.textAlignment = .center
         label.text = "VS"
@@ -45,7 +45,7 @@ final class ConfrontationOpponentsView: UIView {
 
     private let rightOpponentLabel: UILabel = {
         let label = UILabel()
-        label.font = .robotoMeidum(size: 10)
+        label.font = .robotoRegular(size: 10)
         label.textAlignment = .center
 
         return label

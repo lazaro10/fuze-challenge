@@ -13,6 +13,7 @@ final class PlayerTableViewCell: UITableViewCell, Reusable {
         let view = UIView()
         view.layer.cornerRadius = 12
         view.clipsToBounds = true
+        view.backgroundColor = .secondaryBackground
 
         return view
     }()
@@ -27,14 +28,14 @@ final class PlayerTableViewCell: UITableViewCell, Reusable {
 
     private let nicknameLabel: UILabel = {
         let label = UILabel()
-        label.font = .robotoMeidum(size: 14)
+        label.font = .robotoBold(size: 14)
 
         return label
     }()
 
     private let nameLabel: UILabel = {
         let label = UILabel()
-        label.font = .robotoMeidum(size: 12)
+        label.font = .robotoRegular(size: 12)
         label.textColor = .primaryBlue
 
         return label

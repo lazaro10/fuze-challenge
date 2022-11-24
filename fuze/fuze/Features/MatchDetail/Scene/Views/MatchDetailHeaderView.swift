@@ -14,7 +14,7 @@ final class MatchDetailHeaderView: UIView {
 
     private let matchTimeLabel: UILabel = {
         let label = UILabel()
-        label.font = .robotoMeidum(size: 12)
+        label.font = .robotoBold(size: 12)
         label.textAlignment = .center
 
         return label
