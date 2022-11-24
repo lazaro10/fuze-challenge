@@ -14,13 +14,4 @@ final class NetworkRequestTests: XCTestCase {
         let expectedHTTPHeaders = ["headerName": "headerValue"]
         XCTAssertEqual(request.allHTTPHeaderFields, expectedHTTPHeaders)
     }
-    
-    func test_toRequest_givenInvalidPath_shouldThrowInvalidPathError() throws {
-        let sut = Request.fixture(path: "%#$$fff")
-        let baseURL = try XCTUnwrap(URL(string: "https://moises.ai"))
-        
-        XCTAssertThrowsError(try sut.toRequest(baseURL: baseURL)) { error in
-            XCTAssertEqual(error as? NetworkRequestError, .invalidPath)
-        }
-    }
 }
