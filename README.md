@@ -34,11 +34,11 @@ All frameworks were installed using SPM
 
 The architecture used was MVVM with some layers of support.
 
-- Repository: Layer responsible for communicating with services and providing data. 
-- Converter: Layer responsible for converting business models into visual models. 
-- Model: Layer responsible for defining the business model
-- ViewModel: Layer responsible for commanding the presentation rules
-- View: Layer responsible for presenting the layout
+- Repository: Responsible for communicating with services and providing data. 
+- Converter: Responsible for converting business models into visual models. 
+- Model: Responsible for defining the business model
+- ViewModel: Responsible for commanding the presentation rules
+- View: Responsible for presenting the layout
 
 ## Requirements for tests
 
