@@ -52,7 +52,10 @@ For the tests to work correctly, some configurations are necessary.
 ## Demo
 
 ### Apperance Dark
-![ezgif-4-2b0d8adfa8](https://user-images.githubusercontent.com/13118511/203706064-30fb9c0d-0f23-4dd4-a416-7b669abe08fb.gif)
+
+![dark](https://user-images.githubusercontent.com/13118511/203831484-b7203fe9-7d21-47a6-a75f-6bce93d57b5e.gif)
+
 
 ### Apperance Light
-![ezgif-4-13d5a578e0](https://user-images.githubusercontent.com/13118511/203706378-7c82962f-ac7f-4f8c-b02d-a19881867322.gif)
+
+![light](https://user-images.githubusercontent.com/13118511/203831530-03cf4ef6-7768-4e2f-a633-9eec3dd06266.gif)
