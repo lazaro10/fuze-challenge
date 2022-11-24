@@ -278,6 +278,46 @@
 			path = Formatters;
 			sourceTree = "<group>";
 		};
+		A13F6186292EF13C00F58BE9 /* FuzeDesignSystem */ = {
+			isa = PBXGroup;
+			children = (
+				A19F31D4292AD40600EAABDE /* Formatters */,
+				A19F31CB292AC7EC00EAABDE /* Images */,
+				A19B68762929697A00145256 /* Colors */,
+				A19B687929296DD500145256 /* Fonts */,
+				A19B687E292973FF00145256 /* Localizable */,
+			);
+			path = FuzeDesignSystem;
+			sourceTree = "<group>";
+		};
+		A13F6187292EF19500F58BE9 /* FuzeDesignSystem */ = {
+			isa = PBXGroup;
+			children = (
+				A13F617F292EE02300F58BE9 /* Formatters */,
+				A19F31CE292AC8C600EAABDE /* Images */,
+				A14A00B92929E4DD00B918D1 /* Colors */,
+				A14A00BC2929E62D00B918D1 /* Fonts */,
+				A14A00BF2929E82E00B918D1 /* Localizable */,
+			);
+			path = FuzeDesignSystem;
+			sourceTree = "<group>";
+		};
+		A13F6188292EF1F400F58BE9 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A1876A3529281B3F006CE7C9 /* NetworkService */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		A13F6189292EF20B00F58BE9 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A1876A4B29284F2D006CE7C9 /* NetworkService */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		A14A00AD2929DB0900B918D1 /* Features */ = {
 			isa = PBXGroup;
 			children = (
@@ -459,6 +499,8 @@
 				A1876A2B292811D8006CE7C9 /* AppDelegate */,
 				A1876A2F292812C6006CE7C9 /* Coordinator */,
 				A1876A2D292811E6006CE7C9 /* Features */,
+				A13F6186292EF13C00F58BE9 /* FuzeDesignSystem */,
+				A13F6188292EF1F400F58BE9 /* Services */,
 				A1876A3429281B2A006CE7C9 /* Common */,
 				A1876A2E292811EC006CE7C9 /* Resources */,
 			);
@@ -470,7 +512,8 @@
 			children = (
 				A17BDEDF292C2CC5001BF682 /* Coordinator */,
 				A14A00AD2929DB0900B918D1 /* Features */,
-				A1876A4A29284F0F006CE7C9 /* Common */,
+				A13F6187292EF19500F58BE9 /* FuzeDesignSystem */,
+				A13F6189292EF20B00F58BE9 /* Services */,
 			);
 			path = fuzeTests;
 			sourceTree = "<group>";
@@ -519,14 +562,8 @@
 			isa = PBXGroup;
 			children = (
 				A13F6176292EB86200F58BE9 /* DispatchQueue */,
-				A19F31D4292AD40600EAABDE /* Formatters */,
 				A19F31BE292A856700EAABDE /* ConstraintsTools */,
 				A19F31B9292A82C200EAABDE /* ReusableCell */,
-				A19F31CB292AC7EC00EAABDE /* Images */,
-				A19B687E292973FF00145256 /* Localizable */,
-				A19B687929296DD500145256 /* Fonts */,
-				A19B68762929697A00145256 /* Colors */,
-				A1876A3529281B3F006CE7C9 /* NetworkService */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -557,19 +594,6 @@
 				A1876A3B292820A8006CE7C9 /* NetworkServiceMethod.swift */,
 			);
 			path = Method;
-			sourceTree = "<group>";
-		};
-		A1876A4A29284F0F006CE7C9 /* Common */ = {
-			isa = PBXGroup;
-			children = (
-				A13F617F292EE02300F58BE9 /* Formatters */,
-				A19F31CE292AC8C600EAABDE /* Images */,
-				A14A00BF2929E82E00B918D1 /* Localizable */,
-				A14A00BC2929E62D00B918D1 /* Fonts */,
-				A14A00B92929E4DD00B918D1 /* Colors */,
-				A1876A4B29284F2D006CE7C9 /* NetworkService */,
-			);
-			path = Common;
 			sourceTree = "<group>";
 		};
 		A1876A4B29284F2D006CE7C9 /* NetworkService */ = {
