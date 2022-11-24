@@ -48,7 +48,7 @@ final class MatchesView: UIView {
 
     private func setupConstraints() {
         addSubview(tableView, constraints: [
-            tableView.topAnchor.constraint(equalTo: topAnchor),
+            tableView.topAnchor.constraint(equalTo: layoutMarginsGuide.topAnchor),
             tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: bottomAnchor)
