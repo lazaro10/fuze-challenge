@@ -32,7 +32,7 @@ All frameworks were installed using SPM
 
 ## Architecture
 
-A arquitetura utilizada foi MVVM com algumas camadas de apoio.
+The architecture used was MVVM with some layers of support.
 
 - Repository: Layer responsible for communicating with services and providing data. 
 - Converter: Layer responsible for converting business models into visual models. 
