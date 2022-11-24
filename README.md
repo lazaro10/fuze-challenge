@@ -2,7 +2,7 @@
 
 This application lets you know the schedule of Counter-Strike: Global Offensive championship matches
 
-# Features
+## Features
 
 ### Matches
 
