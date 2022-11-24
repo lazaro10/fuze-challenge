@@ -33,9 +33,20 @@ final class MatchesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = Strings.matches
         contentView.delegate = self
         viewModel.fetchMatches()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        title = Strings.matches
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+        title = ""
     }
 }
 
