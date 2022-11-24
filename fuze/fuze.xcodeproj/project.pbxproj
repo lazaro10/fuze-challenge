@@ -17,6 +17,7 @@
 		A13F618F292EF92D00F58BE9 /* AppConfigurationProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13F618E292EF92D00F58BE9 /* AppConfigurationProviderTests.swift */; };
 		A13F6191292F0DAE00F58BE9 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A13F6190292F0DAE00F58BE9 /* Roboto-Regular.ttf */; };
 		A13F6193292F0DBB00F58BE9 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A13F6192292F0DBB00F58BE9 /* Roboto-Bold.ttf */; };
+		A13F61E2292F199E00F58BE9 /* MatchesViewSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13F61E1292F199E00F58BE9 /* MatchesViewSnapshotTests.swift */; };
 		A14A00AC2929C0A500B918D1 /* MatchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14A00AB2929C0A500B918D1 /* MatchModel.swift */; };
 		A14A00B12929DB4400B918D1 /* MatchesNetworkRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14A00B02929DB4400B918D1 /* MatchesNetworkRequestTests.swift */; };
 		A14A00B32929DED800B918D1 /* MatchesRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14A00B22929DED800B918D1 /* MatchesRepositoryTests.swift */; };
@@ -116,6 +117,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		A13F61D8292F193500F58BE9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A18769F029280E7E006CE7C9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A18769F729280E7E006CE7C9;
+			remoteInfo = fuze;
+		};
 		A1876A0F29280E7F006CE7C9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A18769F029280E7E006CE7C9 /* Project object */;
@@ -135,6 +143,8 @@
 		A13F618E292EF92D00F58BE9 /* AppConfigurationProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfigurationProviderTests.swift; sourceTree = "<group>"; };
 		A13F6190292F0DAE00F58BE9 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		A13F6192292F0DBB00F58BE9 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
+		A13F61D4292F193500F58BE9 /* fuzeSnapshotTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = fuzeSnapshotTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A13F61E1292F199E00F58BE9 /* MatchesViewSnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesViewSnapshotTests.swift; sourceTree = "<group>"; };
 		A14A00AB2929C0A500B918D1 /* MatchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchModel.swift; sourceTree = "<group>"; };
 		A14A00B02929DB4400B918D1 /* MatchesNetworkRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesNetworkRequestTests.swift; sourceTree = "<group>"; };
 		A14A00B22929DED800B918D1 /* MatchesRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesRepositoryTests.swift; sourceTree = "<group>"; };
@@ -240,6 +250,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		A13F61D1292F193500F58BE9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A18769F529280E7E006CE7C9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -312,6 +329,46 @@
 				A1876A4B29284F2D006CE7C9 /* NetworkService */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		A13F61D5292F193500F58BE9 /* fuzeSnapshotTests */ = {
+			isa = PBXGroup;
+			children = (
+				A13F61DD292F194E00F58BE9 /* Features */,
+			);
+			path = fuzeSnapshotTests;
+			sourceTree = "<group>";
+		};
+		A13F61DD292F194E00F58BE9 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				A13F61DE292F195800F58BE9 /* Matches */,
+				A13F61DF292F195E00F58BE9 /* MatchDetail */,
+				A13F61E0292F196B00F58BE9 /* Players */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		A13F61DE292F195800F58BE9 /* Matches */ = {
+			isa = PBXGroup;
+			children = (
+				A13F61E1292F199E00F58BE9 /* MatchesViewSnapshotTests.swift */,
+			);
+			path = Matches;
+			sourceTree = "<group>";
+		};
+		A13F61DF292F195E00F58BE9 /* MatchDetail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MatchDetail;
+			sourceTree = "<group>";
+		};
+		A13F61E0292F196B00F58BE9 /* Players */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Players;
 			sourceTree = "<group>";
 		};
 		A14A00AD2929DB0900B918D1 /* Features */ = {
@@ -476,6 +533,7 @@
 				A1876A4329283F55006CE7C9 /* AppConfiguration.xcconfig */,
 				A18769FA29280E7E006CE7C9 /* fuze */,
 				A1876A1129280E7F006CE7C9 /* fuzeTests */,
+				A13F61D5292F193500F58BE9 /* fuzeSnapshotTests */,
 				A18769F929280E7E006CE7C9 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -485,6 +543,7 @@
 			children = (
 				A18769F829280E7E006CE7C9 /* fuze.app */,
 				A1876A0E29280E7F006CE7C9 /* fuzeTests.xctest */,
+				A13F61D4292F193500F58BE9 /* fuzeSnapshotTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -936,6 +995,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		A13F61D3292F193500F58BE9 /* fuzeSnapshotTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A13F61DA292F193500F58BE9 /* Build configuration list for PBXNativeTarget "fuzeSnapshotTests" */;
+			buildPhases = (
+				A13F61D0292F193500F58BE9 /* Sources */,
+				A13F61D1292F193500F58BE9 /* Frameworks */,
+				A13F61D2292F193500F58BE9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A13F61D9292F193500F58BE9 /* PBXTargetDependency */,
+			);
+			name = fuzeSnapshotTests;
+			productName = fuzeSnapshotTests;
+			productReference = A13F61D4292F193500F58BE9 /* fuzeSnapshotTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		A18769F729280E7E006CE7C9 /* fuze */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A1876A2229280E7F006CE7C9 /* Build configuration list for PBXNativeTarget "fuze" */;
@@ -984,6 +1061,10 @@
 				LastSwiftUpdateCheck = 1340;
 				LastUpgradeCheck = 1340;
 				TargetAttributes = {
+					A13F61D3292F193500F58BE9 = {
+						CreatedOnToolsVersion = 13.4.1;
+						TestTargetID = A18769F729280E7E006CE7C9;
+					};
 					A18769F729280E7E006CE7C9 = {
 						CreatedOnToolsVersion = 13.4.1;
 					};
@@ -1012,11 +1093,19 @@
 			targets = (
 				A18769F729280E7E006CE7C9 /* fuze */,
 				A1876A0D29280E7F006CE7C9 /* fuzeTests */,
+				A13F61D3292F193500F58BE9 /* fuzeSnapshotTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		A13F61D2292F193500F58BE9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A18769F629280E7E006CE7C9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1041,6 +1130,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		A13F61D0292F193500F58BE9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A13F61E2292F199E00F58BE9 /* MatchesViewSnapshotTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A18769F429280E7E006CE7C9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1156,6 +1253,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		A13F61D9292F193500F58BE9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A18769F729280E7E006CE7C9 /* fuze */;
+			targetProxy = A13F61D8292F193500F58BE9 /* PBXContainerItemProxy */;
+		};
 		A1876A1029280E7F006CE7C9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = A18769F729280E7E006CE7C9 /* fuze */;
@@ -1185,6 +1287,40 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		A13F61DB292F193500F58BE9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = cc.app.fuzeSnapshotTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/fuze.app/fuze";
+			};
+			name = Debug;
+		};
+		A13F61DC292F193500F58BE9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = cc.app.fuzeSnapshotTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/fuze.app/fuze";
+			};
+			name = Release;
+		};
 		A1876A2029280E7F006CE7C9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A1876A4329283F55006CE7C9 /* AppConfiguration.xcconfig */;
@@ -1396,6 +1532,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		A13F61DA292F193500F58BE9 /* Build configuration list for PBXNativeTarget "fuzeSnapshotTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A13F61DB292F193500F58BE9 /* Debug */,
+				A13F61DC292F193500F58BE9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		A18769F329280E7E006CE7C9 /* Build configuration list for PBXProject "fuze" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
