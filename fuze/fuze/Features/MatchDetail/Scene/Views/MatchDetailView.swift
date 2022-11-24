@@ -5,7 +5,7 @@ protocol MatchDetailViewProtocol: UIView {
 }
 
 final class MatchDetailView: UIView {
-    private enum State {
+    enum State {
         case content
         case loading
     }
@@ -37,7 +37,7 @@ final class MatchDetailView: UIView {
 
     private func setupConstraints() {
         addSubview(headerView, constraints: [
-            headerView.topAnchor.constraint(equalTo: layoutMarginsGuide.topAnchor, constant: -24),
+            headerView.topAnchor.constraint(equalTo: topAnchor, constant: 60),
             headerView.leadingAnchor.constraint(equalTo: leadingAnchor),
             headerView.trailingAnchor.constraint(equalTo: trailingAnchor)
         ])
@@ -61,7 +61,7 @@ final class MatchDetailView: UIView {
         backgroundColor = .primaryBackground
     }
 
-    private func changeState(_ state: State) {
+    func changeState(_ state: State) {
         switch state {
         case .content:
             headerView.isHidden = false

@@ -20,14 +20,6 @@ final class MatchesView: UIView {
         case error
     }
 
-
-    private let topLineView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .primaryBackground
-
-        return view
-    }()
-
     private lazy var tableViewProvider = PageableTableViewProvider<MatchTableViewCell, MatchViewModel>(tableView: tableView, delegate: self)
 
     private let tableView: UITableView = {
@@ -55,15 +47,8 @@ final class MatchesView: UIView {
     }
 
     private func setupConstraints() {
-        addSubview(topLineView, constraints: [
-            topLineView.topAnchor.constraint(equalTo: layoutMarginsGuide.topAnchor, constant: 16),
-            topLineView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            topLineView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            topLineView.heightAnchor.constraint(equalToConstant: 1)
-        ])
-
         addSubview(tableView, constraints: [
-            tableView.topAnchor.constraint(equalTo: topLineView.bottomAnchor),
+            tableView.topAnchor.constraint(equalTo: topAnchor),
             tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: bottomAnchor)

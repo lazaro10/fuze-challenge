@@ -39,8 +39,8 @@ final class MatchDetailHeaderView: UIView {
     private func setupConstraints() {
         addSubview(titleLabel, constraints: [
             titleLabel.topAnchor.constraint(equalTo: topAnchor),
-            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16)
+            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24),
+            titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -24)
         ])
 
         addSubview(confrontationView, constraints: [
