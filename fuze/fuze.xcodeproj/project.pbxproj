@@ -12,6 +12,9 @@
 		A13F6181292EE02D00F58BE9 /* DateFormatterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13F6180292EE02D00F58BE9 /* DateFormatterTest.swift */; };
 		A13F6183292EE7F500F58BE9 /* MatchesCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13F6182292EE7F500F58BE9 /* MatchesCoordinatorTests.swift */; };
 		A13F6185292EEF3E00F58BE9 /* NavigationControllerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13F6184292EEF3E00F58BE9 /* NavigationControllerSpy.swift */; };
+		A13F618B292EF2A000F58BE9 /* AppConfigurationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13F618A292EF2A000F58BE9 /* AppConfigurationProvider.swift */; };
+		A13F618D292EF86600F58BE9 /* AppConfigurationProviderSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13F618C292EF86600F58BE9 /* AppConfigurationProviderSpy.swift */; };
+		A13F618F292EF92D00F58BE9 /* AppConfigurationProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13F618E292EF92D00F58BE9 /* AppConfigurationProviderTests.swift */; };
 		A14A00AC2929C0A500B918D1 /* MatchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14A00AB2929C0A500B918D1 /* MatchModel.swift */; };
 		A14A00B12929DB4400B918D1 /* MatchesNetworkRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14A00B02929DB4400B918D1 /* MatchesNetworkRequestTests.swift */; };
 		A14A00B32929DED800B918D1 /* MatchesRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14A00B22929DED800B918D1 /* MatchesRepositoryTests.swift */; };
@@ -46,20 +49,13 @@
 		A1876A31292812E1006CE7C9 /* MatchesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1876A30292812E1006CE7C9 /* MatchesCoordinator.swift */; };
 		A1876A33292812E8006CE7C9 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1876A32292812E8006CE7C9 /* Coordinator.swift */; };
 		A1876A3729281EA8006CE7C9 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1876A3629281EA8006CE7C9 /* NetworkRequest.swift */; };
-		A1876A3A29281FAD006CE7C9 /* BaseURLProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1876A3929281FAD006CE7C9 /* BaseURLProvider.swift */; };
 		A1876A3C292820A8006CE7C9 /* NetworkServiceMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1876A3B292820A8006CE7C9 /* NetworkServiceMethod.swift */; };
 		A1876A3E29282412006CE7C9 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1876A3D29282412006CE7C9 /* Network.swift */; };
 		A1876A4229283743006CE7C9 /* NetworkDeserialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1876A4129283743006CE7C9 /* NetworkDeserialization.swift */; };
-		A1876A452928429A006CE7C9 /* AccessTokenProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1876A442928429A006CE7C9 /* AccessTokenProvider.swift */; };
-		A1876A47292843DC006CE7C9 /* ApiProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1876A46292843DC006CE7C9 /* ApiProvider.swift */; };
-		A1876A4E29284F54006CE7C9 /* BaseURLProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1876A4D29284F54006CE7C9 /* BaseURLProviderTests.swift */; };
-		A1876A532928519A006CE7C9 /* AccessTokenProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1876A522928519A006CE7C9 /* AccessTokenProviderTests.swift */; };
 		A1876A59292854EF006CE7C9 /* NetworkRequestFixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1876A58292854EF006CE7C9 /* NetworkRequestFixture.swift */; };
 		A1876A5B29285504006CE7C9 /* NetworkRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1876A5A29285504006CE7C9 /* NetworkRequestTests.swift */; };
 		A1876A5D29285C51006CE7C9 /* NetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1876A5C29285C51006CE7C9 /* NetworkTests.swift */; };
 		A1876A6029285C89006CE7C9 /* NetworkDeserializationSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1876A5F29285C89006CE7C9 /* NetworkDeserializationSpy.swift */; };
-		A1876A6229285DED006CE7C9 /* BaseURLProviderSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1876A6129285DED006CE7C9 /* BaseURLProviderSpy.swift */; };
-		A1876A6429285EF4006CE7C9 /* AccessTokenProviderSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1876A6329285EF4006CE7C9 /* AccessTokenProviderSpy.swift */; };
 		A1876A6829286700006CE7C9 /* ResponseModeFixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1876A6729286700006CE7C9 /* ResponseModeFixture.swift */; };
 		A1876A6A29286871006CE7C9 /* NetworkProviderSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1876A6929286871006CE7C9 /* NetworkProviderSpy.swift */; };
 		A1876A6C29286A88006CE7C9 /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1876A6B29286A88006CE7C9 /* NetworkProvider.swift */; };
@@ -132,6 +128,9 @@
 		A13F6180292EE02D00F58BE9 /* DateFormatterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterTest.swift; sourceTree = "<group>"; };
 		A13F6182292EE7F500F58BE9 /* MatchesCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesCoordinatorTests.swift; sourceTree = "<group>"; };
 		A13F6184292EEF3E00F58BE9 /* NavigationControllerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControllerSpy.swift; sourceTree = "<group>"; };
+		A13F618A292EF2A000F58BE9 /* AppConfigurationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfigurationProvider.swift; sourceTree = "<group>"; };
+		A13F618C292EF86600F58BE9 /* AppConfigurationProviderSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfigurationProviderSpy.swift; sourceTree = "<group>"; };
+		A13F618E292EF92D00F58BE9 /* AppConfigurationProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfigurationProviderTests.swift; sourceTree = "<group>"; };
 		A14A00AB2929C0A500B918D1 /* MatchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchModel.swift; sourceTree = "<group>"; };
 		A14A00B02929DB4400B918D1 /* MatchesNetworkRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesNetworkRequestTests.swift; sourceTree = "<group>"; };
 		A14A00B22929DED800B918D1 /* MatchesRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesRepositoryTests.swift; sourceTree = "<group>"; };
@@ -169,21 +168,14 @@
 		A1876A30292812E1006CE7C9 /* MatchesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesCoordinator.swift; sourceTree = "<group>"; };
 		A1876A32292812E8006CE7C9 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		A1876A3629281EA8006CE7C9 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
-		A1876A3929281FAD006CE7C9 /* BaseURLProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseURLProvider.swift; sourceTree = "<group>"; };
 		A1876A3B292820A8006CE7C9 /* NetworkServiceMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceMethod.swift; sourceTree = "<group>"; };
 		A1876A3D29282412006CE7C9 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		A1876A4129283743006CE7C9 /* NetworkDeserialization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDeserialization.swift; sourceTree = "<group>"; };
 		A1876A4329283F55006CE7C9 /* AppConfiguration.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = AppConfiguration.xcconfig; sourceTree = "<group>"; };
-		A1876A442928429A006CE7C9 /* AccessTokenProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessTokenProvider.swift; sourceTree = "<group>"; };
-		A1876A46292843DC006CE7C9 /* ApiProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiProvider.swift; sourceTree = "<group>"; };
-		A1876A4D29284F54006CE7C9 /* BaseURLProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseURLProviderTests.swift; sourceTree = "<group>"; };
-		A1876A522928519A006CE7C9 /* AccessTokenProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessTokenProviderTests.swift; sourceTree = "<group>"; };
 		A1876A58292854EF006CE7C9 /* NetworkRequestFixture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequestFixture.swift; sourceTree = "<group>"; };
 		A1876A5A29285504006CE7C9 /* NetworkRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequestTests.swift; sourceTree = "<group>"; };
 		A1876A5C29285C51006CE7C9 /* NetworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTests.swift; sourceTree = "<group>"; };
 		A1876A5F29285C89006CE7C9 /* NetworkDeserializationSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDeserializationSpy.swift; sourceTree = "<group>"; };
-		A1876A6129285DED006CE7C9 /* BaseURLProviderSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseURLProviderSpy.swift; sourceTree = "<group>"; };
-		A1876A6329285EF4006CE7C9 /* AccessTokenProviderSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessTokenProviderSpy.swift; sourceTree = "<group>"; };
 		A1876A6729286700006CE7C9 /* ResponseModeFixture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseModeFixture.swift; sourceTree = "<group>"; };
 		A1876A6929286871006CE7C9 /* NetworkProviderSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProviderSpy.swift; sourceTree = "<group>"; };
 		A1876A6B29286A88006CE7C9 /* NetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
@@ -580,9 +572,7 @@
 		A1876A4829284EAA006CE7C9 /* Providers */ = {
 			isa = PBXGroup;
 			children = (
-				A1876A46292843DC006CE7C9 /* ApiProvider.swift */,
-				A1876A3929281FAD006CE7C9 /* BaseURLProvider.swift */,
-				A1876A442928429A006CE7C9 /* AccessTokenProvider.swift */,
+				A13F618A292EF2A000F58BE9 /* AppConfigurationProvider.swift */,
 				A1876A6B29286A88006CE7C9 /* NetworkProvider.swift */,
 			);
 			path = Providers;
@@ -610,8 +600,7 @@
 		A1876A4C29284F3D006CE7C9 /* Providers */ = {
 			isa = PBXGroup;
 			children = (
-				A1876A4D29284F54006CE7C9 /* BaseURLProviderTests.swift */,
-				A1876A522928519A006CE7C9 /* AccessTokenProviderTests.swift */,
+				A13F618E292EF92D00F58BE9 /* AppConfigurationProviderTests.swift */,
 			);
 			path = Providers;
 			sourceTree = "<group>";
@@ -629,8 +618,7 @@
 			isa = PBXGroup;
 			children = (
 				A1876A5F29285C89006CE7C9 /* NetworkDeserializationSpy.swift */,
-				A1876A6129285DED006CE7C9 /* BaseURLProviderSpy.swift */,
-				A1876A6329285EF4006CE7C9 /* AccessTokenProviderSpy.swift */,
+				A13F618C292EF86600F58BE9 /* AppConfigurationProviderSpy.swift */,
 				A1876A6929286871006CE7C9 /* NetworkProviderSpy.swift */,
 				A14A00B42929DF2200B918D1 /* NetworkSpy.swift */,
 				A196D86929287CC6000ADDEE /* NetworkErrorDummy.swift */,
@@ -1062,12 +1050,11 @@
 				A1A24361292D8DC400A6EEEE /* PlayersBuilder.swift in Sources */,
 				A19B687029295DC000145256 /* MatchesViewModel.swift in Sources */,
 				A1876A3C292820A8006CE7C9 /* NetworkServiceMethod.swift in Sources */,
-				A1876A47292843DC006CE7C9 /* ApiProvider.swift in Sources */,
 				A1A24363292D928E00A6EEEE /* MatchDetailViewModel.swift in Sources */,
 				A1876A33292812E8006CE7C9 /* Coordinator.swift in Sources */,
 				A1A24354292D4A2900A6EEEE /* PlayersViewModel.swift in Sources */,
 				A1A24356292D4A3D00A6EEEE /* PlayersConverter.swift in Sources */,
-				A1876A3A29281FAD006CE7C9 /* BaseURLProvider.swift in Sources */,
+				A13F618B292EF2A000F58BE9 /* AppConfigurationProvider.swift in Sources */,
 				A1A2434B292D373700A6EEEE /* MatchDetailHeaderView.swift in Sources */,
 				A17BDECF292BF50F001BF682 /* LoadingView.swift in Sources */,
 				A13F6178292EB87200F58BE9 /* DispatchQueue.swift in Sources */,
@@ -1079,7 +1066,6 @@
 				A19B686B29295C4500145256 /* MatchesViewController.swift in Sources */,
 				A19B688929297B3700145256 /* MatchesRepository.swift in Sources */,
 				A1876A3729281EA8006CE7C9 /* NetworkRequest.swift in Sources */,
-				A1876A452928429A006CE7C9 /* AccessTokenProvider.swift in Sources */,
 				A17BDED1292BF526001BF682 /* EmptyStateView.swift in Sources */,
 				A1876A4229283743006CE7C9 /* NetworkDeserialization.swift in Sources */,
 				A194CE35292E7EA000CC5A8E /* DispatchQueueTestingOverrides.swift in Sources */,
@@ -1106,8 +1092,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A1876A6229285DED006CE7C9 /* BaseURLProviderSpy.swift in Sources */,
 				A196D86A29287CC6000ADDEE /* NetworkErrorDummy.swift in Sources */,
+				A13F618D292EF86600F58BE9 /* AppConfigurationProviderSpy.swift in Sources */,
 				A17BDECB292BE7EE001BF682 /* MatchesViewModeSpy.swift in Sources */,
 				A1876A6829286700006CE7C9 /* ResponseModeFixture.swift in Sources */,
 				A13F6185292EEF3E00F58BE9 /* NavigationControllerSpy.swift in Sources */,
@@ -1121,12 +1107,12 @@
 				A1876A5D29285C51006CE7C9 /* NetworkTests.swift in Sources */,
 				A1876A59292854EF006CE7C9 /* NetworkRequestFixture.swift in Sources */,
 				A1876A6029285C89006CE7C9 /* NetworkDeserializationSpy.swift in Sources */,
-				A1876A532928519A006CE7C9 /* AccessTokenProviderTests.swift in Sources */,
 				A194CE0E292E57A500CC5A8E /* MatchDetailViewSpy.swift in Sources */,
 				A17BDEBC292BBACA001BF682 /* MatchesViewModelTests.swift in Sources */,
 				A194CE29292E640700CC5A8E /* PlayersConverterTests.swift in Sources */,
 				A194CE1E292E5DB800CC5A8E /* PlayerModelFixture.swift in Sources */,
 				A194CE0C292E577E00CC5A8E /* MatchDetailViewModelSpy.swift in Sources */,
+				A13F618F292EF92D00F58BE9 /* AppConfigurationProviderTests.swift in Sources */,
 				A194CE20292E5E7400CC5A8E /* PlayerViewModelFixture.swift in Sources */,
 				A17BDEC7292BDB70001BF682 /* ConfrontationOpponentsViewModelFixture.swift in Sources */,
 				A194CE17292E5B2300CC5A8E /* PlayersViewModelSpy.swift in Sources */,
@@ -1141,7 +1127,6 @@
 				A13F6183292EE7F500F58BE9 /* MatchesCoordinatorTests.swift in Sources */,
 				A17BDEC1292BC7F9001BF682 /* MatchesViewControllerDisplaySpy.swift in Sources */,
 				A17BDEBF292BBC1E001BF682 /* MatchesRepositorySpy.swift in Sources */,
-				A1876A6429285EF4006CE7C9 /* AccessTokenProviderSpy.swift in Sources */,
 				A194CE1B292E5CFE00CC5A8E /* PlayersViewSpy.swift in Sources */,
 				A194CE2D292E6BF600CC5A8E /* PlayersViewControllerTests.swift in Sources */,
 				A17BDECD292BE83B001BF682 /* MatchesViewSpy.swift in Sources */,
@@ -1151,7 +1136,6 @@
 				A17BDEE2292C2CD8001BF682 /* MatchesCoordinatorSpy.swift in Sources */,
 				A17BDEE8292C6C30001BF682 /* MatchesConverterTests.swift in Sources */,
 				A194CE13292E5A3D00CC5A8E /* PlayersRepositorySpy.swift in Sources */,
-				A1876A4E29284F54006CE7C9 /* BaseURLProviderTests.swift in Sources */,
 				A194CE05292E54D500CC5A8E /* MatchDetailViewModelTests.swift in Sources */,
 				A196D86829287B72000ADDEE /* NetworkErrorEquatable.swift in Sources */,
 				A13F6181292EE02D00F58BE9 /* DateFormatterTest.swift in Sources */,

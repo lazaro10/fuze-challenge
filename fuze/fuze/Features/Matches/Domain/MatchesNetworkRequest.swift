@@ -1,13 +1,13 @@
 enum MatchesNetworkRequest: NetworkRequest {
-    case running(page: Int)
-    case upcoming(page: Int)
+    case running(page: Int, configuration: AppConfigurationProviding)
+    case upcoming(page: Int, configuration: AppConfigurationProviding)
 
     var parameters: [String: String] {
         switch self {
-        case .running(let page):
-            return ["page": "\(page)", "per_page": "10"]
-        case .upcoming(let page):
-            return ["page": "\(page)", "per_page": "10"]
+        case let .running(page, configuration):
+            return ["page": "\(page)", "per_page": "10", "token": configuration.accessToken(.pandaScore)]
+        case let .upcoming(page, configuration):
+            return ["page": "\(page)", "per_page": "10", "token": configuration.accessToken(.pandaScore)]
         }
     }
 

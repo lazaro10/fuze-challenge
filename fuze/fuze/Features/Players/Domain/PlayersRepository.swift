@@ -10,7 +10,7 @@ final class PlayersRepository: PlayersRepositable {
     }
 
     func fetchPlayers(page: Int, teamId: Int, completion: @escaping (Result<[PlayerModel], Error>) -> Void) {
-        let request = PlayersNetworkRequest(page: page, teamId: teamId)
+        let request = PlayersNetworkRequest(page: page, teamId: teamId, configuration: AppConfigurationProvider())
 
         network.request(request, completion: completion)
     }

@@ -1,7 +1,7 @@
 import Foundation
 
 protocol NetworkRequest {
-    var baseURL: ApiProvider { get }
+    var baseURL: ApiConfiguration { get }
     var path: String { get }
     var method: NetworkServiceMethod { get }
     var parameters: [String: String] { get }
@@ -9,7 +9,7 @@ protocol NetworkRequest {
 }
 
 extension NetworkRequest {
-    var baseURL: ApiProvider { .pandaScore }
+    var baseURL: ApiConfiguration { .pandaScore }
     var parameters: [String: String] { [:] }
     var headers: [String: String] { [:] }
 }
@@ -20,7 +20,7 @@ enum NetworkRequestError: Error, Equatable {
 }
 
 extension NetworkRequest {
-    func toRequest(baseURL: URL, token: (key: String, value: String)) throws -> URLRequest {
+    func toRequest(baseURL: URL) throws -> URLRequest {
         guard var urlPathComponent = URLComponents(string: path) else {
             throw NetworkRequestError.invalidPath
         }
@@ -29,8 +29,6 @@ extension NetworkRequest {
             URLQueryItem(name: key, value: value)
         }
 
-        urlPathComponent.queryItems?.append(URLQueryItem(name: token.key, value: token.value))
-        
         guard let url = urlPathComponent.url(relativeTo: baseURL) else {
             throw NetworkRequestError.invalidURL
         }

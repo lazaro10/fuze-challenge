@@ -11,13 +11,13 @@ final class MatchesRepository: MatchesRepositable {
     }
 
     func fetchRunningMatches(page: Int, completion: @escaping (Result<[MatchModel], Error>) -> Void) {
-        let request = MatchesNetworkRequest.running(page: page)
+        let request = MatchesNetworkRequest.running(page: page, configuration: AppConfigurationProvider())
 
         network.request(request, completion: completion)
     }
 
     func fetchUpcomingMatches(page: Int, completion: @escaping (Result<[MatchModel], Error>) -> Void) {
-        let request = MatchesNetworkRequest.upcoming(page: page)
+        let request = MatchesNetworkRequest.upcoming(page: page, configuration: AppConfigurationProvider())
 
         network.request(request, completion: completion)
     }

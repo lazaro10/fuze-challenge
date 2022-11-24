@@ -13,19 +13,16 @@ protocol NetworkRequestable {
 final class Network {
     private let session: NetworkProviding
     private let deserialization: NetworkDeserializable
-    private let urlProvider: BaseURLProviding
-    private let accessTokenProvider: AccessTokenProviding
+    private let configuration: AppConfigurationProviding
     
     init(
         session: NetworkProviding,
         deserialization: NetworkDeserializable,
-        urlProvider: BaseURLProviding,
-        accessTokenProvider: AccessTokenProviding
+        configuration: AppConfigurationProviding
     ) {
         self.session = session
         self.deserialization = deserialization
-        self.urlProvider = urlProvider
-        self.accessTokenProvider = accessTokenProvider
+        self.configuration = configuration
     }
     
     private func dataTask(request: URLRequest, completion: @escaping (Result<Data, Error>) -> Void) {
@@ -50,8 +47,7 @@ final class Network {
 extension Network: NetworkRequestable {
     func request<T>(_ networkRequest: NetworkRequest, completion: @escaping (Result<T, Error>) -> Void) where T : Decodable {
         do {
-            let accessToken = accessTokenProvider.getAccessToken(api: networkRequest.baseURL)
-            let request = try networkRequest.toRequest(baseURL: urlProvider.getURL(api: networkRequest.baseURL), token: accessToken)
+            let request = try networkRequest.toRequest(baseURL: configuration.baseURL(networkRequest.baseURL))
 
             dataTask(request: request) { result in
                 completion(result.flatMap {

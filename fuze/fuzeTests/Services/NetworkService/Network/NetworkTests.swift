@@ -4,15 +4,9 @@ import XCTest
 final class NetworkTests: XCTestCase {
     let sessionSpy = NetworkProviderSpy()
     let deserializationSpy = NetworkDeserializationSpy()
-    let urlProviderSpy = BaseURLProviderSpy()
-    let accessTokenProviderSpy = AccessTokenProviderSpy()
+    let configurationSpy = AppConfigurationProviderSpy()
 
-    lazy var sut = Network(
-        session: sessionSpy,
-        deserialization: deserializationSpy,
-        urlProvider: urlProviderSpy,
-        accessTokenProvider: accessTokenProviderSpy
-    )
+    lazy var sut = Network(session: sessionSpy, deserialization: deserializationSpy, configuration: configurationSpy)
 
     func test_request_givenSuccess_shouldCompletionWithSuccess() throws {
         let json = ""
@@ -26,8 +20,7 @@ final class NetworkTests: XCTestCase {
         )
 
         deserializationSpy.stubbedDecodeResult = ResponseModel.fixture()
-        urlProviderSpy.stubbedGetURLResult = url
-        accessTokenProviderSpy.stubbedGetAccessTokenResult = (key: "token", value: "l54o4k")
+        configurationSpy.stubbedBaseURLResult = url
 
         var resultRequest: Result<ResponseModel, Error>?
 
@@ -38,11 +31,9 @@ final class NetworkTests: XCTestCase {
         switch resultRequest {
         case .success(let object):
             XCTAssertEqual(sessionSpy.invokedDataTaskCount, 1)
-            XCTAssertEqual(sessionSpy.invokedDataTaskParameterRequest?.url?.absoluteString, "https://moises.ai/path?paramName=paramValue&token=l54o4k")
-            XCTAssertEqual(accessTokenProviderSpy.invokedGetAccessTokenCount, 1)
-            XCTAssertEqual(accessTokenProviderSpy.invokedGetAccessTokenParameterApi, .pandaScore)
-            XCTAssertEqual(urlProviderSpy.invokedGetURLCount, 1)
-            XCTAssertEqual(urlProviderSpy.invokedGetURLParameterApi, .pandaScore)
+            XCTAssertEqual(sessionSpy.invokedDataTaskParameterRequest?.url?.absoluteString, "https://moises.ai/path?paramName=paramValue")
+            XCTAssertEqual(configurationSpy.invokedBaseURLCount, 1)
+            XCTAssertEqual(configurationSpy.invokedBaseURLParameterConfiguration, .pandaScore)
             XCTAssertEqual(deserializationSpy.invokedDecodeCount, 1)
             XCTAssertNotNil(deserializationSpy.invokedDecodeParameterData)
             XCTAssertEqual(object.firstParam, "fuze")
@@ -56,8 +47,7 @@ final class NetworkTests: XCTestCase {
         sessionSpy.stubbedDataTaskCompletionHandlerResult = (nil, nil, ErrorDummy.error)
 
         deserializationSpy.stubbedDecodeResult = ResponseModel.fixture()
-        urlProviderSpy.stubbedGetURLResult = try XCTUnwrap(URL(string: "https://moises.ai"))
-        accessTokenProviderSpy.stubbedGetAccessTokenResult = (key: "token", value: "l54o4k")
+        configurationSpy.stubbedBaseURLResult = try XCTUnwrap(URL(string: "https://moises.ai"))
 
         var resultRequest: Result<ResponseModel, Error>?
 
@@ -68,10 +58,8 @@ final class NetworkTests: XCTestCase {
         switch resultRequest {
         case .failure(let error):
             XCTAssertEqual(sessionSpy.invokedDataTaskCount, 1)
-            XCTAssertEqual(accessTokenProviderSpy.invokedGetAccessTokenCount, 1)
-            XCTAssertEqual(accessTokenProviderSpy.invokedGetAccessTokenParameterApi, .pandaScore)
-            XCTAssertEqual(urlProviderSpy.invokedGetURLCount, 1)
-            XCTAssertEqual(urlProviderSpy.invokedGetURLParameterApi, .pandaScore)
+            XCTAssertEqual(configurationSpy.invokedBaseURLCount, 1)
+            XCTAssertEqual(configurationSpy.invokedBaseURLParameterConfiguration, .pandaScore)
             XCTAssertEqual(deserializationSpy.invokedDecodeCount, 0)
             XCTAssertEqual(error as? NetworkError, .failureRequest(error: ErrorDummy.error))
             break
@@ -90,8 +78,7 @@ final class NetworkTests: XCTestCase {
         )
 
         deserializationSpy.stubbedDecodeResult = ResponseModel.fixture()
-        urlProviderSpy.stubbedGetURLResult = url
-        accessTokenProviderSpy.stubbedGetAccessTokenResult = (key: "token", value: "l54o4k")
+        configurationSpy.stubbedBaseURLResult = url
 
         var resultRequest: Result<ResponseModel, Error>?
 
@@ -102,10 +89,8 @@ final class NetworkTests: XCTestCase {
         switch resultRequest {
         case .failure(let error):
             XCTAssertEqual(sessionSpy.invokedDataTaskCount, 1)
-            XCTAssertEqual(accessTokenProviderSpy.invokedGetAccessTokenCount, 1)
-            XCTAssertEqual(accessTokenProviderSpy.invokedGetAccessTokenParameterApi, .pandaScore)
-            XCTAssertEqual(urlProviderSpy.invokedGetURLCount, 1)
-            XCTAssertEqual(urlProviderSpy.invokedGetURLParameterApi, .pandaScore)
+            XCTAssertEqual(configurationSpy.invokedBaseURLCount, 1)
+            XCTAssertEqual(configurationSpy.invokedBaseURLParameterConfiguration, .pandaScore)
             XCTAssertEqual(deserializationSpy.invokedDecodeCount, 0)
             XCTAssertEqual(error as? NetworkError, .failureResponse)
             break

@@ -2,7 +2,7 @@ import XCTest
 @testable import fuze
 
 struct Request: NetworkRequest {
-    var baseURL: ApiProvider
+    var baseURL: ApiConfiguration
     var path: String
     var method: NetworkServiceMethod
     var parameters: [String : String]
@@ -11,7 +11,7 @@ struct Request: NetworkRequest {
 
 extension Request {
     static func fixture(
-        baseURL: ApiProvider = .pandaScore,
+        baseURL: ApiConfiguration = .pandaScore,
         path: String = "/path",
         method: NetworkServiceMethod = .get,
         parameters: [String: String] = ["paramName": "paramValue"],

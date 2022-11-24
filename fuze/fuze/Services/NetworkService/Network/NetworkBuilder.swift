@@ -2,14 +2,12 @@ enum NetworkBuilder {
     static func build() -> Network {
         let session = NetworkProvider()
         let deserialization = NetworkDeserialization()
-        let urlProvider = BaseURLProvider()
-        let accessTokenProvider = AccessTokenProvider()
+        let appConfigurationProvider = AppConfigurationProvider()
 
         return Network(
             session: session,
             deserialization: deserialization,
-            urlProvider: urlProvider,
-            accessTokenProvider: accessTokenProvider
+            configuration: appConfigurationProvider
         )
     }
 }
