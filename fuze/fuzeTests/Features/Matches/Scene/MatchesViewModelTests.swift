@@ -28,7 +28,18 @@ final class MatchesViewModelTests: XCTestCase {
         XCTAssertEqual(sut.runningMachesPage, 2)
     }
 
-    func test_fetchMatches_givenRunningMatchesSuccess_givenMatchesLessThan10_shouldShouldCallMatchesUpcome() {
+    func test_fetchMatches_givenRunningMatchesSuccess_givenMatchesLessThan10_shouldDisplayContentState() {
+        matchesRepositorySpy.stubbedFetchRunningMatchesCompletionResult = .success([.fixture()])
+        converterSpy.stubbedConvertResult = [.fixture()]
+
+        sut.fetchMatches()
+
+        XCTAssertEqual(matchesRepositorySpy.invokedFetchUpcomingMatchesCount, 1)
+        XCTAssertEqual(displaySpy.invokedDisplayStateCount, 2)
+        XCTAssertEqual(displaySpy.invokedDisplayStateParameterState, .content(viewModels: [.fixture()]))
+    }
+
+    func test_fetchMatches_givenRunningMatchesSuccess_givenMatchesLessThan10_shouldCallMatchesUpcome() {
         matchesRepositorySpy.stubbedFetchRunningMatchesCompletionResult = .success([])
 
         sut.fetchMatches()

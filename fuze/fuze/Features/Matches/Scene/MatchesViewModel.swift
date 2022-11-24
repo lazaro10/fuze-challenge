@@ -48,10 +48,11 @@ final class MatchesViewModel {
                 self.runningMachesPage += 1
 
                 if matches.count < 10 {
+                    self.setupMatchesToDisplay(matches: matches)
                     self.fetchUpcomingMatches()
                 } else {
-                    self.isContinueRunningPagination = true
                     self.setupMatchesToDisplay(matches: matches)
+                    self.isContinueRunningPagination = true
                 }
 
             case .failure:
