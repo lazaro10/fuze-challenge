@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		62E328F12AE046A400CDC7FB /* iOSSnapshotTestCase in Frameworks */ = {isa = PBXBuildFile; productRef = 62E328F02AE046A400CDC7FB /* iOSSnapshotTestCase */; };
 		A13F6178292EB87200F58BE9 /* DispatchQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13F6177292EB87200F58BE9 /* DispatchQueue.swift */; };
 		A13F617E292EDB7200F58BE9 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = A13F617D292EDB7200F58BE9 /* Kingfisher */; };
 		A13F6181292EE02D00F58BE9 /* DateFormatterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13F6180292EE02D00F58BE9 /* DateFormatterTest.swift */; };
@@ -18,7 +19,6 @@
 		A13F6191292F0DAE00F58BE9 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A13F6190292F0DAE00F58BE9 /* Roboto-Regular.ttf */; };
 		A13F6193292F0DBB00F58BE9 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A13F6192292F0DBB00F58BE9 /* Roboto-Bold.ttf */; };
 		A13F61E2292F199E00F58BE9 /* MatchesViewSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13F61E1292F199E00F58BE9 /* MatchesViewSnapshotTests.swift */; };
-		A13F61EB292F24B900F58BE9 /* iOSSnapshotTestCase in Frameworks */ = {isa = PBXBuildFile; productRef = A13F61EA292F24B900F58BE9 /* iOSSnapshotTestCase */; };
 		A13F61EE292F252A00F58BE9 /* ViewControllerSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13F61ED292F252A00F58BE9 /* ViewControllerSnapshot.swift */; };
 		A13F61F1292F263000F58BE9 /* MatchViewModelFixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13F61F0292F263000F58BE9 /* MatchViewModelFixture.swift */; };
 		A13F61F5292F270B00F58BE9 /* ConfrontationOpponentsViewModelFixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13F61F4292F270B00F58BE9 /* ConfrontationOpponentsViewModelFixture.swift */; };
@@ -267,7 +267,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A13F61EB292F24B900F58BE9 /* iOSSnapshotTestCase in Frameworks */,
+				62E328F12AE046A400CDC7FB /* iOSSnapshotTestCase in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1070,7 +1070,7 @@
 			);
 			name = fuzeSnapshotTests;
 			packageProductDependencies = (
-				A13F61EA292F24B900F58BE9 /* iOSSnapshotTestCase */,
+				62E328F02AE046A400CDC7FB /* iOSSnapshotTestCase */,
 			);
 			productName = fuzeSnapshotTests;
 			productReference = A13F61D4292F193500F58BE9 /* fuzeSnapshotTests.xctest */;
@@ -1149,7 +1149,7 @@
 			mainGroup = A18769EF29280E7E006CE7C9;
 			packageReferences = (
 				A13F617C292EDB7200F58BE9 /* XCRemoteSwiftPackageReference "Kingfisher" */,
-				A13F61E9292F24B900F58BE9 /* XCRemoteSwiftPackageReference "ios-snapshot-test-case" */,
+				62E328EF2AE046A400CDC7FB /* XCRemoteSwiftPackageReference "ios-snapshot-test-case" */,
 			);
 			productRefGroup = A18769F929280E7E006CE7C9 /* Products */;
 			projectDirPath = "";
@@ -1641,6 +1641,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		62E328EF2AE046A400CDC7FB /* XCRemoteSwiftPackageReference "ios-snapshot-test-case" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/uber/ios-snapshot-test-case";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.0;
+			};
+		};
 		A13F617C292EDB7200F58BE9 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
@@ -1649,26 +1657,18 @@
 				kind = branch;
 			};
 		};
-		A13F61E9292F24B900F58BE9 /* XCRemoteSwiftPackageReference "ios-snapshot-test-case" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/uber/ios-snapshot-test-case.git";
-			requirement = {
-				branch = main;
-				kind = branch;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		62E328F02AE046A400CDC7FB /* iOSSnapshotTestCase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 62E328EF2AE046A400CDC7FB /* XCRemoteSwiftPackageReference "ios-snapshot-test-case" */;
+			productName = iOSSnapshotTestCase;
+		};
 		A13F617D292EDB7200F58BE9 /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = A13F617C292EDB7200F58BE9 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
-		};
-		A13F61EA292F24B900F58BE9 /* iOSSnapshotTestCase */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = A13F61E9292F24B900F58BE9 /* XCRemoteSwiftPackageReference "ios-snapshot-test-case" */;
-			productName = iOSSnapshotTestCase;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
