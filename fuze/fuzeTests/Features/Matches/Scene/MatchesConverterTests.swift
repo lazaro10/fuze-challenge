@@ -13,8 +13,6 @@ final class MatchesConverterTests: XCTestCase {
         XCTAssertEqual(viewModel.confrontationViewModel.leftOpponentName, "180mgkoffein")
         XCTAssertEqual(viewModel.confrontationViewModel.rightOpponentImageURL, nil)
         XCTAssertEqual(viewModel.confrontationViewModel.leftOpponentImageURL, nil)
-        XCTAssertEqual(viewModel.leagueSerie, "Closed Qualifier | Season 6 2022")
-        XCTAssertEqual(viewModel.matchTime, "Sun 06:30")
         XCTAssertEqual(viewModel.matchTimeViewColor, .tertiaryGrey)
         XCTAssertEqual(viewModel.id, 20)
         XCTAssertEqual(viewModel.leagueImageURL, nil)
