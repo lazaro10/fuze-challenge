@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		62E328F12AE046A400CDC7FB /* iOSSnapshotTestCase in Frameworks */ = {isa = PBXBuildFile; productRef = 62E328F02AE046A400CDC7FB /* iOSSnapshotTestCase */; };
 		A13F6178292EB87200F58BE9 /* DispatchQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13F6177292EB87200F58BE9 /* DispatchQueue.swift */; };
 		A13F617E292EDB7200F58BE9 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = A13F617D292EDB7200F58BE9 /* Kingfisher */; };
 		A13F6181292EE02D00F58BE9 /* DateFormatterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13F6180292EE02D00F58BE9 /* DateFormatterTest.swift */; };
@@ -267,7 +266,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				62E328F12AE046A400CDC7FB /* iOSSnapshotTestCase in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1070,7 +1068,6 @@
 			);
 			name = fuzeSnapshotTests;
 			packageProductDependencies = (
-				62E328F02AE046A400CDC7FB /* iOSSnapshotTestCase */,
 			);
 			productName = fuzeSnapshotTests;
 			productReference = A13F61D4292F193500F58BE9 /* fuzeSnapshotTests.xctest */;
@@ -1149,7 +1146,6 @@
 			mainGroup = A18769EF29280E7E006CE7C9;
 			packageReferences = (
 				A13F617C292EDB7200F58BE9 /* XCRemoteSwiftPackageReference "Kingfisher" */,
-				62E328EF2AE046A400CDC7FB /* XCRemoteSwiftPackageReference "ios-snapshot-test-case" */,
 			);
 			productRefGroup = A18769F929280E7E006CE7C9 /* Products */;
 			projectDirPath = "";
@@ -1641,14 +1637,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		62E328EF2AE046A400CDC7FB /* XCRemoteSwiftPackageReference "ios-snapshot-test-case" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/uber/ios-snapshot-test-case";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 8.0.0;
-			};
-		};
 		A13F617C292EDB7200F58BE9 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
@@ -1660,11 +1648,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		62E328F02AE046A400CDC7FB /* iOSSnapshotTestCase */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 62E328EF2AE046A400CDC7FB /* XCRemoteSwiftPackageReference "ios-snapshot-test-case" */;
-			productName = iOSSnapshotTestCase;
-		};
 		A13F617D292EDB7200F58BE9 /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = A13F617C292EDB7200F58BE9 /* XCRemoteSwiftPackageReference "Kingfisher" */;
