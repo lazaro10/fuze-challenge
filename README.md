@@ -44,7 +44,7 @@ The architecture used was MVVM with some layers of support.
 
 For the tests to work correctly, some configurations are necessary.
 
-- iPhone 11 (iOS 14.5)
+- iPhone 11
 - Dark Appearance activated
 - Region: United States
 - iPhone Laguage: English
