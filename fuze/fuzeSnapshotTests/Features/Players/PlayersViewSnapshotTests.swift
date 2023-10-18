@@ -1,13 +1,14 @@
-import iOSSnapshotTestCase
+import SnapshotTesting
+import XCTest
 @testable import fuze
 
-final class PlayersViewSnapshotTests: FBSnapshotTestCase {
+final class PlayersViewSnapshotTests: XCTestCase {
     private let sut = PlayersView()
 
     override func setUp() {
         super.setUp()
 
-        recordMode = false
+        isRecording = false
     }
 
     func test_view_givenAlignmentLeft_shouldCorrectLayout() {
@@ -17,8 +18,7 @@ final class PlayersViewSnapshotTests: FBSnapshotTestCase {
             self.sut.updatePlayers(viewModels: viewModels)
         }
 
-        viewControllerSnapshot.viewDidLoad()
-        FBSnapshotVerifyView(sut)
+        assertSnapshots(of: viewControllerSnapshot, as: [.image])
     }
 
     func test_view_givenAlignmentRight_shouldCorrectLayout() {
@@ -28,8 +28,7 @@ final class PlayersViewSnapshotTests: FBSnapshotTestCase {
             self.sut.updatePlayers(viewModels: viewModels)
         }
 
-        viewControllerSnapshot.viewDidLoad()
-        FBSnapshotVerifyView(sut)
+        assertSnapshots(of: viewControllerSnapshot, as: [.image])
     }
 }
 

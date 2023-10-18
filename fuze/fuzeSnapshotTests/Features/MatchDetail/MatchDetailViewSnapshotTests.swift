@@ -1,20 +1,20 @@
-import iOSSnapshotTestCase
+import SnapshotTesting
+import XCTest
 @testable import fuze
 
-final class MatchDetailViewSnapshotTests: FBSnapshotTestCase {
+final class MatchDetailViewSnapshotTests: XCTestCase {
     private let sut = MatchDetailView()
 
     override func setUp() {
         super.setUp()
 
-        recordMode = false
+        isRecording = true
     }
 
     func test_view_defaultState_shouldCorrectLayout() {
         let viewControllerSnapshot = ViewControllerSnapshot(customView: sut)
 
-        viewControllerSnapshot.viewDidLoad()
-        FBSnapshotVerifyView(sut)
+        assertSnapshots(of: viewControllerSnapshot, as: [.image])
     }
 
     func test_view_givenSetMatch_shouldCorrectLayout() {
@@ -23,7 +23,6 @@ final class MatchDetailViewSnapshotTests: FBSnapshotTestCase {
             self.sut.changeState(.content)
         }
 
-        viewControllerSnapshot.viewDidLoad()
-        FBSnapshotVerifyView(sut)
+        assertSnapshots(of: viewControllerSnapshot, as: [.image])
     }
 }

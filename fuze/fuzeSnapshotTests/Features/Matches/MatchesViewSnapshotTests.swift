@@ -1,17 +1,17 @@
-import iOSSnapshotTestCase
+import SnapshotTesting
+import XCTest
 @testable import fuze
 
-final class MatchesViewSnapshotTests: FBSnapshotTestCase {
+final class MatchesViewSnapshotTests: XCTestCase {
     private let sut = MatchesView()
 
     override func setUp() {
         super.setUp()
-
-        recordMode = false
+        
+        isRecording = false
     }
 
     func test_view_givenStateContent_shouldCorrectLayout() {
-
         var viewModels = [MatchViewModel](repeating: .fixture(matchTime: "NOW", matchTimeViewColor: .primaryRed), count: 2)
         viewModels.append(contentsOf: [.fixture(), .fixture()])
 
@@ -19,8 +19,7 @@ final class MatchesViewSnapshotTests: FBSnapshotTestCase {
             self.sut.changeState(.content(viewModels: viewModels))
         }
 
-        viewControllerSnapshot.viewDidLoad()
-        FBSnapshotVerifyView(sut)
+        assertSnapshots(of: viewControllerSnapshot, as: [.image])
     }
 
     func test_view_givenStateLoading_shouldCorrectLayout() {
@@ -28,8 +27,7 @@ final class MatchesViewSnapshotTests: FBSnapshotTestCase {
             self.sut.changeState(.loading)
         }
 
-        viewControllerSnapshot.viewDidLoad()
-        FBSnapshotVerifyView(sut)
+        assertSnapshots(of: viewControllerSnapshot, as: [.image])
     }
 
     func test_view_givenStateEmpty_shouldCorrectLayout() {
@@ -37,8 +35,7 @@ final class MatchesViewSnapshotTests: FBSnapshotTestCase {
             self.sut.changeState(.empty)
         }
 
-        viewControllerSnapshot.viewDidLoad()
-        FBSnapshotVerifyView(sut)
+        assertSnapshots(of: viewControllerSnapshot, as: [.image])
     }
 
     func test_view_givenStateIsError_shouldCorrectLayout() {
@@ -46,7 +43,6 @@ final class MatchesViewSnapshotTests: FBSnapshotTestCase {
             self.sut.changeState(.error)
         }
 
-        viewControllerSnapshot.viewDidLoad()
-        FBSnapshotVerifyView(sut)
+        assertSnapshots(of: viewControllerSnapshot, as: [.image])
     }
 }
