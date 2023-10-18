@@ -8,7 +8,7 @@ final class MatchDetailViewSnapshotTests: XCTestCase {
     override func setUp() {
         super.setUp()
 
-        isRecording = true
+        isRecording = false
     }
 
     func test_view_defaultState_shouldCorrectLayout() {
